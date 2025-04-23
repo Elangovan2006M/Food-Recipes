@@ -7,4 +7,5 @@ import com.example.foody.model.Recipe;
 
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
+    
 }
