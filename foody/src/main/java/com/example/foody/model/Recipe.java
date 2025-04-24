@@ -25,5 +25,17 @@ public class Recipe {
     private String imageUrl;
     
     private String videoUrl;
+
+    private String ingredients;
+
+    private String Cusions;
+
+    private String preTime;
+    
+    private String cookTime;
+    
+    private String totalTime;
+
+    
 }
 
