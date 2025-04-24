@@ -7,10 +7,11 @@ const Navbar = () => {
         <div className='navbar'>
             <h2 className='nav-header'>PlateStream</h2>
             <ul className='nav-content'>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
-                <li>Home</li>
+                <li><a href='\'>Home</a></li>
+                <li><a href='\'>Recipes</a></li>
+                <li><a href='\'>Blog</a></li>
+                <li><a href='\'>About Us</a></li>
+                
             </ul>
         </div>
     </div>
