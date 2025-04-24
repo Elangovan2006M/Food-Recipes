@@ -1,21 +1,61 @@
-2025-04-23T13:38:04.533+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 23356 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T13:38:04.533+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T13:38:04.626+05:30  INFO 23356 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T13:38:04.634+05:30  INFO 23356 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interface.
-2025-04-23T13:38:04.714+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T13:38:04.716+05:30  INFO 23356 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T13:38:04.717+05:30  INFO 23356 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T13:38:04.729+05:30  INFO 23356 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T13:38:04.730+05:30  INFO 23356 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 195 ms
-2025-04-23T13:38:04.752+05:30  INFO 23356 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T13:38:04.756+05:30  INFO 23356 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T13:38:04.767+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T13:38:04.768+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-04-23T13:38:04.786+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24f86aaa
-2025-04-23T13:38:04.788+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-04-23T13:38:04.790+05:30  WARN 23356 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T13:38:04.790+05:30  WARN 23356 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T13:38:04.791+05:30  INFO 23356 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-04-24T10:11:21.549+05:30  INFO 5484 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 5484 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
+2025-04-24T10:11:21.556+05:30  INFO 5484 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T10:11:21.693+05:30  INFO 5484 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-24T10:11:21.693+05:30  INFO 5484 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-24T10:11:22.373+05:30  INFO 5484 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T10:11:22.463+05:30  INFO 5484 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interface.
+2025-04-24T10:11:22.845+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T10:11:22.854+05:30  INFO 5484 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T10:11:22.854+05:30  INFO 5484 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T10:11:22.884+05:30  INFO 5484 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T10:11:22.893+05:30  INFO 5484 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1200 ms
+2025-04-24T10:11:23.006+05:30  INFO 5484 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T10:11:23.034+05:30  INFO 5484 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-24T10:11:23.051+05:30  INFO 5484 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T10:11:23.255+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T10:11:23.284+05:30  INFO 5484 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T10:11:23.609+05:30  INFO 5484 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59d6f9a7
+2025-04-24T10:11:23.609+05:30  INFO 5484 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T10:11:23.653+05:30  WARN 5484 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T10:11:23.654+05:30  WARN 5484 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T10:11:23.669+05:30  INFO 5484 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-24T10:11:24.616+05:30  INFO 5484 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T10:11:24.857+05:30  INFO 5484 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:11:25.126+05:30  WARN 5484 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T10:11:25.535+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T10:11:25.563+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T10:11:25.568+05:30  INFO 5484 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 4.51 seconds (process running for 5.009)
+2025-04-24T10:16:53.417+05:30  INFO 5484 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T10:16:53.432+05:30  INFO 5484 --- [Foody] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-24T10:16:53.442+05:30  INFO 5484 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-24T10:16:53.447+05:30  INFO 5484 --- [Foody] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:16:53.451+05:30  INFO 5484 --- [Foody] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T10:16:53.470+05:30  INFO 5484 --- [Foody] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T10:16:53.580+05:30  INFO 5484 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 5484 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
+2025-04-24T10:16:53.581+05:30  INFO 5484 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T10:16:53.788+05:30  INFO 5484 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T10:16:53.788+05:30  INFO 5484 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interface.
+2025-04-24T10:16:53.896+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T10:16:53.896+05:30  INFO 5484 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T10:16:53.896+05:30  INFO 5484 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T10:16:53.928+05:30  INFO 5484 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T10:16:53.930+05:30  INFO 5484 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 348 ms
+2025-04-24T10:16:54.040+05:30  INFO 5484 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T10:16:54.040+05:30  INFO 5484 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T10:16:54.059+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T10:16:54.060+05:30  INFO 5484 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-24T10:16:54.088+05:30  INFO 5484 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ffc6b48
+2025-04-24T10:16:54.090+05:30  INFO 5484 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-24T10:16:54.091+05:30  WARN 5484 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T10:16:54.091+05:30  WARN 5484 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T10:16:54.092+05:30  INFO 5484 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -23,111 +63,32 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-23T13:38:04.821+05:30  INFO 23356 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T13:38:04.827+05:30  INFO 23356 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:38:04.868+05:30  WARN 23356 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T13:38:05.012+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T13:38:05.018+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T13:38:05.021+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.518 seconds (process running for 34.643)
-2025-04-23T13:38:05.023+05:30  INFO 23356 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T13:38:51.221+05:30  INFO 23356 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-23T13:38:51.222+05:30  INFO 23356 --- [Foody] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T13:38:51.226+05:30  INFO 23356 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T13:38:51.227+05:30  INFO 23356 --- [Foody] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:38:51.227+05:30  INFO 23356 --- [Foody] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2025-04-23T13:38:51.231+05:30  INFO 23356 --- [Foody] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2025-04-23T13:38:51.290+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 23356 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T13:38:51.290+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T13:38:51.384+05:30  INFO 23356 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T13:38:51.388+05:30  INFO 23356 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interface.
-2025-04-23T13:38:51.445+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T13:38:51.445+05:30  INFO 23356 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T13:38:51.446+05:30  INFO 23356 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T13:38:51.456+05:30  INFO 23356 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T13:38:51.456+05:30  INFO 23356 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 164 ms
-2025-04-23T13:38:51.476+05:30  INFO 23356 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T13:38:51.478+05:30  INFO 23356 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T13:38:51.483+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T13:38:51.483+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2025-04-23T13:38:51.493+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@450032f3
-2025-04-23T13:38:51.493+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2025-04-23T13:38:51.494+05:30  WARN 23356 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T13:38:51.494+05:30  WARN 23356 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T13:38:51.495+05:30  INFO 23356 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T13:38:51.524+05:30  INFO 23356 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T13:38:51.531+05:30  INFO 23356 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:38:51.568+05:30  WARN 23356 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T13:38:51.736+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T13:38:51.742+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T13:38:51.743+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.47 seconds (process running for 81.366)
-2025-04-23T13:38:51.745+05:30  INFO 23356 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T13:39:01.437+05:30  INFO 23356 --- [Foody] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-23T13:39:01.437+05:30  INFO 23356 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-23T13:39:01.437+05:30  INFO 23356 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-04-23T13:45:34.280+05:30  INFO 23356 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 6 class path changes (0 additions, 0 deletions, 6 modifications)
-2025-04-23T13:45:34.283+05:30  INFO 23356 --- [Foody] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T13:45:34.301+05:30  INFO 23356 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T13:45:34.303+05:30  INFO 23356 --- [Foody] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:45:34.305+05:30  INFO 23356 --- [Foody] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2025-04-23T13:45:34.312+05:30  INFO 23356 --- [Foody] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2025-04-23T13:45:34.381+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 23356 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T13:45:34.381+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T13:45:34.556+05:30  INFO 23356 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T13:45:34.570+05:30  INFO 23356 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
-2025-04-23T13:45:34.716+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T13:45:34.719+05:30  INFO 23356 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T13:45:34.720+05:30  INFO 23356 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T13:45:34.762+05:30  INFO 23356 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T13:45:34.762+05:30  INFO 23356 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 379 ms
-2025-04-23T13:45:34.828+05:30  INFO 23356 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T13:45:34.834+05:30  INFO 23356 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T13:45:34.843+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T13:45:34.846+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2025-04-23T13:45:34.878+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60eb8063
-2025-04-23T13:45:34.879+05:30  INFO 23356 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2025-04-23T13:45:34.881+05:30  WARN 23356 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T13:45:34.882+05:30  WARN 23356 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T13:45:34.883+05:30  INFO 23356 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T13:45:34.986+05:30  INFO 23356 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T13:45:34.999+05:30  INFO 23356 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:45:35.074+05:30  WARN 23356 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T13:45:35.325+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T13:45:35.336+05:30  INFO 23356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T13:45:35.340+05:30  INFO 23356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.98 seconds (process running for 484.962)
-2025-04-23T13:45:35.341+05:30  INFO 23356 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T13:47:29.118+05:30  INFO 23356 --- [Foody] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T13:47:29.126+05:30  INFO 23356 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T13:47:29.136+05:30  INFO 23356 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:47:29.138+05:30  INFO 23356 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2025-04-23T13:47:29.145+05:30  INFO 23356 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2025-04-23T13:47:49.103+05:30  INFO 1620 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : Starting FoodyApplicationTests using Java 21.0.6 with PID 1620 (started by elang in C:\Food Recipes\foody)
-2025-04-23T13:47:49.103+05:30  INFO 1620 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T13:47:50.184+05:30  INFO 1620 --- [Foody] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T13:47:50.232+05:30  INFO 1620 --- [Foody] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
-2025-04-23T13:47:50.956+05:30  INFO 1620 --- [Foody] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T13:47:51.027+05:30  INFO 1620 --- [Foody] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-04-23T13:47:51.117+05:30  INFO 1620 --- [Foody] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T13:47:51.496+05:30  INFO 1620 --- [Foody] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T13:47:51.516+05:30  INFO 1620 --- [Foody] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-23T13:47:51.851+05:30  INFO 1620 --- [Foody] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e31d53b
-2025-04-23T13:47:51.853+05:30  INFO 1620 --- [Foody] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-23T13:47:51.904+05:30  WARN 1620 --- [Foody] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T13:47:51.905+05:30  WARN 1620 --- [Foody] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T13:47:51.925+05:30  INFO 1620 --- [Foody] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-04-24T10:16:54.198+05:30  INFO 5484 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T10:16:54.210+05:30  INFO 5484 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:16:54.278+05:30  WARN 5484 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T10:16:54.806+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T10:16:54.826+05:30  INFO 5484 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T10:16:54.833+05:30  INFO 5484 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 1.3 seconds (process running for 334.274)
+2025-04-24T10:16:54.833+05:30  INFO 5484 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-24T10:17:38.663+05:30  INFO 5484 --- [Foody] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-24T10:17:38.668+05:30  INFO 5484 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-24T10:17:38.678+05:30  INFO 5484 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:17:38.679+05:30  INFO 5484 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-04-24T10:17:38.689+05:30  INFO 5484 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-04-24T10:18:06.695+05:30  INFO 25604 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : Starting FoodyApplicationTests using Java 21.0.6 with PID 25604 (started by elang in C:\Food Recipes\foody)
+2025-04-24T10:18:06.695+05:30  INFO 25604 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T10:18:08.266+05:30  INFO 25604 --- [Foody] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T10:18:08.415+05:30  INFO 25604 --- [Foody] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 1 JPA repository interface.
+2025-04-24T10:18:09.410+05:30  INFO 25604 --- [Foody] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T10:18:09.478+05:30  INFO 25604 --- [Foody] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-24T10:18:09.641+05:30  INFO 25604 --- [Foody] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T10:18:10.519+05:30  INFO 25604 --- [Foody] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T10:18:10.656+05:30  INFO 25604 --- [Foody] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T10:18:11.362+05:30  INFO 25604 --- [Foody] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@66ab924
+2025-04-24T10:18:11.420+05:30  INFO 25604 --- [Foody] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T10:18:11.489+05:30  WARN 25604 --- [Foody] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T10:18:11.491+05:30  WARN 25604 --- [Foody] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T10:18:11.529+05:30  INFO 25604 --- [Foody] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -135,27 +96,34 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-23T13:47:53.138+05:30  INFO 1620 --- [Foody] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T13:47:53.199+05:30  INFO 1620 --- [Foody] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:47:53.602+05:30  WARN 1620 --- [Foody] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T13:47:54.411+05:30  INFO 1620 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : Started FoodyApplicationTests in 5.781 seconds (process running for 7.17)
-2025-04-23T13:47:55.306+05:30  INFO 1620 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:47:55.307+05:30  INFO 1620 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-23T13:47:55.316+05:30  INFO 1620 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-23T13:51:30.735+05:30  INFO 15688 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : Starting FoodyApplicationTests using Java 21.0.6 with PID 15688 (started by elang in C:\Food Recipes\foody)
-2025-04-23T13:51:30.735+05:30  INFO 15688 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T13:51:31.662+05:30  INFO 15688 --- [Foody] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T13:51:31.734+05:30  INFO 15688 --- [Foody] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interface.
-2025-04-23T13:51:32.119+05:30  INFO 15688 --- [Foody] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T13:51:32.150+05:30  INFO 15688 --- [Foody] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-04-23T13:51:32.187+05:30  INFO 15688 --- [Foody] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T13:51:32.460+05:30  INFO 15688 --- [Foody] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T13:51:32.492+05:30  INFO 15688 --- [Foody] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-23T13:51:32.865+05:30  INFO 15688 --- [Foody] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e31d53b
-2025-04-23T13:51:32.866+05:30  INFO 15688 --- [Foody] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-23T13:51:32.898+05:30  WARN 15688 --- [Foody] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T13:51:32.914+05:30  WARN 15688 --- [Foody] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T13:51:32.923+05:30  INFO 15688 --- [Foody] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-04-24T10:18:12.849+05:30  INFO 25604 --- [Foody] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T10:18:12.942+05:30  INFO 25604 --- [Foody] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:18:13.962+05:30  WARN 25604 --- [Foody] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T10:18:15.869+05:30  INFO 25604 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : Started FoodyApplicationTests in 9.72 seconds (process running for 12.365)
+2025-04-24T10:18:17.058+05:30  INFO 25604 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:18:17.060+05:30  INFO 25604 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T10:18:17.066+05:30  INFO 25604 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T10:19:03.455+05:30  INFO 23648 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 23648 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
+2025-04-24T10:19:03.455+05:30  INFO 23648 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T10:19:03.496+05:30  INFO 23648 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-24T10:19:03.497+05:30  INFO 23648 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-24T10:19:03.969+05:30  INFO 23648 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T10:19:04.039+05:30  INFO 23648 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-04-24T10:19:04.419+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T10:19:04.438+05:30  INFO 23648 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T10:19:04.438+05:30  INFO 23648 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T10:19:04.527+05:30  INFO 23648 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T10:19:04.533+05:30  INFO 23648 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1035 ms
+2025-04-24T10:19:04.767+05:30  INFO 23648 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T10:19:04.820+05:30  INFO 23648 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-24T10:19:04.854+05:30  INFO 23648 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T10:19:05.033+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T10:19:05.056+05:30  INFO 23648 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T10:19:05.352+05:30  INFO 23648 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c0c2bee
+2025-04-24T10:19:05.352+05:30  INFO 23648 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T10:19:05.386+05:30  WARN 23648 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T10:19:05.389+05:30  WARN 23648 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T10:19:05.402+05:30  INFO 23648 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -163,199 +131,36 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-23T13:51:34.014+05:30  INFO 15688 --- [Foody] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T13:51:34.076+05:30  INFO 15688 --- [Foody] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:51:34.448+05:30  WARN 15688 --- [Foody] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T13:51:35.212+05:30  INFO 15688 --- [Foody] [main] c.example.foody.FoodyApplicationTests    : Started FoodyApplicationTests in 4.861 seconds (process running for 5.869)
-2025-04-23T13:51:36.015+05:30  INFO 15688 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:51:36.018+05:30  INFO 15688 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-23T13:51:36.028+05:30  INFO 15688 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-23T13:53:43.305+05:30  INFO 19932 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 19932 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T13:53:43.308+05:30  INFO 19932 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T13:53:43.347+05:30  INFO 19932 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-23T13:53:43.347+05:30  INFO 19932 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-23T13:53:44.001+05:30  INFO 19932 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T13:53:44.092+05:30  INFO 19932 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interface.
-2025-04-23T13:53:44.849+05:30  INFO 19932 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T13:53:44.872+05:30  INFO 19932 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T13:53:44.876+05:30  INFO 19932 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T13:53:44.942+05:30  INFO 19932 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T13:53:44.944+05:30  INFO 19932 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1595 ms
-2025-04-23T13:53:45.166+05:30  INFO 19932 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T13:53:45.229+05:30  INFO 19932 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-04-23T13:53:45.264+05:30  INFO 19932 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T13:53:45.525+05:30  INFO 19932 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T13:53:45.552+05:30  INFO 19932 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-23T13:53:46.038+05:30  INFO 19932 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c416dc6
-2025-04-23T13:53:46.041+05:30  INFO 19932 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-23T13:53:46.104+05:30  WARN 19932 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T13:53:46.106+05:30  WARN 19932 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T13:53:46.125+05:30  INFO 19932 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T13:53:46.787+05:30  INFO 19932 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T13:53:46.863+05:30  INFO 19932 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T13:53:47.178+05:30  WARN 19932 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T13:53:47.851+05:30  INFO 19932 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T13:53:47.879+05:30  INFO 19932 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T13:53:47.912+05:30  INFO 19932 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 5.207 seconds (process running for 5.75)
-2025-04-23T13:53:57.973+05:30  INFO 19932 --- [Foody] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-23T13:53:57.973+05:30  INFO 19932 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-23T13:53:57.979+05:30  INFO 19932 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2025-04-23T14:46:42.326+05:30  WARN 19932 --- [Foody] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m56s50ms425µs200ns).
-2025-04-23T14:51:35.191+05:30  WARN 19932 --- [Foody] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m22s808ms97µs500ns).
-2025-04-23T14:52:02.235+05:30  INFO 19932 --- [Foody] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T14:52:02.243+05:30  INFO 19932 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T14:52:02.271+05:30  INFO 19932 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T14:52:02.291+05:30  INFO 19932 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-23T14:52:02.311+05:30  INFO 19932 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-23T14:52:10.576+05:30  INFO 8124 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 8124 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T14:52:10.578+05:30  INFO 8124 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T14:52:10.623+05:30  INFO 8124 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-23T14:52:10.623+05:30  INFO 8124 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-23T14:52:11.177+05:30  INFO 8124 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T14:52:11.254+05:30  INFO 8124 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
-2025-04-23T14:52:11.816+05:30  INFO 8124 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T14:52:11.826+05:30  INFO 8124 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T14:52:11.827+05:30  INFO 8124 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T14:52:11.872+05:30  INFO 8124 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T14:52:11.872+05:30  INFO 8124 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1248 ms
-2025-04-23T14:52:12.059+05:30  INFO 8124 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T14:52:12.127+05:30  INFO 8124 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-04-23T14:52:12.170+05:30  INFO 8124 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T14:52:12.437+05:30  INFO 8124 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T14:52:12.497+05:30  INFO 8124 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-23T14:52:12.839+05:30  INFO 8124 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c3a1742
-2025-04-23T14:52:12.841+05:30  INFO 8124 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-23T14:52:12.873+05:30  WARN 8124 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T14:52:12.873+05:30  WARN 8124 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T14:52:12.892+05:30  INFO 8124 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T14:52:13.602+05:30  INFO 8124 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T14:52:13.669+05:30  INFO 8124 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T14:52:13.882+05:30  WARN 8124 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T14:52:14.427+05:30  INFO 8124 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T14:52:14.474+05:30  INFO 8124 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T14:52:14.481+05:30  INFO 8124 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 4.381 seconds (process running for 4.995)
-2025-04-23T14:52:37.781+05:30  INFO 8124 --- [Foody] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-23T14:52:37.781+05:30  INFO 8124 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-23T14:52:37.784+05:30  INFO 8124 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-04-23T15:15:40.077+05:30  INFO 8124 --- [Foody] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T15:15:40.084+05:30  INFO 8124 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T15:15:40.107+05:30  INFO 8124 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:15:40.116+05:30  INFO 8124 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-23T15:15:40.141+05:30  INFO 8124 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-23T15:15:49.661+05:30  INFO 8728 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 8728 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T15:15:49.663+05:30  INFO 8728 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T15:15:49.737+05:30  INFO 8728 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-23T15:15:49.737+05:30  INFO 8728 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-23T15:15:50.750+05:30  INFO 8728 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T15:15:50.793+05:30  INFO 8728 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
-2025-04-23T15:15:51.199+05:30  INFO 8728 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T15:15:51.231+05:30  INFO 8728 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T15:15:51.262+05:30  INFO 8728 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T15:15:51.389+05:30  INFO 8728 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T15:15:51.389+05:30  INFO 8728 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1652 ms
-2025-04-23T15:15:51.563+05:30  INFO 8728 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T15:15:51.626+05:30  INFO 8728 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-04-23T15:15:51.690+05:30  INFO 8728 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T15:15:52.053+05:30  INFO 8728 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T15:15:52.069+05:30  INFO 8728 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-23T15:15:52.384+05:30  INFO 8728 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6808387a
-2025-04-23T15:15:52.384+05:30  INFO 8728 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-23T15:15:52.431+05:30  WARN 8728 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T15:15:52.431+05:30  WARN 8728 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T15:15:52.447+05:30  INFO 8728 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T15:15:53.527+05:30  INFO 8728 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T15:15:53.590+05:30  INFO 8728 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:15:53.859+05:30  WARN 8728 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T15:15:54.626+05:30  INFO 8728 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T15:15:54.689+05:30  INFO 8728 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T15:15:54.705+05:30  INFO 8728 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 5.834 seconds (process running for 6.515)
-2025-04-23T15:16:09.634+05:30  INFO 8728 --- [Foody] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-23T15:16:09.635+05:30  INFO 8728 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-23T15:16:09.637+05:30  INFO 8728 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-04-23T15:37:55.704+05:30  INFO 8728 --- [Foody] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T15:37:55.726+05:30  INFO 8728 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T15:37:55.734+05:30  INFO 8728 --- [Foody] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:37:55.744+05:30  INFO 8728 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-23T15:37:55.761+05:30  INFO 8728 --- [Foody] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-23T15:38:04.419+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T15:38:04.419+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T15:38:04.457+05:30  INFO 6096 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-23T15:38:04.457+05:30  INFO 6096 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-23T15:38:05.038+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T15:38:05.145+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
-2025-04-23T15:38:05.712+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T15:38:05.733+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T15:38:05.735+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T15:38:05.796+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T15:38:05.796+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1339 ms
-2025-04-23T15:38:06.011+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T15:38:06.074+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
-2025-04-23T15:38:06.093+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T15:38:06.278+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T15:38:06.304+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-23T15:38:06.681+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d969397
-2025-04-23T15:38:06.684+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-23T15:38:06.759+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T15:38:06.762+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T15:38:06.779+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T15:38:07.561+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T15:38:07.622+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:38:07.862+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T15:38:08.444+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T15:38:08.498+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T15:38:08.505+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 4.649 seconds (process running for 5.407)
-2025-04-23T15:40:28.544+05:30  INFO 6096 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-23T15:40:28.551+05:30  INFO 6096 --- [Foody] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T15:40:28.559+05:30  INFO 6096 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T15:40:28.564+05:30  INFO 6096 --- [Foody] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:40:28.568+05:30  INFO 6096 --- [Foody] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-23T15:40:28.577+05:30  INFO 6096 --- [Foody] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-04-23T15:40:28.638+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T15:40:28.639+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T15:40:28.830+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T15:40:28.837+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interface.
-2025-04-23T15:40:28.938+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T15:40:28.938+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T15:40:28.938+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T15:40:28.971+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T15:40:28.971+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 330 ms
-2025-04-23T15:40:29.002+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T15:40:29.004+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T15:40:29.016+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T15:40:29.017+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-04-23T15:40:29.032+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39f0dd26
-2025-04-23T15:40:29.032+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-04-23T15:40:29.033+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T15:40:29.033+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T15:40:29.035+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-04-24T10:19:06.032+05:30  INFO 23648 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T10:19:06.135+05:30  INFO 23648 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:19:06.327+05:30  WARN 23648 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T10:19:06.790+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T10:19:06.826+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T10:19:06.835+05:30  INFO 23648 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 3.676 seconds (process running for 3.971)
+2025-04-24T10:21:22.340+05:30  INFO 23648 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-24T10:21:22.352+05:30  INFO 23648 --- [Foody] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-24T10:21:22.359+05:30  INFO 23648 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-24T10:21:22.368+05:30  INFO 23648 --- [Foody] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:21:22.428+05:30  INFO 23648 --- [Foody] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T10:21:22.440+05:30  INFO 23648 --- [Foody] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T10:21:22.551+05:30  INFO 23648 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 23648 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
+2025-04-24T10:21:22.552+05:30  INFO 23648 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-24T10:21:22.684+05:30  INFO 23648 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T10:21:22.691+05:30  INFO 23648 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interface.
+2025-04-24T10:21:22.782+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T10:21:22.783+05:30  INFO 23648 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T10:21:22.783+05:30  INFO 23648 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T10:21:22.796+05:30  INFO 23648 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T10:21:22.797+05:30  INFO 23648 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 243 ms
+2025-04-24T10:21:22.824+05:30  INFO 23648 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T10:21:22.825+05:30  INFO 23648 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T10:21:22.833+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T10:21:22.834+05:30  INFO 23648 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-24T10:21:22.849+05:30  INFO 23648 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75d80e78
+2025-04-24T10:21:22.850+05:30  INFO 23648 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-24T10:21:22.850+05:30  WARN 23648 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T10:21:22.851+05:30  WARN 23648 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T10:21:22.851+05:30  INFO 23648 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -363,209 +168,10 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-04-23T15:40:29.090+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T15:40:29.099+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:40:29.152+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T15:40:29.347+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T15:40:29.355+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T15:40:29.358+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.743 seconds (process running for 146.256)
-2025-04-23T15:40:29.361+05:30  INFO 6096 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T15:40:36.870+05:30  INFO 6096 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-23T15:40:36.873+05:30  INFO 6096 --- [Foody] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T15:40:36.878+05:30  INFO 6096 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T15:40:36.880+05:30  INFO 6096 --- [Foody] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:40:36.880+05:30  INFO 6096 --- [Foody] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2025-04-23T15:40:36.884+05:30  INFO 6096 --- [Foody] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2025-04-23T15:40:36.940+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T15:40:36.940+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T15:40:37.059+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T15:40:37.066+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interface.
-2025-04-23T15:40:37.134+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T15:40:37.135+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T15:40:37.135+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T15:40:37.153+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T15:40:37.154+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 210 ms
-2025-04-23T15:40:37.180+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T15:40:37.183+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T15:40:37.188+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T15:40:37.223+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2025-04-23T15:40:37.234+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ba6d398
-2025-04-23T15:40:37.234+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2025-04-23T15:40:37.234+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T15:40:37.234+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T15:40:37.234+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T15:40:37.263+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T15:40:37.270+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:40:37.344+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T15:40:37.534+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T15:40:37.544+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T15:40:37.548+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.631 seconds (process running for 154.445)
-2025-04-23T15:40:37.549+05:30  INFO 6096 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T15:40:42.003+05:30  INFO 6096 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
-2025-04-23T15:40:42.004+05:30  INFO 6096 --- [Foody] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T15:40:42.008+05:30  INFO 6096 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T15:40:42.010+05:30  INFO 6096 --- [Foody] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:40:42.011+05:30  INFO 6096 --- [Foody] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2025-04-23T15:40:42.014+05:30  INFO 6096 --- [Foody] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2025-04-23T15:40:42.063+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T15:40:42.063+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T15:40:42.186+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T15:40:42.193+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interface.
-2025-04-23T15:40:42.249+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T15:40:42.250+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T15:40:42.250+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T15:40:42.264+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T15:40:42.264+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 198 ms
-2025-04-23T15:40:42.289+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T15:40:42.291+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T15:40:42.297+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T15:40:42.299+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2025-04-23T15:40:42.311+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@672f4fd
-2025-04-23T15:40:42.312+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2025-04-23T15:40:42.313+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T15:40:42.313+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T15:40:42.313+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T15:40:42.346+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T15:40:42.352+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T15:40:42.407+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T15:40:42.644+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T15:40:42.657+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T15:40:42.661+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.614 seconds (process running for 159.559)
-2025-04-23T15:40:42.662+05:30  INFO 6096 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T15:42:59.407+05:30  INFO 6096 --- [Foody] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-23T15:42:59.407+05:30  INFO 6096 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-23T15:42:59.407+05:30  INFO 6096 --- [Foody] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-04-23T15:49:19.760+05:30  WARN 6096 --- [Foody] [HikariPool-4 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=2m7s248ms850µs100ns).
-2025-04-23T16:00:28.178+05:30  WARN 6096 --- [Foody] [HikariPool-4 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=7m8s338ms9µs100ns).
-2025-04-23T16:07:09.883+05:30  INFO 6096 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-23T16:07:09.885+05:30  INFO 6096 --- [Foody] [Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T16:07:09.885+05:30  INFO 6096 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T16:07:09.891+05:30  INFO 6096 --- [Foody] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T16:07:09.892+05:30  INFO 6096 --- [Foody] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2025-04-23T16:07:09.899+05:30  INFO 6096 --- [Foody] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2025-04-23T16:07:09.974+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T16:07:09.976+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T16:07:10.291+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T16:07:10.302+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
-2025-04-23T16:07:10.389+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T16:07:10.390+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T16:07:10.391+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T16:07:10.409+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T16:07:10.409+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 430 ms
-2025-04-23T16:07:10.442+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T16:07:10.445+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T16:07:10.453+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T16:07:10.454+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
-2025-04-23T16:07:10.470+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55dfa010
-2025-04-23T16:07:10.471+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
-2025-04-23T16:07:10.472+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T16:07:10.472+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T16:07:10.472+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T16:07:10.519+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T16:07:10.528+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T16:07:10.610+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T16:07:10.962+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T16:07:10.974+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T16:07:10.983+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 1.036 seconds (process running for 1747.88)
-2025-04-23T16:07:10.990+05:30  INFO 6096 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T16:07:12.398+05:30  INFO 6096 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-23T16:07:12.399+05:30  INFO 6096 --- [Foody] [Thread-19] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T16:07:12.404+05:30  INFO 6096 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T16:07:12.408+05:30  INFO 6096 --- [Foody] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T16:07:12.409+05:30  INFO 6096 --- [Foody] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
-2025-04-23T16:07:12.412+05:30  INFO 6096 --- [Foody] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
-2025-04-23T16:07:12.494+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T16:07:12.495+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T16:07:12.693+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T16:07:12.706+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
-2025-04-23T16:07:12.803+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T16:07:12.804+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T16:07:12.804+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T16:07:12.862+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T16:07:12.863+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 365 ms
-2025-04-23T16:07:12.903+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T16:07:12.904+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T16:07:12.918+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T16:07:12.919+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
-2025-04-23T16:07:12.939+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@364ae6d7
-2025-04-23T16:07:12.940+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
-2025-04-23T16:07:12.940+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T16:07:12.941+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T16:07:12.941+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T16:07:12.992+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T16:07:13.084+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T16:07:13.147+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T16:07:13.476+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T16:07:13.487+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T16:07:13.491+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 1.029 seconds (process running for 1750.389)
-2025-04-23T16:07:13.493+05:30  INFO 6096 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T16:07:14.917+05:30  INFO 6096 --- [Foody] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 6 class path changes (0 additions, 0 deletions, 6 modifications)
-2025-04-23T16:07:14.922+05:30  INFO 6096 --- [Foody] [Thread-23] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-23T16:07:14.934+05:30  INFO 6096 --- [Foody] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-23T16:07:14.939+05:30  INFO 6096 --- [Foody] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T16:07:14.990+05:30  INFO 6096 --- [Foody] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
-2025-04-23T16:07:14.999+05:30  INFO 6096 --- [Foody] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
-2025-04-23T16:07:15.064+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.6 with PID 6096 (C:\Food Recipes\foody\target\classes started by elang in C:\Food Recipes\foody)
-2025-04-23T16:07:15.065+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
-2025-04-23T16:07:15.206+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-23T16:07:15.213+05:30  INFO 6096 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 1 JPA repository interface.
-2025-04-23T16:07:15.317+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-23T16:07:15.320+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-23T16:07:15.320+05:30  INFO 6096 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-23T16:07:15.341+05:30  INFO 6096 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-23T16:07:15.343+05:30  INFO 6096 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 277 ms
-2025-04-23T16:07:15.401+05:30  INFO 6096 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-23T16:07:15.404+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-04-23T16:07:15.417+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-23T16:07:15.418+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
-2025-04-23T16:07:15.441+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ea10dc
-2025-04-23T16:07:15.443+05:30  INFO 6096 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
-2025-04-23T16:07:15.443+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-23T16:07:15.443+05:30  WARN 6096 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-04-23T16:07:15.443+05:30  INFO 6096 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-04-23T16:07:15.520+05:30  INFO 6096 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-23T16:07:16.231+05:30  INFO 6096 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-23T16:07:16.326+05:30  WARN 6096 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-23T16:07:16.502+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-23T16:07:16.511+05:30  INFO 6096 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-23T16:07:16.513+05:30  INFO 6096 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 1.479 seconds (process running for 1753.411)
-2025-04-23T16:07:16.514+05:30  INFO 6096 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-04-23T16:32:58.287+05:30  WARN 6096 --- [Foody] [HikariPool-7 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=2m42s280ms418µs600ns).
-2025-04-23T17:16:29.941+05:30  WARN 6096 --- [Foody] [HikariPool-7 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=20m31s288ms907µs400ns).
-2025-04-23T17:24:00.327+05:30  WARN 6096 --- [Foody] [HikariPool-7 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=1m235ms761µs100ns).
-2025-04-23T20:49:43.895+05:30  WARN 6096 --- [Foody] [HikariPool-7 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Thread starvation or clock leap detected (housekeeper delta=3h25m46s557ms240µs800ns).
+2025-04-24T10:21:22.910+05:30  INFO 23648 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T10:21:22.975+05:30  INFO 23648 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T10:21:23.046+05:30  WARN 23648 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T10:21:23.315+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-24T10:21:23.321+05:30  INFO 23648 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T10:21:23.325+05:30  INFO 23648 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.845 seconds (process running for 140.461)
+2025-04-24T10:21:23.327+05:30  INFO 23648 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
