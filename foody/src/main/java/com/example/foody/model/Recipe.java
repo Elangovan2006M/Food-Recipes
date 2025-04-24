@@ -17,13 +17,15 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String foodName;
-    
     private String description;
-    
     private String imageUrl;
-    
     private String videoUrl;
+    private String ingredients;
+    private String cuisines;
+    private double prepTime;
+    private double cookTime;
+    private double totalTime;
+    private String difficulty;
+    private String foodType;
 }
-
