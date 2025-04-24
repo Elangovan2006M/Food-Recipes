@@ -40,7 +40,7 @@ public class RecipeService {
     public List<Recipe> searchByFoodType(String foodType) {
         return recipeRepository.findByFoodTypeIgnoreCase(foodType);
     }
-
+    
     public List<Recipe> searchByDifficulty(String difficulty) {
         return recipeRepository.findByDifficultyIgnoreCase(difficulty);
     }
