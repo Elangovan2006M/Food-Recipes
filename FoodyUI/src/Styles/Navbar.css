@@ -4,8 +4,10 @@
   justify-content: center;
   align-items: center;
   height: 60px;
-  background-color: #f97316;
+  background-color: #EA7300;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 999;
 }
 
 .navbar {
@@ -22,6 +24,11 @@
 .nav-brand {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.nav-brand h2:hover{
+  color: #000000;
 }
 
 .navbar img {
@@ -61,25 +68,23 @@
   position: relative;
   display: flex;
   align-items: center;
-}
-
-.nav-search input {
-  padding: 8px 15px 8px 25px;
-  width: 100px;
-  border-radius: 20px;
-  border: none;
-  font-size: 14px;
-  outline: none;
-  background-color: white;
-  color: black;
+  margin-left: 15px;
 }
 
 .search-icon {
   position: absolute;
   right: 10px;
-  font-size: 14px;
-  color: gray;
-  pointer-events: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.search-icon:hover
+{
+  color: #000000;
+  text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
 }
 
 /* Hamburger Menu */
@@ -96,7 +101,7 @@
     flex-direction: column;
     width: 100%;
     display: none;
-    background-color: #f97316;
+    background-color: #EA7300;
     padding: 10px 0;
   }
 
