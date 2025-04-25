@@ -1,16 +1,23 @@
-import './App.css';
-import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { RecipeProvider } from './Service/RecipeContext';
 import RecipeSearch from './Components/RecipeSearch';
+import RecipeDisplay from './Components/RecipeDisplay';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <RecipeProvider>
       <Navbar/>
-      <RecipeSearch/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<RecipeSearch />} />
+          <Route path="/recipe" element={<RecipeDisplay />} />
+        </Routes>
+      </Router>
       <Footer/>
-    </div>
+    </RecipeProvider>
   );
-}
+};
 
 export default App;
