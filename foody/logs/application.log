@@ -1169,3 +1169,6 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2025-04-25T12:09:06.373+05:30  INFO 356 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2025-04-25T12:09:06.405+05:30  INFO 356 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
 2025-04-25T12:09:06.409+05:30  INFO 356 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 3.662 seconds (process running for 3.967)
+2025-04-25T12:27:05.091+05:30  INFO 356 --- [Foody] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-25T12:27:05.091+05:30  INFO 356 --- [Foody] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-25T12:27:05.091+05:30  INFO 356 --- [Foody] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
