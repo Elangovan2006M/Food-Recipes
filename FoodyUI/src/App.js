@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import RecipeSearch from './Components/RecipeSearch';
 
@@ -7,6 +8,7 @@ function App() {
     <div>
       <Navbar/>
       <RecipeSearch/>
+      <Footer/>
     </div>
   );
 }

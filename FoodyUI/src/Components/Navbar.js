@@ -1,26 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Styles/Navbar.css';
-import {FiSearch} from 'react-icons/fi'
-import PlateStream from '../Assests/Platestream.png'
+import {FiSearch} from 'react-icons/fi';
+import {FaBars, FaTimes} from 'react-icons/fa';
+import PlateStream from '../Assests/Platestream.png';
+import {useNavigate} from 'react-router-dom';
+
+
+
 
 const Navbar = () => {
+const[isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const navigate = useNavigate();
+
+const toggleMobileMenu = () =>
+{
+  setIsMobileMenuOpen(!isMobileMenuOpen);
+}
+
+const handleNavigate = () =>
+{
+  navigate('/');
+};
+
   return (
     <div className="navbar-container">
       <div className="navbar">
-        <div className="nav-brand">
-          <img src={PlateStream} alt="logo" />
-          <h2 className="nav-header">PlateStream</h2>
+        <div className="nav-brand" onClick={handleNavigate}>
+            <img src={PlateStream} alt="logo" />
+            <h2 className="nav-header">PlateStream</h2>
         </div>
-        <ul className="nav-content">
+        <div className={`nav-content ${isMobileMenuOpen ? 'open' : ''}`}>
           <li><a href="/">Home</a></li>
           <li><a href="/">Recipes</a></li>
           <li><a href="/">Blog</a></li>
           <li><a href="/">About Us</a></li>
         <div className='nav-search'>
-          <input type='search' placeholder='Search'/>
+          {/* <input type='text' placeholder='Search'/> */}
           <FiSearch className='search-icon'/>
         </div>
-        </ul>
+        <div className='hamburger' onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <FaTimes/> : <FaBars/>}
+        </div>
+        </div>
       </div>
     </div>
   );
