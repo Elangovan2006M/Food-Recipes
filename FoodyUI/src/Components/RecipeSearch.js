@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import RecipeCard from './RecipeCard';
 import {
   searchByFoodName,
   searchByCuisines,
   searchByFoodType,
   searchByDifficulty,
   searchByTotalTime
-} from '../Service/recipeService';
-
+} from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
 
 const RecipeSearch = () => {
@@ -130,27 +130,13 @@ const RecipeSearch = () => {
         </div>
       </div>
 
-      {/* Results */}
+      {/* Results Section */}
       <div className="results">
         <h3>Results:</h3>
         {searchResults.length > 0 ? (
           <div className="card-grid">
             {searchResults.map((recipe) => (
-              <div key={recipe.id} className="recipe-card">
-                <img
-                  src={recipe.imageUrl || 'https://via.placeholder.com/150'}
-                  alt={recipe.foodName}
-                  className="recipe-image"
-                />
-                <div className="recipe-details">
-                  <h4>{recipe.foodName}</h4>
-                  <p><strong>Cuisine:</strong> {recipe.cuisines}</p>
-                  <p><strong>Type:</strong> {recipe.foodType}</p>
-                  <p><strong>Difficulty:</strong> {recipe.difficulty}</p>
-                  <p><strong>Time:</strong> {recipe.totalTime} min</p>
-                  <p>{recipe.description}</p>
-                </div>
-              </div>
+              <RecipeCard key={recipe.id} recipe={recipe} />
             ))}
           </div>
         ) : (
