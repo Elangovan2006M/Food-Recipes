@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { RecipeProvider } from './Service/RecipeContext';
+import Home from './Components/Home';
 import RecipeSearch from './Components/RecipeSearch';
 import RecipeDisplay from './Components/RecipeDisplay';
 import Navbar from './Components/Navbar';
@@ -10,7 +11,8 @@ const App = () => {
     <RecipeProvider>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<RecipeSearch />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<RecipeSearch />} />
         <Route path="/recipe" element={<RecipeDisplay />} />
       </Routes>
       <Footer/>
