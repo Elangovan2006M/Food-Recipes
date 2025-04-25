@@ -9,10 +9,12 @@ const App = () => {
   return (
     <RecipeProvider>
       <Navbar/>
+      
       <Routes>
         <Route path="/" element={<RecipeSearch />} />
         <Route path="/recipe" element={<RecipeDisplay />} />
       </Routes>
+     
       <Footer/>
     </RecipeProvider>
   );

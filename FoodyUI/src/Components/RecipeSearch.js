@@ -9,6 +9,7 @@ import {
 } from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
 
+
 const RecipeSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [foodName, setFoodName] = useState('');
@@ -53,6 +54,7 @@ const RecipeSearch = () => {
   };
 
   return (
+   
     <div className="search-container">
       <h2 className="title">Search Recipes</h2>
 
@@ -144,6 +146,7 @@ const RecipeSearch = () => {
         )}
       </div>
     </div>
+      
   );
 };
 
