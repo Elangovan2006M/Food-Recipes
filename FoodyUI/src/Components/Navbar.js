@@ -31,12 +31,12 @@ const handleNavigate = () =>
         </div>
         <div className={`nav-content ${isMobileMenuOpen ? 'open' : ''}`}>
           <li><a href="/">Home</a></li>
-          <li><a href="/">Recipes</a></li>
-          <li><a href="/">Blog</a></li>
-          <li><a href="/">About Us</a></li>
+          <li><a href="/recipe">Recipes</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/about-us">About Us</a></li>
         <div className='nav-search'>
-          {/* <input type='text' placeholder='Search'/> */}
-          <FiSearch className='search-icon'/>
+          <a href='/search'>
+          <FiSearch className='search-icon'/></a>
         </div>
         <div className='hamburger' onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? <FaTimes/> : <FaBars/>}

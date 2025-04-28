@@ -1,0 +1,102 @@
+.home-container
+{
+    margin-top: 80px;
+}
+
+.home {
+
+}
+
+.home-banner img{
+    width: 100%;
+    height: 200px;
+}
+
+.home-welcome h1{
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.home-welcome p {
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.brand-name {
+    color: #EA7300;
+    font-size: 48px;
+}
+
+.home-trending {
+
+}
+
+.full-align {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-highlight-style {
+    color: #EA7300;
+    font-size: 32px;
+}
+
+.home-trending-cards {
+
+}
+
+.home-cuisines {
+
+}
+
+.cuisine-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.cuisine-box {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px 5px rgba(175, 174, 172, 0.4);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cuisine-box:hover {
+    background-color: #FF7C00;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px 5px rgba(238, 154, 9, 0.4);
+}
+
+.home-popular {
+
+
+}
+
+.view-all {
+    height: 50px;
+    width: 150px;
+    padding: 0px 20px;
+    color: #ffffff;
+    background: linear-gradient(to left, #ff9a0e, #ffba26);
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 8px 10px rgba(255, 154, 14, 0.4);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.view-all img {
+    padding-left: 10px;
+    height: 15px;
+    width: 15px;
+}
+
