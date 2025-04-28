@@ -36,3 +36,4 @@
 2025-04-28T10:18:42.133+05:30  INFO 17872 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-04-28T10:18:42.133+05:30  INFO 17872 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 2025-04-28T14:07:24.018+05:30  WARN 17872 --- [Foody] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m22s565ms944µs200ns).
+2025-04-28T16:41:46.885+05:30  WARN 17872 --- [Foody] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m20s133ms633µs500ns).

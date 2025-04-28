@@ -133,7 +133,6 @@ const RecipeSearch = () => {
                 checked={selectedDifficulties.includes(item)}
                 onChange={() =>
                   handleCheckboxChange(item, setSelectedDifficulties, selectedDifficulties)
-
                 }
               />
               {item}
