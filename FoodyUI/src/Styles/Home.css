@@ -29,13 +29,68 @@
     font-size: 48px;
 }
 
-.home-trending {
+.home-trending h2{
+    margin-bottom: 2px;
 
 }
 
+
 .full-align {
+    position: relative;
     display: flex;
+    margin-bottom: 1.5rem;
     justify-content: space-between;
+}
+.button-stack {
+    position: relative;
+    display: inline-block;
+}
+.button-back {
+    background-color: #FFA837F0;
+    box-shadow: 0 4px 8px rgba(238, 154, 9, 0.4);
+    height: 55px;
+    width: 260px;
+    border-radius: 8px;
+    position: absolute;
+    /* top: 6px;
+    left: 4px; */
+    z-index: -1;
+}
+.button-front {
+    background-color: #FF7C00;
+    color: #ffffff;
+    height: 55px;
+    width: 260px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    top: -4px;
+    left: 6px;
+    z-index: 0;
+    border: none;
+    box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);
+    
+}
+
+
+
+.full-align  h3 {
+    padding: 10px 20px;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-top: 0px;
+    background-color: #FF7C00;
+    /* border-radius: 15px; */
+}
+
+.full-align img {
+    height: 25px;
+    width: 25px;
 }
 
 .home-highlight-style {
@@ -46,6 +101,17 @@
 .home-trending-cards {
 
 }
+
+/* .trending-card {
+    height: 200px;
+    width: 170px;
+    background-color: #e7692e;
+}
+
+.card-image {
+    margin: 8px 5px 8px 5px;
+    background-color: #827e7a;
+} */
 
 .home-cuisines {
 
@@ -59,7 +125,7 @@
 }
 
 .cuisine-box {
-    width: 150px;
+    width: 300px;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -78,10 +144,10 @@
 
 .home-popular {
 
-
 }
 
 .view-all {
+    margin-top: 30px;
     height: 50px;
     width: 150px;
     padding: 0px 20px;
@@ -99,4 +165,6 @@
     height: 15px;
     width: 15px;
 }
+
+
 

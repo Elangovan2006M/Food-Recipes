@@ -10,6 +10,7 @@ import {MdTrendingUp} from 'react-icons/md';
 
 const Home = () =>
 {
+    const trending_recipes = {};
     return(
         <div className="home-container">
             <div className="home">
@@ -26,19 +27,30 @@ const Home = () =>
                     <div className="full-align">
                         <h2>What to <span className="home-highlight-style">Cook</span>?</h2>
                         <button className="view-all">View All<img src={Right_Arrow} alt="right-arrow"/></button>
-                        {/* <button className="view-all">View All<FaArrowRight size={22} color="#ffffff"/></button> */}
                     </div>
-                    <h3>See Trending recipes<MdTrendingUp size={24} color="#000000" /></h3>
+                        <div className="button-stack">
+                        <div className="button-back"></div>
+                        <h3 className="button-front">See Trending recipes <MdTrendingUp size={24} color="#ffffff" /></h3>
+                        </div>
                     <div className="home-trending-cards">
-                        <img src="" alt="trending-imgs"/>
+                        <div className="trending-card">
+                            <div className="card-image">
+
+                            </div>
+                            <div className="card-content">
+                                
+                            </div>
+                        </div>
                         <button type="submit">View Recipe</button>
                     </div>
                 </div>
 
                 <div className="home-cuisines">
                     <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
-                    <h3>Explore By Cuisines <img src={Cup_Img} alt="cup-img"/></h3>
-
+                    <div className="button-stack">
+                        <div className="button-back"></div>
+                        <h3 className="button-front">Explore By Cuisines <img src={Cup_Img} alt="cup-img"/></h3>
+                    </div>
                     <div className="cuisine-container">
                         <div className="cuisine-box">
                             <p>Indian</p>
@@ -79,9 +91,12 @@ const Home = () =>
                     <div className="full-align">
                         <h2><span className="home-highlight-style">Our</span> Most <span className="home-highlight-style">Popular</span> recipes</h2>
                         <button className="view-all">View All<img src={Right_Arrow} alt="right-arrow"/></button>
-                        {/* <button className="view-all">View All<FaArrowRight size={22} color="#ffffff"/></button> */}
                     </div>
-                    <h3>Explore By Cuisines <img src={Popular_Img} alt="cup-img"/></h3>
+                        <div className="button-stack">
+                            <div className="button-back"></div>
+                        <h3 className="button-front">Trending tastes everyone's loving <img src={Popular_Img} alt="popular-heart-img"/></h3>
+                        </div>
+                        {/* <button className="view-all">View All<FaArrowRight size={22} color="#ffffff"/></button> */}
 
                 </div>
             </div>
