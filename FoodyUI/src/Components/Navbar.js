@@ -21,6 +21,10 @@ const handleNavigate = () =>
 {
   navigate('/');
 };
+const handleSearch = () =>
+{
+  navigate('/search');
+};
 
   return (
     <div className="navbar-container">
@@ -35,8 +39,7 @@ const handleNavigate = () =>
           <li><a href="/">Blog</a></li>
           <li><a href="/">About Us</a></li>
         <div className='nav-search'>
-          {/* <input type='text' placeholder='Search'/> */}
-          <FiSearch className='search-icon'/>
+          <FiSearch className='search-icon' onClick={handleSearch}/>
         </div>
         <div className='hamburger' onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? <FaTimes/> : <FaBars/>}

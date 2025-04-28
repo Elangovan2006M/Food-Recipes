@@ -4,6 +4,7 @@ import RecipeSearch from './Components/RecipeSearch';
 import RecipeDisplay from './Components/RecipeDisplay';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
       <Navbar/>
       
       <Routes>
-        <Route path="/" element={<RecipeSearch />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<RecipeSearch />} />
         <Route path="/recipe" element={<RecipeDisplay />} />
       </Routes>
      
