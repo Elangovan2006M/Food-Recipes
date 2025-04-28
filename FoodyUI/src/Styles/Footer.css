@@ -15,7 +15,14 @@
     gap: 10px;
 }
 
+.footer h3
+{
+    color: #ffffff;
+}
 
+.footer h3:hover{
+    color: black;
+}
 
 .footer div
 {
@@ -85,6 +92,11 @@
 {
     text-decoration: none;
     color: #ffffff;
+}
+
+.quick-links a:hover, .categories a:hover
+{
+    color: black;
 }
 
 .categories

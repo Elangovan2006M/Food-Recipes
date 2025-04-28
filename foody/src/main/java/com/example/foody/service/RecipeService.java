@@ -44,4 +44,7 @@ public class RecipeService {
     public List<Recipe> searchByDifficulty(String difficulty) {
         return recipeRepository.findByDifficultyIgnoreCase(difficulty);
     }
+
+
+    
 }
