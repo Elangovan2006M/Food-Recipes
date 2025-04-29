@@ -63,7 +63,7 @@
 }
 
 .search-input {
-  width: 90%;
+  width: 96%;
   padding: 10px 15px;
   display: flex;
   font-size: 16px;
@@ -93,6 +93,7 @@ input[type="checkbox"] {
   accent-color: #ff7b00;
   cursor: pointer;
 }
+
 
 .filter-button {
   padding: 10px 20px;

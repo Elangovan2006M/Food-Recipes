@@ -65,12 +65,12 @@ const RecipeSearch = () => {
     try {
       let results = [];
   
-      // Step 1: Fetch all data initially or from API
+      //Fetch all data initially or from API
       const allData = await getAllRecipes(); // <-- your full list fetching function
   
       results = allData.data;
   
-      // Step 2: Apply filters on the fetched list
+      //Apply filters on the fetched list
       if (selectedCuisines.length > 0) {
         results = results.filter(item =>
           selectedCuisines.includes(item.cuisines)
@@ -187,7 +187,7 @@ const RecipeSearch = () => {
       <div className="search-header">
           <div style={{ position: 'relative', width: '45%' }}>
             <input
-              type="text"
+              type="search"
               value={foodName}
               onChange={(e) => handleSearchInput(e.target.value)}
               placeholder="Search your recipe"
