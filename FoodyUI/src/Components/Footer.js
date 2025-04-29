@@ -15,9 +15,9 @@ const Footer = () =>
                     </div>
                     <p>Watch. Cook. Share. Your favorite recipes—streamed fresh every day.</p>
                     <div className="socialmedia">
-                        <FaFacebook className="footer-socialmedia" size={24} color="#4267B2" />
-                        <FaTwitter className="footer-socialmedia" size={24} color="#1DA1F2" />
-                        <FaInstagram className="footer-socialmedia" size={24} color="#E1306C" />
+                        <FaFacebook className="footer-socialmedia" size={24} />
+                        <FaTwitter className="footer-socialmedia" size={24} />
+                        <FaInstagram className="footer-socialmedia" size={24}  />
                     </div>
                 </div>
                 <div className="quick-links">

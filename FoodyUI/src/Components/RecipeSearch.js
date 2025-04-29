@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { FiChevronDown, FiChevronUp, FiSearch } from 'react-icons/fi';
 import RecipeCard from './RecipeCard';
 import {
   searchByFoodName,
   getAllRecipes,
 } from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
-import { FiSearch } from 'react-icons/fi';
 
 const RecipeSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -16,6 +16,12 @@ const RecipeSearch = () => {
   const foodTypes = ['Breakfast', 'Lunch', 'Dinner'];
   const difficulties = ['Easy', 'Medium', 'Hard'];
   const timeOptions = [15, 30, 45, 60];
+
+  // Dropdown toggles
+  const [showCuisines, setShowCuisines] = useState(false);
+  const [showFoodTypes, setShowFoodTypes] = useState(false);
+  const [showDurations, setShowDurations] = useState(false);
+  const [showDifficulties, setShowDifficulties] = useState(false);
 
   const [selectedCuisines, setSelectedCuisines] = useState([]);
   const [selectedFoodTypes, setSelectedFoodTypes] = useState([]);
@@ -121,9 +127,12 @@ const RecipeSearch = () => {
       <aside className="filters">
         <h3 className="filter-word">Filters</h3>
 
+        {/* CUISINES */}
         <div className="filter-group">
-          <h4>Cuisines</h4>
-          {cuisines.map((item) => (
+          <h4 onClick={() => setShowCuisines(!showCuisines)} style={{ cursor: 'pointer' }}>
+            Cuisines {showCuisines ? <FiChevronUp /> : <FiChevronDown />}
+          </h4>
+          {showCuisines && cuisines.map((item) => (
             <label key={item} className="filter-option">
               <input
                 type="checkbox"
@@ -134,10 +143,13 @@ const RecipeSearch = () => {
             </label>
           ))}
         </div>
-
+        {showCuisines ?<hr className='filter-line'/>: null}
+        {/* FOOD TYPE */}
         <div className="filter-group">
-          <h4>Food Type</h4>
-          {foodTypes.map((item) => (
+          <h4 onClick={() => setShowFoodTypes(!showFoodTypes)} style={{ cursor: 'pointer' }}>
+            Food Type {showFoodTypes ? <FiChevronUp /> : <FiChevronDown />}
+          </h4>
+          {showFoodTypes && foodTypes.map((item) => (
             <label key={item} className="filter-option">
               <input
                 type="checkbox"
@@ -148,10 +160,13 @@ const RecipeSearch = () => {
             </label>
           ))}
         </div>
-
+        {showFoodTypes ?<hr className='filter-line'/>: null}
+        {/* DURATION */}
         <div className="filter-group">
-          <h4>Duration</h4>
-          {timeOptions.map((item) => (
+          <h4 onClick={() => setShowDurations(!showDurations)} style={{ cursor: 'pointer' }}>
+            Duration {showDurations ? <FiChevronUp /> : <FiChevronDown />}
+          </h4>
+          {showDurations && timeOptions.map((item) => (
             <label key={item} className="filter-option">
               <input
                 type="checkbox"
@@ -162,10 +177,13 @@ const RecipeSearch = () => {
             </label>
           ))}
         </div>
-
+        {showDurations ?<hr className='filter-line'/>: null}
+        {/* DIFFICULTY */}
         <div className="filter-group">
-          <h4>Difficulty</h4>
-          {difficulties.map((item) => (
+          <h4 onClick={() => setShowDifficulties(!showDifficulties)} style={{ cursor: 'pointer' }}>
+            Difficulty {showDifficulties ? <FiChevronUp /> : <FiChevronDown />}
+          </h4>
+          {showDifficulties && difficulties.map((item) => (
             <label key={item} className="filter-option">
               <input
                 type="checkbox"

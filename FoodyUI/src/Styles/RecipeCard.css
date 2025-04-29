@@ -59,7 +59,7 @@
   margin: 10px 0;
 }
 
-.recipe-info {
+.recipe-details .recipe-info {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
