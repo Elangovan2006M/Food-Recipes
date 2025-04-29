@@ -1,0 +1,15 @@
+.trending-recipes-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 12px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.trending-recipes-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.recipe-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}

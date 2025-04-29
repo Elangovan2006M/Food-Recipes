@@ -21,6 +21,10 @@ const handleNavigate = () =>
 {
   navigate('/');
 };
+const handleSearch = () =>
+{
+  navigate('/search');
+};
 
   return (
     <div className="navbar-container">
@@ -31,12 +35,11 @@ const handleNavigate = () =>
         </div>
         <div className={`nav-content ${isMobileMenuOpen ? 'open' : ''}`}>
           <li><a href="/">Home</a></li>
-          <li><a href="/recipe">Recipes</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/about-us">About Us</a></li>
+          <li><a href="/">Recipes</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/">About Us</a></li>
         <div className='nav-search'>
-          <a href='/search'>
-          <FiSearch className='search-icon'/></a>
+          <FiSearch className='search-icon' onClick={handleSearch}/>
         </div>
         <div className='hamburger' onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? <FaTimes/> : <FaBars/>}

@@ -5,18 +5,25 @@ import {
   searchByCuisines,
   searchByFoodType,
   searchByDifficulty,
-  searchByTotalTime
+  searchByTotalTime,
 } from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
+import {FiSearch} from 'react-icons/fi';
+
 
 const RecipeSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [foodName, setFoodName] = useState('');
 
-  const cuisines = ['Indian', 'Italian', 'Mexican', 'Chinese'];
+  const cuisines = ['Indian', 'Asian', 'Italian', 'Chinese', 'Korean'];
   const foodTypes = ['Breakfast', 'Lunch', 'Dinner'];
   const difficulties = ['Easy', 'Medium', 'Hard'];
   const timeOptions = [15, 30, 45, 60];
+
+  const [selectedCuisines, setSelectedCuisines] = useState([]);
+  const [selectedFoodTypes, setSelectedFoodTypes] = useState([]);
+  const [selectedDifficulties, setSelectedDifficulties] = useState([]);
+  const [selectedTimes, setSelectedTimes] = useState([]);
 
   const handleSearchByName = async () => {
     try {
@@ -27,123 +34,144 @@ const RecipeSearch = () => {
     }
   };
 
-  const handleFilter = async (type, value) => {
+  const handleCheckboxChange = (value, setter, selectedArray) => {
+    if (selectedArray.includes(value)) {
+      setter(selectedArray.filter((item) => item !== value));
+    } else {
+      setter([...selectedArray, value]);
+    }
+  };
+
+  const handleFilterSearch = async () => {
     try {
-      let res;
-      switch (type) {
-        case 'cuisine':
-          res = await searchByCuisines(value);
-          break;
-        case 'foodType':
-          res = await searchByFoodType(value);
-          break;
-        case 'difficulty':
-          res = await searchByDifficulty(value);
-          break;
-        case 'time':
-          res = await searchByTotalTime(value);
-          break;
-        default:
-          return;
+      let results = [];
+
+      if (selectedCuisines.length > 0) {
+        const res = await searchByCuisines(selectedCuisines.join(','));
+        results = res.data;
       }
-      setSearchResults(res.data);
+
+      if (selectedFoodTypes.length > 0) {
+        const res = await searchByFoodType(selectedFoodTypes.join(','));
+        results = res.data;
+      }
+
+      if (selectedDifficulties.length > 0) {
+        const res = await searchByDifficulty(selectedDifficulties.join(','));
+        results = res.data;
+      }
+
+      if (selectedTimes.length > 0) {
+        const res = await searchByTotalTime(Math.max(...selectedTimes));
+        results = res.data;
+      }
+
+      setSearchResults(results);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="search-container">
-      <h2 className="title">Search Recipes</h2>
+    <div className="main-container">
+      <aside className="filters">
+      <h3 className='filter-word'>Filters</h3>
+        <div className="filter-group">
+          <h4>Cuisines</h4>
+          {cuisines.map((item) => (
+            <label key={item} className="filter-option">
+              <input
+                type="checkbox"
+                checked={selectedCuisines.includes(item)}
+                onChange={() =>
+                  handleCheckboxChange(item, setSelectedCuisines, selectedCuisines)
+                }
+              />
+              {item}
+            </label>
+          ))}
+        </div>
 
-      {/* Search Box */}
-      <div className="search-box">
-        <input
-          type="text"
-          value={foodName}
-          onChange={(e) => setFoodName(e.target.value)}
-          placeholder="Search by food name"
-        />
-        <button onClick={handleSearchByName}>Search</button>
+        <div className="filter-group">
+          <h4>Food Type</h4>
+          {foodTypes.map((item) => (
+            <label key={item} className="filter-option">
+              <input
+                type="checkbox"
+                checked={selectedFoodTypes.includes(item)}
+                onChange={() =>
+                  handleCheckboxChange(item, setSelectedFoodTypes, selectedFoodTypes)
+                }
+              />
+              {item}
+            </label>
+          ))}
+        </div>
+
+        <div className="filter-group">
+          <h4>Duration</h4>
+          {timeOptions.map((item) => (
+            <label key={item} className="filter-option">
+              <input
+                type="checkbox"
+                checked={selectedTimes.includes(item)}
+                onChange={() =>
+                  handleCheckboxChange(item, setSelectedTimes, selectedTimes)
+                }
+              />
+              Under {item} min
+            </label>
+          ))}
+        </div>
+
+        <div className="filter-group">
+          <h4>Difficulty</h4>
+          {difficulties.map((item) => (
+            <label key={item} className="filter-option">
+              <input
+                type="checkbox"
+                checked={selectedDifficulties.includes(item)}
+                onChange={() =>
+                  handleCheckboxChange(item, setSelectedDifficulties, selectedDifficulties)
+                }
+              />
+              {item}
+            </label>
+          ))}
+        </div>
+
+        <button onClick={handleFilterSearch} className="filter-button">
+          Apply
+        </button>
+      </aside>
+
+      <section className="content">
+        <div className="search-header">
+          <input
+            type="text"
+            value={foodName}
+            onChange={(e) => setFoodName(e.target.value)}
+            placeholder="Search your recipe"
+            className="search-input"
+            />
+          <button onClick={handleSearchByName} className="search-button">
+            <FiSearch className='searchicon'/>
+          </button>
+        </div>
+
+        <div className="results">
+          {searchResults.length > 0 ? (
+            <div className="card-grid">
+              {searchResults.map((recipe) => (
+                <RecipeCard key={recipe.id} recipe={recipe} />
+              ))}
+            </div>
+          ) : (
+            <p>No results to display.</p>
+          )}
+        </div>
+      </section>
       </div>
-
-      {/* Filters */}
-      <div className="filters">
-        <div className="filter-group">
-          <h3>Cuisine</h3>
-          <div className="filter-options">
-            {cuisines.map((cuisine) => (
-              <div
-                key={cuisine}
-                className="filter-box"
-                onClick={() => handleFilter('cuisine', cuisine)}
-              >
-                {cuisine}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="filter-group">
-          <h3>Food Type</h3>
-          <div className="filter-options">
-            {foodTypes.map((type) => (
-              <div
-                key={type}
-                className="filter-box"
-                onClick={() => handleFilter('foodType', type)}
-              >
-                {type}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="filter-group">
-          <h3>Difficulty</h3>
-          <div className="filter-options">
-            {difficulties.map((level) => (
-              <div
-                key={level}
-                className="filter-box"
-                onClick={() => handleFilter('difficulty', level)}
-              >
-                {level}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="filter-group">
-          <h3>Total Time</h3>
-          <div className="filter-options">
-            {timeOptions.map((time) => (
-              <div
-                key={time}
-                className="filter-box"
-                onClick={() => handleFilter('time', time)}
-              >
-                Under {time} min
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Results Section */}
-      <div className="results">
-        <h3>Results:</h3>
-        {searchResults.length > 0 ? (
-          <div className="card-grid">
-            {searchResults.map((recipe) => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </div>
-        ) : (
-          <p>No results to display.</p>
-        )}
-      </div>
-    </div>
   );
 };
 
