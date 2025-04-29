@@ -863,3 +863,41 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
 	... 43 common frames omitted
 
+2025-04-29T13:06:18.979+05:30  INFO 7752 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Starting FoodyApplication using Java 21.0.7 with PID 7752 (E:\reactprojects\Food-Recipes\foody\target\classes started by anushalakshmi.s in E:\reactprojects\Food-Recipes\foody)
+2025-04-29T13:06:18.979+05:30  INFO 7752 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-04-29T13:06:19.029+05:30  INFO 7752 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-29T13:06:19.029+05:30  INFO 7752 --- [Foody] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-29T13:06:19.554+05:30  INFO 7752 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-29T13:06:19.610+05:30  INFO 7752 --- [Foody] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-04-29T13:06:19.984+05:30  INFO 7752 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-29T13:06:19.996+05:30  INFO 7752 --- [Foody] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-29T13:06:19.996+05:30  INFO 7752 --- [Foody] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-29T13:06:20.045+05:30  INFO 7752 --- [Foody] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-29T13:06:20.045+05:30  INFO 7752 --- [Foody] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1016 ms
+2025-04-29T13:06:20.169+05:30  INFO 7752 --- [Foody] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-29T13:06:20.201+05:30  INFO 7752 --- [Foody] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-29T13:06:20.226+05:30  INFO 7752 --- [Foody] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-29T13:06:20.405+05:30  INFO 7752 --- [Foody] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-29T13:06:20.439+05:30  INFO 7752 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-29T13:06:20.688+05:30  INFO 7752 --- [Foody] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5caa5924
+2025-04-29T13:06:20.688+05:30  INFO 7752 --- [Foody] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-29T13:06:20.722+05:30  WARN 7752 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-29T13:06:20.728+05:30  WARN 7752 --- [Foody] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-29T13:06:20.736+05:30  INFO 7752 --- [Foody] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-29T13:06:21.327+05:30  INFO 7752 --- [Foody] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-29T13:06:21.372+05:30  INFO 7752 --- [Foody] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-29T13:06:21.607+05:30  INFO 7752 --- [Foody] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-29T13:06:22.136+05:30  WARN 7752 --- [Foody] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-29T13:06:22.567+05:30  INFO 7752 --- [Foody] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-29T13:06:22.621+05:30  INFO 7752 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-29T13:06:22.628+05:30  INFO 7752 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 4.044 seconds (process running for 4.41)
+2025-04-29T13:07:07.712+05:30  INFO 7752 --- [Foody] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-29T13:07:07.712+05:30  INFO 7752 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-29T13:07:07.712+05:30  INFO 7752 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
