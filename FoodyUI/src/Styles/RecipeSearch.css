@@ -1,229 +1,157 @@
-import React, { useEffect, useState } from 'react';
-import RecipeCard from './RecipeCard';
-import {
-  searchByFoodName,
-  searchByCuisines,
-  searchByFoodType,
-  searchByDifficulty,
-  searchByTotalTime,
-  getAllRecipes,
-} from '../Service/RecipeService';
-import '../Styles/RecipeSearch.css';
-import { FiSearch } from 'react-icons/fi';
+.main-container {
+  display: flex;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px 50px 20px 50px;
+  margin-top: 50px;
+  background-color: #fff;
+}
 
-const RecipeSearch = () => {
-  const [searchResults, setSearchResults] = useState([]);
-  const [foodName, setFoodName] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+.filters {
+  padding-right: 20px;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  border: 1px solid #d0cece;
+  border-radius: 10px;
+  width: 127px;
+  margin-top: 70px;
+  margin-right: 20px;
+  height: 100%;
+}
 
-  const cuisines = ['Indian', 'Asian', 'Italian', 'Chinese', 'Korean'];
-  const foodTypes = ['Breakfast', 'Lunch', 'Dinner'];
-  const difficulties = ['Easy', 'Medium', 'Hard'];
-  const timeOptions = [15, 30, 45, 60];
+.filter-word{
+  padding-left: 35px;
+}
 
-  const [selectedCuisines, setSelectedCuisines] = useState([]);
-  const [selectedFoodTypes, setSelectedFoodTypes] = useState([]);
-  const [selectedDifficulties, setSelectedDifficulties] = useState([]);
-  const [selectedTimes, setSelectedTimes] = useState([]);
+.filters h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
 
-  // Initial load to fetch all recipes
-  useEffect(() => { 
-    handleInitialLoad();
-  }, []);
+.filter-group {
+  margin-bottom: 20px;
+}
 
-  // Handle search input and fetch suggestions
-  const handleSearchInput = async (query) => {
-    try {
-      setFoodName(query);
+.filter-group h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ff7b00;
+}
 
-      if (query.length > 1) {
-        const res = await searchByFoodName(query);
-        const foodNames = res.data.map((recipe) => recipe.foodName);
-        setSuggestions(foodNames);
-      } else {
-        setSuggestions([]);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+.filter-option {
+  font-size: 13px;
+  cursor: pointer;
+  
+  color: #333;
+  display: block;
+}
 
+.filter-option:hover {
+  color: #ff7b00;
+  font-weight: bold;
+}
 
-  // Initial load to fetch all recipes
-  const handleInitialLoad = async () => {
-    const  res = await getAllRecipes();
-    setSearchResults(res.data);
-  }
+.content {
+  flex: 1;
+}
 
-  // Handle checkbox changes for filters
-  const handleCheckboxChange = (value, setter, selectedArray) => {
-    if (selectedArray.includes(value)) {
-      setter(selectedArray.filter((item) => item !== value));
-    } else {
-      setter([...selectedArray, value]);
-    }
-  };
+.search-header {
+  display: flex;
+  margin: 10px 10px 10px 10px;
+  justify-content: center;
+  align-items: center;
+}
 
-  // Handle filter search
-  const handleFilterSearch = async () => {
-    try {
-      let results = [];
+.search-input {
+  width: 90%;
+  padding: 10px 15px;
+  display: flex;
+  font-size: 16px;
+  border: 2px solid #f5f5f5;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f5f5f5;
+  margin-right: 10px;
+}
 
-      if (selectedCuisines.length > 0) {
-        const res = await searchByCuisines(selectedCuisines.join(','));
-        results = res.data;
-      }
+.search-button {
+  padding: 10px 20px;
+  background-color: #ff7b00;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  display: flex;
+ 
+}
+input[type="checkbox"] {
+  accent-color: #ff7b00;
+  cursor: pointer;
+}
 
-      if (selectedFoodTypes.length > 0) {
-        const res = await searchByFoodType(selectedFoodTypes.join(','));
-        results = res.data;
-      }
-
-      if (selectedDifficulties.length > 0) {
-        const res = await searchByDifficulty(selectedDifficulties.join(','));
-        results = res.data;
-      }
-
-      if (selectedTimes.length > 0) {
-        const res = await searchByTotalTime(Math.max(...selectedTimes));
-        results = res.data;
-      }
-
-      setSearchResults(results);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  // Handle search button click
-  const handleSearchClick = async () => {
-    try {
-      if (foodName.trim() !== '') {
-        const res = await searchByFoodName(foodName);
-        setSearchResults(res.data);
-        setSuggestions([]);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  return (
-    <div className="main-container">
-      {/* Sidebar Filters */}
-      <aside className="filters">
-        <h3 className="filter-word">Filters</h3>
-
-        <div className="filter-group">
-          <h4>Cuisines</h4>
-          {cuisines.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedCuisines.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedCuisines, selectedCuisines)}
-              />
-              {item}
-            </label>
-          ))}
-        </div>
-
-        <div className="filter-group">
-          <h4>Food Type</h4>
-          {foodTypes.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedFoodTypes.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedFoodTypes, selectedFoodTypes)}
-              />
-              {item}
-            </label>
-          ))}
-        </div>
-
-        <div className="filter-group">
-          <h4>Duration</h4>
-          {timeOptions.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedTimes.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedTimes, selectedTimes)}
-              />
-              Under {item} min
-            </label>
-          ))}
-        </div>
-
-        <div className="filter-group">
-          <h4>Difficulty</h4>
-          {difficulties.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedDifficulties.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedDifficulties, selectedDifficulties)}
-              />
-              {item}
-            </label>
-          ))}
-        </div>
-
-        <button onClick={handleFilterSearch} className="filter-button">
-          Apply
-        </button>
-      </aside>
-
-      {/* Main Content */}
-      <section className="content">
-      <div className="search-header">
-          <div style={{ position: 'relative', width: '45%' }}>
-            <input
-              type="text"
-              value={foodName}
-              onChange={(e) => handleSearchInput(e.target.value)}
-              placeholder="Search your recipe"
-              className="search-input"
-            />
-            
-            {suggestions.length > 0 && (
-              <ul className="suggestions-dropdown">
-                {suggestions.map((item, index) => (
-                  <li
-                    key={index}
-                    onClick={() => {
-                      setFoodName(item);
-                      handleSearchClick();
-                    }}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-
-          <button onClick={handleSearchClick} className="search-button">
-            <FiSearch className="searchicon" />
-          </button>
-        </div>
+.filter-button {
+  padding: 10px 20px;
+  background-color: #ff7b00;
+  border-radius: 20px;
+  color: white;
+  border: 0px solid #ff7b00;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  display: flex;
+}
 
 
-        <div className="results">
-          {searchResults.length > 0 ? (
-            <div className="card-grid">
-              {searchResults.map((recipe) => (
-                <RecipeCard key={recipe.id} recipe={recipe} />
-              ))}
-            </div>
-          ) : (
-            <p>No results to display.</p>
-          )}
-        </div>
-      </section>
-    </div>
-  );
-};
+.search-button .search-icon {
+  margin-right: 22px;
+  font-size: 20px;
+}
 
-export default RecipeSearch;
+.search-button:hover {
+  background-color: #e76f00;
+}
+
+.results .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.results{
+  padding: 20px 20px 20px 20px;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%; /* Push just below the search input */
+  left: 0;
+  width: 96%; /* Same width as parent */
+  background: white;
+  border: 1px solid #f5f5f5;
+  border-top: none; /* no double border */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000; /* stay on top */
+  border-radius: 10px 10px 10px 10px; /* rounded bottom corners */
+  overflow: hidden;
+}
+
+.suggestions-dropdown li {
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.suggestions-dropdown li:hover {
+  background: #ff7b00;
+  color: white;
+}
