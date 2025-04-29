@@ -686,3 +686,6 @@ Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (usi
 2025-04-29T12:45:54.424+05:30  INFO 10760 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
 2025-04-29T12:45:54.426+05:30  INFO 10760 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.603 seconds (process running for 9634.541)
 2025-04-29T12:45:54.429+05:30  INFO 10760 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-29T12:47:47.650+05:30  INFO 10760 --- [Foody] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-3].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-29T12:47:47.650+05:30  INFO 10760 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-29T12:47:47.655+05:30  INFO 10760 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
