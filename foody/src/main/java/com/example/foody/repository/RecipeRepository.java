@@ -2,11 +2,14 @@ package com.example.foody.repository;
 
 import com.example.foody.model.Recipe;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
 import java.util.List;
 
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    // Search by partial or full food name (case-insensitive)
+    // Search by partial or full food name (case-insensitive an Similar)
+    @Query("SELECT r FROM Recipe r WHERE LOWER(r.foodName) LIKE LOWER(CONCAT('%', ?1, '%'))")
     List<Recipe> findByFoodNameContainingIgnoreCase(String foodName);
 
     // Search by cuisines (case-insensitive)
