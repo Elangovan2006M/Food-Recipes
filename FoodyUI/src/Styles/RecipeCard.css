@@ -1,9 +1,9 @@
-.recipe-container {
+/* .recipe-container {
   display: grid;
   gap: 10px;
   padding: 20px 20px 0 20px;
   justify-content: center;
-}
+} */
 
 .recipe-card {
   border: 1px solid #ddd;
@@ -54,7 +54,7 @@
 }
 
 .recipe-description {
-  font-size: 0.3em;
+  font-size: 0.8em;
   color: #555;
   margin: 10px 0;
 }

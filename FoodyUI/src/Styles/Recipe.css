@@ -1,0 +1,25 @@
+.recipe-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .card-content {
+    /* REMOVE display: flex and justify-content: center */
+    /* Let the grid inside take full width */
+    width: 100%;
+  }
+  
+  .result {
+    width: 100%;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  

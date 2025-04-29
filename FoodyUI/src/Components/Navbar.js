@@ -35,7 +35,7 @@ const handleSearch = () =>
         </div>
         <div className={`nav-content ${isMobileMenuOpen ? 'open' : ''}`}>
           <li><a href="/">Home</a></li>
-          <li><a href="/">Recipes</a></li>
+          <li><a href="/recipe">Recipes</a></li>
           <li><a href="/">Blog</a></li>
           <li><a href="/">About Us</a></li>
         <div className='nav-search'>
