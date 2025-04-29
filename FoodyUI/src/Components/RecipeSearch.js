@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
 import {
   searchByFoodName,
-  searchByCuisines,
-  searchByFoodType,
-  searchByDifficulty,
-  searchByTotalTime,
   getAllRecipes,
 } from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
@@ -16,7 +12,7 @@ const RecipeSearch = () => {
   const [foodName, setFoodName] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
-  const cuisines = ['Indian', 'Asian', 'Italian', 'Chinese', 'Korean'];
+  const cuisines = ['Indian', 'French', 'Italian', 'Japanese'];
   const foodTypes = ['Breakfast', 'Lunch', 'Dinner'];
   const difficulties = ['Easy', 'Medium', 'Hard'];
   const timeOptions = [15, 30, 45, 60];
@@ -68,32 +64,43 @@ const RecipeSearch = () => {
   const handleFilterSearch = async () => {
     try {
       let results = [];
-
+  
+      // Step 1: Fetch all data initially or from API
+      const allData = await getAllRecipes(); // <-- your full list fetching function
+  
+      results = allData.data;
+  
+      // Step 2: Apply filters on the fetched list
       if (selectedCuisines.length > 0) {
-        const res = await searchByCuisines(selectedCuisines.join(','));
-        results = res.data;
+        results = results.filter(item =>
+          selectedCuisines.includes(item.cuisines)
+        );
       }
-
+  
       if (selectedFoodTypes.length > 0) {
-        const res = await searchByFoodType(selectedFoodTypes.join(','));
-        results = res.data;
+        results = results.filter(item =>
+          selectedFoodTypes.includes(item.foodType)
+        );
       }
-
+  
       if (selectedDifficulties.length > 0) {
-        const res = await searchByDifficulty(selectedDifficulties.join(','));
-        results = res.data;
+        results = results.filter(item =>
+          selectedDifficulties.includes(item.difficulty)
+        );
       }
-
+  
       if (selectedTimes.length > 0) {
-        const res = await searchByTotalTime(Math.max(...selectedTimes));
-        results = res.data;
+        results = results.filter(item =>
+          item.totalTime <= Math.max(...selectedTimes)
+        );
       }
-
+  
       setSearchResults(results);
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   // Handle search button click
   const handleSearchClick = async () => {
