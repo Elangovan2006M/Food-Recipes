@@ -1,6 +1,6 @@
 .home-container
 {
-    margin: 80px 60px 100px 60px;
+    margin: 80px;
 }
 
 .home {
@@ -63,6 +63,7 @@
     width: 260px;
     border-radius: 8px;
     display: flex;
+    padding-left: 7px;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -74,7 +75,7 @@
     z-index: 0;
     border: none;
     box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);
-    
+
 }
 
 
@@ -135,12 +136,23 @@
     transition: all 0.3s ease;
     cursor: pointer;
     background-color: white;
+    gap: 10px;
 }
-
 .cuisine-box:hover {
     background-color: #FF7C00;
     color: #ffffff;
     box-shadow: 5px 5px 5px 5px rgba(238, 154, 9, 0.4);
+}
+
+.cuisine-box:hover .cuisine-icons {
+    color: white;
+}
+
+
+.cuisine-icons{
+    color: #EA7300;
+    font-size: 2.0em;
+    
 }
 
 .home-popular {
@@ -151,21 +163,24 @@
     margin-top: 30px;
     height: 50px;
     width: 150px;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     color: #ffffff;
     background: linear-gradient(to left, #ff9a0e, #ffba26);
     border-radius: 20px;
     border: none;
+    
     box-shadow: 0 8px 10px rgba(255, 154, 14, 0.4);
     font-weight: 700;
     font-size: 18px;
+    
 }
 
-.view-all img {
+
+/* .view-all img {
     padding-left: 10px;
     height: 15px;
     width: 15px;
-}
+} */
 
 
 .home-popular-cards .results .card-grid {
@@ -184,6 +199,7 @@
 }
 
 .home-popular-cards::-webkit-scrollbar {
+    right: 0;
     display: none;
 }
 .home-trending-cards .results .card-grid {
