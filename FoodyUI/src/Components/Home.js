@@ -2,16 +2,18 @@ import React ,{useState, useEffect}from "react";
 import { getAllRecipes } from "../Service/RecipeService";
 import '../Styles/Home.css';
 import { useRecipe } from "../Service/RecipeContext";
-import Brand_Img from '../Assests/brand-image.png';
-import Cup_Img from '../Assests/cup.png';
-import Popular_Img from '../Assests/popular-heart.png';
+import Brand_Img from '../Assests/banner.png';
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";import RecipeCard from "./RecipeCard";
 import {MdTrendingUp} from 'react-icons/md';
-import { FaPepperHot,FaFish  } from "react-icons/fa6";
+import { FaPepperHot,FaShieldHeart,FaFish  } from "react-icons/fa6";
 import { GiBowlOfRice,GiSushis,GiSteak,GiNoodles,GiTacos,GiFullPizza,GiSadCrab} from "react-icons/gi";
-import { LuSandwich } from "react-icons/lu";
+import { LuSandwich, LuMessagesSquare } from "react-icons/lu";
 import {useNavigate} from 'react-router-dom';
-
+import { IoNewspaperOutline } from "react-icons/io5";
+import Blog from '../Assests/Blog.png';
+import { FaGlobe, FaUtensils, FaAppleAlt,FaMapMarkedAlt  } from 'react-icons/fa';
+import { BiSolidVideos } from "react-icons/bi";
+import logo from '../Assests/round-logo.png';
 
 const Home = () =>
 {
@@ -58,7 +60,7 @@ const Home = () =>
         <div className="home-container">
             <div className="home">
                 <div className="home-banner">
-                    <img src={Brand_Img} alt="brand-image"></img>
+                    <img src={Brand_Img} alt="brand-image" className="brand-image"></img>
                 </div>
 
                 <div className="home-welcome">
@@ -69,12 +71,12 @@ const Home = () =>
                 <div className="home-trending">
                     <div className="full-align">
                         <h2>What to <span className="home-highlight-style">Cook</span>?</h2>
-                        <button className="view-all">View All<MdOutlineKeyboardArrowRight className="right arrow" size={30}/></button>
                     </div>
-                        <div className="button-stack">
+                    <div className="button-stack">
                         <div className="button-back"></div>
-                        <h3 className="button-front">See Trending recipes <MdTrendingUp size={24} color="#ffffff" /></h3>
-                        </div>
+                        <h3 className="button-front">See Trending recipes <MdTrendingUp className="topic-icons" /></h3>
+                    </div>
+                    <button className="view-all">View All<MdOutlineKeyboardArrowRight className="right-arrow" /></button>
                     <div className="home-trending-cards">
                         <div className="trending-card">
                             <div className="card-image">
@@ -100,7 +102,7 @@ const Home = () =>
                     <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
-                        <h3 className="button-front">Explore By Cuisines <img src={Cup_Img} alt="cup-img"/></h3>
+                        <h3 className="button-front">Explore By Cuisines <FaMapMarkedAlt className="topic-icons" /></h3>
                     </div>
                     <div className="cuisine-container">
                         <div className="cuisine-box" onClick={() => handleCuisineSelect('Indian')}>
@@ -151,12 +153,12 @@ const Home = () =>
                 <div className="home-popular">
                     <div className="full-align">
                         <h2><span className="home-highlight-style">Our</span> Most <span className="home-highlight-style">Popular</span> recipes</h2>
-                        <button className="view-all" >View All<MdOutlineKeyboardArrowRight className="right arrow" size={30}/></button>
                     </div>
                         <div className="button-stack">
                             <div className="button-back"></div>
-                        <h3 className="button-front">Trending tastes everyone's loving <img src={Popular_Img} alt="popular-heart-img"/></h3>
+                        <h3 className="button-front">Popular Picks<FaShieldHeart className="topic-icons" /></h3>
                         </div>
+                        <button className="view-all" >View All<MdOutlineKeyboardArrowRight className="right-arrow"/></button>
                         <div className="home-popular-cards">
                             <div className="results">
                             {popular_recipes.length > 0 ? (
@@ -168,8 +170,84 @@ const Home = () =>
                             ) : (<p>...</p>)}
                             </div>
                         </div>
-                        {/* <button className="view-all">View All<FaArrowRight size={22} color="#ffffff"/></button> */}
+                </div>
 
+                <div className="blog">
+                    <h2><span className="home-highlight-style">From Our</span> Blog</h2>
+                    <div className="button-stack">
+                        <div className="button-back"></div>
+                        <h3 className="button-front">Best Articles For You  <IoNewspaperOutline  className="topic-icons"/></h3>
+                    </div>
+                    <div className="blog-container">
+                        <div className="kitchen-banner">
+                            <div className="kitchen-text">
+                                <h2>
+                                <span className="highlight">Spice up your</span> 
+                                <span className="bold"> kitchen stories!</span>
+                                </h2>
+                                <p>
+                                Discover new flavors, explore exciting recipes, and turn everyday meals into unforgettable culinary moments. Whether you're a home cook or a food lover, let your kitchen adventures begin here!</p>
+                                <button className="read-more">Read More Articles &gt;&gt;&gt;</button>
+                            </div>
+                            <div className="kitchen-image">
+                                <img src={Blog} alt="Kitchen Collage" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="about">
+                    <h2><span className="home-highlight-style">About</span> Us</h2>
+                    <div className="button-stack">
+                        <div className="button-back"></div>
+                        <h3 className="button-front">Best Articles For You  <LuMessagesSquare  className="topic-icons"/></h3>
+                    </div>
+                    <div className="about-container">
+                        <div className="feature-banner">
+                            <div className="feature-left">
+                                <h3>
+                                <img src={logo}/> is your all-in-one cooking companion — a platform designed to help you to <b>watch</b>, <b>learn</b>, and <b>cook</b> delicious meals easily.
+                                </h3>
+                                <div className="cta-box">
+                                <p>
+                                    <strong>
+                                    Join us, explore trending bites, try new flavors, and turn every plate into a masterpiece.
+                                    </strong>
+                                </p>
+                                <strong className="cta-highlight">Stream. <span>Cook</span>. Taste. <span>Repeat</span>.</strong>
+                                </div>
+                            </div>
+
+                            <div className="Gap">
+                                <div className="feature-right">
+                                    <div className="icon-box">
+                                    <strong>
+                                    <BiSolidVideos className="icon" />
+                                    <p>Watch Video<br/> Recipes</p>
+                                    </strong>
+                                    </div>
+                                    <div className="icon-box">
+                                    <strong>
+                                    <FaGlobe className="icon" />
+                                    <p>Explore Global <br/>Cuisines</p>
+                                    </strong>
+                                    </div>
+                                    <div className="icon-box">
+                                    <strong>
+                                    <FaUtensils className="icon" />
+                                    <p>Cook Experted<br/> Recipes</p>
+                                    </strong>
+                                    </div>
+                                    <div className="icon-box">
+                                    <strong>
+                                    <FaAppleAlt className="icon" />
+                                    <p>Enjoy Healthy<br/> Meals</p>
+                                    </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

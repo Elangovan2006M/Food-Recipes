@@ -3,8 +3,13 @@
     margin: 80px;
 }
 
-.home {
-
+.brand-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    z-index: auto;
 }
 
 .home-banner img{
@@ -48,35 +53,44 @@
 .button-back {
     background-color: #FFA837F0;
     box-shadow: 0 4px 8px rgba(238, 154, 9, 0.4);
-    height: 55px;
+    height: 45px;
     width: 260px;
-    border-radius: 8px;
+    border-radius: 5px;
     position: absolute;
+    opacity: 80%;
+    margin-top:8px ;
     /* top: 6px;
     left: 4px; */
-    z-index: -1;
+    /* z-index: -1; */
+    rotate: -3deg;
 }
 .button-front {
     background-color: #FF7C00;
     color: #ffffff;
     height: 55px;
     width: 260px;
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
-    padding-left: 7px;
     align-items: center;
     justify-content: center;
     gap: 10px;
     font-weight: 600;
     font-size: 16px;
-    position: relative;
-    top: -4px;
-    left: 6px;
-    z-index: 0;
+    /* position: relative; */
+    /* top: -10px; */
+    /*left: 6px; */
+    /* z-index: 0; */
+    opacity: 85%;
     border: none;
     box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);
 
 }
+.button-front .topic-icons {
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+
 
 
 
@@ -97,25 +111,6 @@
 .home-highlight-style {
     color: #EA7300;
     font-size: 32px;
-}
-
-.home-trending-cards {
-
-}
-
-/* .trending-card {
-    height: 200px;
-    width: 170px;
-    background-color: #e7692e;
-}
-
-.card-image {
-    margin: 8px 5px 8px 5px;
-    background-color: #827e7a;
-} */
-
-.home-cuisines {
-
 }
 
 .cuisine-container {
@@ -155,33 +150,29 @@
     
 }
 
-.home-popular {
-
-}
 
 .view-all {
-    margin-top: 30px;
-    height: 50px;
-    width: 150px;
+    margin-left: 950px;
+    height: 45px;
+    width: 130px;
     /* padding: 0px 20px; */
     color: #ffffff;
     background: linear-gradient(to left, #ff9a0e, #ffba26);
     border-radius: 20px;
     border: none;
-    
+    gap: 2px;
     box-shadow: 0 8px 10px rgba(255, 154, 14, 0.4);
     font-weight: 700;
-    font-size: 18px;
+    font-size: 15px;
+    padding-bottom: 10px;
     
 }
 
-
-/* .view-all img {
-    padding-left: 10px;
-    height: 15px;
-    width: 15px;
-} */
-
+.view-all .right-arrow {
+    padding-top: 8px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
 
 .home-popular-cards .results .card-grid {
     display: grid;
@@ -194,7 +185,7 @@
     display: flex;
     overflow-x: auto;
     gap: 16px;
-    padding: 12px 0;
+    /* padding: 12px 0; */
     scroll-snap-type: x mandatory;
 }
 
@@ -220,3 +211,176 @@
 .home-trending-cards::-webkit-scrollbar {
     display: none;
 }
+
+/* Blog section */
+
+.kitchen-banner {
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    max-width: 100%;
+  }
+  
+  .kitchen-text {
+    flex: 1;
+    background-color: #ffb431;
+    padding: 10px 20px 10px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .kitchen-text h2 {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    text-shadow: #00000075 1px 2px 2px ;
+  }
+  
+  .kitchen-text .highlight {
+    color: #d33a00;
+    font-weight: bold;
+  }
+  
+  .kitchen-text .bold {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .kitchen-text p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  .read-more {
+    background-color: #ffb431;
+    color:white;
+    border: 2px solid white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 250px;
+  }
+  
+  .read-more:hover {
+    background-color: white;
+    color: #ffb431;
+  }
+  
+  .kitchen-image {
+    flex: 1;
+    min-height: 300px;
+  }
+  
+  .kitchen-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+  /* About Us section */
+  .feature-banner {
+    display: flex;
+    background-color: #ffa726;
+    border-radius: 15px;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .feature-left {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .feature-left h3 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+  
+  .platform-name {
+    color: white;
+    background-color: #ff5722;
+    padding: 6px 12px;
+    border-radius: 50px;
+    margin-right: 8px;
+    display: inline-block;
+  }
+  
+  .cta-box {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.514) 2px 4px 12px;
+  }
+  
+  .cta-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .cta-highlight {
+    color: #e65100;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  .cta-highlight span {
+    color: #000000;
+  }
+  
+  .Gap{
+    padding-left: 150px;
+    margin-right: 40px;
+  }
+
+  .feature-right {
+    flex: 1;
+    min-width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 15px 0 15px 0;
+  }
+  
+  .icon-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-box .icon {
+    font-size: 2rem;
+    color: #ff7b00;
+    margin-bottom: 0.5rem;
+  }
+  
+  .icon-box p {
+    font-size: 0.80rem;
+    color: #333;
+    margin: 0;
+  }
+  

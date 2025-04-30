@@ -12,7 +12,7 @@ const RecipeSearch = () => {
   const [foodName, setFoodName] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
-  const cuisines = ['Indian', 'French', 'Italian', 'Japanese'];
+  const cuisines = ['Indian', 'French', 'Italian', 'Japanese','Chinese','Mexican','Thai','Malaysian','Australian','American','Korean'];
   const foodTypes = ['Breakfast', 'Lunch', 'Dinner'];
   const difficulties = ['Easy', 'Medium', 'Hard'];
   const timeOptions = [15, 30, 45, 60];
@@ -71,8 +71,8 @@ const RecipeSearch = () => {
     try {
       let results = [];
   
-      //Fetch all data initially or from API
-      const allData = await getAllRecipes(); // <-- your full list fetching function
+      //Fetch all data initially from API
+      const allData = await getAllRecipes();
   
       results = allData.data;
   
