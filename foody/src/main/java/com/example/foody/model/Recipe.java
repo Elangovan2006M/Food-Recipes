@@ -1,5 +1,6 @@
 package com.example.foody.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,4 +30,7 @@ public class Recipe {
     private double totalTime;
     private String difficulty;
     private String foodType;
+
+    @Column(name = "total_views")
+    private Integer totalViews;
 }

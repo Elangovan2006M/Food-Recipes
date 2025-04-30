@@ -1,0 +1,40 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useRecipe } from '../Service/RecipeContext';
+import { getRecipeById } from '../Service/RecipeService'; // Import getRecipeById
+import '../Styles/TrendingRecipeCard.css';
+
+const TrendingRecipeCard = ({ recipe }) => {
+  const navigate = useNavigate();
+  const { setSelectedRecipe } = useRecipe();
+
+  const handleClick = async () => {
+    try {
+      // Fetch recipe by ID and trigger view tracking from backend
+      const response = await getRecipeById(recipe.id);  // Automatically increments views
+      setSelectedRecipe(response.data);  // Still needed for state management
+      navigate(`/recipes/${recipe.id}`);
+    } catch (error) {
+      console.error("Error fetching recipe", error);
+      navigate('/recipes');  // Fallback even if there's an error
+    }
+  };
+
+  return (
+    <div className='trending-recipe-card'>
+      <img
+        src={recipe.imageUrl || 'https://via.placeholder.com/300'}
+        alt={recipe.foodName}
+        className="recipe-image"
+      />
+      <button
+        className="view-button"
+        onClick={handleClick}
+      >
+        View Recipe
+      </button>
+    </div>
+  );
+};
+
+export default TrendingRecipeCard;
