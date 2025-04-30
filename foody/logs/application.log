@@ -560,3 +560,6 @@ Caused by: org.hibernate.query.SemanticException: Operand of - is of type 'java.
 2025-04-30T15:02:30.267+05:30  INFO 18276 --- [Foody] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
 2025-04-30T15:02:30.270+05:30  INFO 18276 --- [Foody] [restartedMain] com.example.foody.FoodyApplication       : Started FoodyApplication in 0.645 seconds (process running for 2856.6)
 2025-04-30T15:02:30.271+05:30  INFO 18276 --- [Foody] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-30T15:02:35.975+05:30  INFO 18276 --- [Foody] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-30T15:02:35.978+05:30  INFO 18276 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-30T15:02:35.981+05:30  INFO 18276 --- [Foody] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
