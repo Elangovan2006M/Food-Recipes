@@ -4,9 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-# Spring Boot sensitive files
-src/main/resources/application.properties
-foody/logs/application.log
+# Ignore application.properties
+**/application.properties
+
+# Ignore all log files
+logs/
+*.log
 
 
 ### STS ###
