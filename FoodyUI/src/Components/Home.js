@@ -1,26 +1,40 @@
-import React ,{useState, useEffect}from "react";
-import { getAllRecipes } from "../Service/RecipeService";
+import React, { useState, useEffect } from "react";
+import { getTrendingRecipes, getPopularRecipes } from "../Service/RecipeService";
 import '../Styles/Home.css';
-import { useRecipe } from "../Service/RecipeContext";
 import Brand_Img from '../Assests/banner.png';
+import Right_Arrow from '../Assests/right-arrow.png';
+import TrendingCard from "./TrendingCard";
 import RecipeCard from "./RecipeCard";
-import {MdTrendingUp} from 'react-icons/md';
-import { FaPepperHot,FaShieldHeart,FaFish  } from "react-icons/fa6";
-import { GiBowlOfRice,GiSushis,GiSteak,GiNoodles,GiTacos,GiFullPizza,GiSadCrab} from "react-icons/gi";
+import { MdTrendingUp } from 'react-icons/md';
+import { FaPepperHot, FaShieldHeart, FaFish } from "react-icons/fa6";
+import { GiBowlOfRice, GiSushis, GiSteak, GiNoodles, GiTacos, GiFullPizza, GiSadCrab } from "react-icons/gi";
 import { LuSandwich, LuMessagesSquare } from "react-icons/lu";
-import {useNavigate} from 'react-router-dom';
 import { IoNewspaperOutline } from "react-icons/io5";
+import { FaMapMarkedAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { useRecipe } from "../Service/RecipeContext";
 import Blog from '../Assests/Blog.png';
-import { FaGlobe, FaUtensils, FaAppleAlt,FaMapMarkedAlt  } from 'react-icons/fa';
-import { BiSolidVideos } from "react-icons/bi";
 import logo from '../Assests/round-logo.png';
 
-const Home = () =>
-{
-    useEffect(() => {
-        handlePopularRecipes();
-    }, []);
 
+const Home = () => {
+  const [trendingRecipes, setTrendingRecipes] = useState([]);
+  const [popularRecipes, setPopularRecipes]   = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const [tResp, pResp] = await Promise.all([
+          getTrendingRecipes(),
+          getPopularRecipes()
+        ]);
+        setTrendingRecipes(tResp.data);
+        setPopularRecipes(pResp.data);
+      } catch (e) {
+        console.error("Error loading recipes", e);
+      }
+    })();
+  }, []);
     const navigate = useNavigate();
     const { setSelectedCuisine } = useRecipe();
 
@@ -44,18 +58,6 @@ const Home = () =>
         }
     };
 
-
-    const handlePopularRecipes = async () => {
-        try {
-            const response = await getAllRecipes();
-            const recipes = response.data;
-            setPopularRecipes(recipes);
-        } catch (error) {
-            console.error("Error fetching popular recipes:", error);
-        }
-    }
-    const[popular_recipes, setPopularRecipes] = useState([]);
-
     return(
         <div className="home-container">
             <div className="home">
@@ -63,10 +65,26 @@ const Home = () =>
                     <img src={Brand_Img} alt="brand-image" className="brand-image"></img>
                 </div>
 
-                <div className="home-welcome">
-                    <h1>Vanakkam! <span className="brand-name">Plate Stream</span></h1>
-                    <p>Binge-worthy bites, one recipe video at a time.</p>
-                </div>
+        {/* Trending Section */}
+        <section className="home-trending">
+          <div className="full-align">
+            <h2>See <span className="home-highlight-style">Trending</span> Recipes</h2>
+            <button className="view-all">
+              View All <img src={Right_Arrow} alt="→" />
+            </button>
+          </div>
+          <h3 className="button-front">
+            Trending recipes <MdTrendingUp size={24} color="#ffffff" />
+          </h3>
+          <div className="card-grid">
+            {trendingRecipes.length > 0
+              ? trendingRecipes.map(recipe => (
+                  <TrendingCard key={recipe.id} recipe={recipe} />
+                ))
+              : <p>Loading trending…</p>
+            }
+          </div>
+        </section>
 
                 <div className="home-trending">
                     <div className="full-align">
@@ -161,9 +179,9 @@ const Home = () =>
                         <button className="view-all" >View All &gt;</button>
                         <div className="home-popular-cards">
                             <div className="results">
-                            {popular_recipes.length > 0 ? (
+                            {popularRecipes.length > 0 ? (
                             <div className="card-grid">
-                            {popular_recipes.map((recipe) => (
+                            {popularRecipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                             ))}
                             </div>
@@ -249,9 +267,9 @@ const Home = () =>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;

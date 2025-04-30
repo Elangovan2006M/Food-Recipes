@@ -23,4 +23,9 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     // Search by difficulty (Easy, Medium, Hard)
     List<Recipe> findByDifficultyIgnoreCase(String difficulty);
+
+    //Popular views
+    @Query("SELECT r FROM Recipe r ORDER BY r.totalViews DESC")
+    List<Recipe> findTopViewedRecipes();
+
 }

@@ -2,11 +2,16 @@ package com.example.foody.controller;
 
 import com.example.foody.model.Recipe;
 import com.example.foody.service.RecipeService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.NoSuchElementException;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/recipes")
 public class RecipeController {
@@ -19,10 +24,26 @@ public class RecipeController {
         return recipeService.getAllRecipes();
     }
 
+//     @GetMapping("/{id}")
+//     public ResponseEntity<Recipe> getRecipeAndTrackView(@PathVariable Long id, HttpServletRequest request) {
+//         String ip = request.getRemoteAddr();
+//         recipeService.trackView(id, ip);
+//         Recipe recipe = recipeService.getRecipeById(id);
+//         return ResponseEntity.ok(recipe);
+// }
     @GetMapping("/{id}")
-    public Recipe getRecipeById(@PathVariable Long id) {
-        return recipeService.getRecipeById(id);
+    public ResponseEntity<Recipe> getRecipeById(@PathVariable Long id, HttpServletRequest request) {
+        String ipAddress = request.getRemoteAddr();
+        try {
+            recipeService.trackView(id, ipAddress); //  this does everything
+            Recipe recipe = recipeService.getRecipeById(id);
+            return ResponseEntity.ok(recipe);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
+
+
 
     @PostMapping
     public Recipe createRecipe(@RequestBody Recipe recipe) {
@@ -54,4 +75,29 @@ public class RecipeController {
     public List<Recipe> searchByDifficulty(@RequestParam String level) {
         return recipeService.searchByDifficulty(level);
     }
+    @GetMapping("/popular")
+    public List<Recipe> getPopularRecipes() {
+    return recipeService.getPopularRecipes();
+    }
+
+
+    @GetMapping("/trending")
+    public List<Recipe> getTrendingRecipes() {
+        return recipeService.getTrendingRecipes();
+    }
+
+//     @PutMapping("/{id}/increment-views")
+//     public ResponseEntity<Recipe> incrementRecipeViews(@PathVariable Long id) {
+//         Recipe updatedRecipe = recipeService.incrementViews(id);
+//         return ResponseEntity.ok(updatedRecipe);
+// }
+
+
+    @PostMapping("/recipes/{id}/view")
+    public ResponseEntity<?> trackRecipeView(@PathVariable Long id, HttpServletRequest request) {
+        String ip = request.getRemoteAddr();
+        recipeService.trackView(id, ip);
+        return ResponseEntity.ok("View tracked");
+    }
+
 }
