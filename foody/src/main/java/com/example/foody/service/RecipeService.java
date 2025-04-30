@@ -1,16 +1,27 @@
 package com.example.foody.service;
 
 import com.example.foody.model.Recipe;
+import com.example.foody.model.ViewRecipe;
 import com.example.foody.repository.RecipeRepository;
+import com.example.foody.repository.ViewRecipeRepository;
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class RecipeService {
 
+    private final ViewRecipeRepository viewRecipeRepository;
+
     @Autowired
     private RecipeRepository recipeRepository;
+
+    RecipeService(ViewRecipeRepository viewRecipeRepository) {
+        this.viewRecipeRepository = viewRecipeRepository;
+    }
 
     public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
@@ -45,6 +56,41 @@ public class RecipeService {
         return recipeRepository.findByDifficultyIgnoreCase(difficulty);
     }
 
+    //View Recipe - Trending and popular
 
+    @Transactional
+    public void trackView(Long recipeId, String ipAddress) {
+    Recipe recipe = recipeRepository.findById(recipeId)
+        .orElseThrow(() -> new RuntimeException("Recipe not found"));
+
+    recipe.setTotalViews(recipe.getTotalViews() + 1);
+    recipeRepository.save(recipe);
+
+    ViewRecipe view = new ViewRecipe();
+    view.setRecipe(recipe);
+    view.setIpAddress(ipAddress);
+    viewRecipeRepository.save(view);
+    }
+
+    public List<Recipe> getPopularRecipes() {
+        return recipeRepository.findTopViewedRecipes();
+    }
     
+    public Recipe incrementViews(Long id) {
+        Recipe recipe = recipeRepository.findById(id)
+            .orElseThrow(() -> new NoSuchElementException("Recipe not found with ID: " + id));
+        
+        recipe.setTotalViews(recipe.getTotalViews() + 1);
+        return recipeRepository.save(recipe);
+    }
+    
+
+    //Trending Recipe
+    public List<Recipe> getTrendingRecipes() {
+        List<Long> trending = viewRecipeRepository.findTrendingRecipeIds();
+        List<Long> recipeIds = trending;
+
+        return recipeRepository.findAllById(recipeIds);
+    }
+
 }
