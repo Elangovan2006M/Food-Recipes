@@ -1,8 +1,15 @@
 package com.example.foody.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "view_recipe")
 public class ViewRecipe {
@@ -26,37 +33,4 @@ public class ViewRecipe {
         this.viewedAt = LocalDateTime.now();
     }
 
-    // Getters and Setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
-
-    public LocalDateTime getViewedAt() {
-        return viewedAt;
-    }
-
-    public void setViewedAt(LocalDateTime viewedAt) {
-        this.viewedAt = viewedAt;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
 }
