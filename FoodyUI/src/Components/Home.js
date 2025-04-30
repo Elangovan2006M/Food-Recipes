@@ -1,40 +1,26 @@
-// src/components/Home.jsx
-
 import React, { useState, useEffect } from "react";
 import { getTrendingRecipes, getPopularRecipes } from "../Service/RecipeService";
 import '../Styles/Home.css';
-<<<<<<< HEAD
-import Brand_Img from '../Assests/brand-image.png';
-import Cup_Img from '../Assests/cup.png';
+import Brand_Img from '../Assests/banner.png';
 import Right_Arrow from '../Assests/right-arrow.png';
-import Popular_Img from '../Assests/popular-heart.png';
 import TrendingCard from "./TrendingCard";
 import RecipeCard from "./RecipeCard";
-import { MdTrendingUp } from 'react-icons/md';
-import { FaPepperHot, FaFish } from "react-icons/fa6";
+import { MdTrendingUp, MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { FaPepperHot, FaShieldHeart, FaFish } from "react-icons/fa6";
 import { GiBowlOfRice, GiSushis, GiSteak, GiNoodles, GiTacos, GiFullPizza, GiSadCrab } from "react-icons/gi";
-import { LuSandwich } from "react-icons/lu";
-=======
-import { useRecipe } from "../Service/RecipeContext";
-import Brand_Img from '../Assests/banner.png';
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";import RecipeCard from "./RecipeCard";
-import {MdTrendingUp} from 'react-icons/md';
-import { FaPepperHot,FaShieldHeart,FaFish  } from "react-icons/fa6";
-import { GiBowlOfRice,GiSushis,GiSteak,GiNoodles,GiTacos,GiFullPizza,GiSadCrab} from "react-icons/gi";
 import { LuSandwich, LuMessagesSquare } from "react-icons/lu";
-import {useNavigate} from 'react-router-dom';
 import { IoNewspaperOutline } from "react-icons/io5";
+import { FaMapMarkedAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { useRecipe } from "../Service/RecipeContext";
 import Blog from '../Assests/Blog.png';
-import { FaGlobe, FaUtensils, FaAppleAlt,FaMapMarkedAlt  } from 'react-icons/fa';
-import { BiSolidVideos } from "react-icons/bi";
 import logo from '../Assests/round-logo.png';
->>>>>>> cdee5289a7ff43c9315c09f3d6e2bc5230a22a63
+
 
 const Home = () => {
   const [trendingRecipes, setTrendingRecipes] = useState([]);
   const [popularRecipes, setPopularRecipes]   = useState([]);
 
-<<<<<<< HEAD
   useEffect(() => {
     (async () => {
       try {
@@ -49,7 +35,6 @@ const Home = () => {
       }
     })();
   }, []);
-=======
     const navigate = useNavigate();
     const { setSelectedCuisine } = useRecipe();
 
@@ -73,30 +58,12 @@ const Home = () => {
         }
     };
 
->>>>>>> cdee5289a7ff43c9315c09f3d6e2bc5230a22a63
-
-  return (
-    <div className="home-container">
-      <div className="home">
-        {/* Banner */}
-        <div className="home-banner">
-          <img src={Brand_Img} alt="brand-image" />
-        </div>
-
-<<<<<<< HEAD
-        {/* Welcome */}
-        <div className="home-welcome">
-          <h1>Vanakkam! <span className="brand-name">Plate Stream</span></h1>
-          <p>Binge-worthy bites, one recipe video at a time.</p>
-        </div>
-=======
     return(
         <div className="home-container">
             <div className="home">
                 <div className="home-banner">
                     <img src={Brand_Img} alt="brand-image" className="brand-image"></img>
                 </div>
->>>>>>> cdee5289a7ff43c9315c09f3d6e2bc5230a22a63
 
         {/* Trending Section */}
         <section className="home-trending">
@@ -119,31 +86,6 @@ const Home = () => {
           </div>
         </section>
 
-<<<<<<< HEAD
-        {/* Cuisines Section */}
-        <section className="home-cuisines">
-          <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
-          <div className="button-front">
-            Explore By Cuisines <img src={Cup_Img} alt="cup-img" />
-          </div>
-          <div className="cuisine-container">
-            <div className="cuisine-box"><FaPepperHot /><p>Indian</p></div>
-            <div className="cuisine-box"><GiSushis /><p>Japanese</p></div>
-            <div className="cuisine-box"><LuSandwich /><p>American</p></div>
-            <div className="cuisine-box"><GiFullPizza /><p>Italian</p></div>
-            <div className="cuisine-box"><GiTacos /><p>Mexican</p></div>
-          </div>
-          <div className="cuisine-container">
-            <div className="cuisine-box"><GiBowlOfRice /><p>Korean</p></div>
-            <div className="cuisine-box"><GiNoodles /><p>Chinese</p></div>
-            <div className="cuisine-box"><GiSteak /><p>Australian</p></div>
-            <div className="cuisine-box"><GiSadCrab /><p>Thai</p></div>
-            <div className="cuisine-box"><FaFish /><p>Malaysian</p></div>
-          </div>
-        </section>
-
-        <div className="home-popular">
-=======
                 <div className="home-trending">
                     <div className="full-align">
                         <h2>What to <span className="home-highlight-style">Cook</span>?</h2>
@@ -227,7 +169,6 @@ const Home = () => {
                 </div>
 
                 <div className="home-popular">
->>>>>>> cdee5289a7ff43c9315c09f3d6e2bc5230a22a63
                     <div className="full-align">
                         <h2><span className="home-highlight-style">Our</span> Most <span className="home-highlight-style">Popular</span> recipes</h2>
                     </div>
