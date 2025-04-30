@@ -3,7 +3,7 @@ import { getAllRecipes } from "../Service/RecipeService";
 import '../Styles/Home.css';
 import { useRecipe } from "../Service/RecipeContext";
 import Brand_Img from '../Assests/banner.png';
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";import RecipeCard from "./RecipeCard";
+import RecipeCard from "./RecipeCard";
 import {MdTrendingUp} from 'react-icons/md';
 import { FaPepperHot,FaShieldHeart,FaFish  } from "react-icons/fa6";
 import { GiBowlOfRice,GiSushis,GiSteak,GiNoodles,GiTacos,GiFullPizza,GiSadCrab} from "react-icons/gi";
@@ -76,7 +76,7 @@ const Home = () =>
                         <div className="button-back"></div>
                         <h3 className="button-front">See Trending recipes <MdTrendingUp className="topic-icons" /></h3>
                     </div>
-                    <button className="view-all">View All<MdOutlineKeyboardArrowRight className="right-arrow" /></button>
+                    <button className="view-all">View All &gt;</button>
                     <div className="home-trending-cards">
                         <div className="trending-card">
                             <div className="card-image">
@@ -158,7 +158,7 @@ const Home = () =>
                             <div className="button-back"></div>
                         <h3 className="button-front">Popular Picks<FaShieldHeart className="topic-icons" /></h3>
                         </div>
-                        <button className="view-all" >View All<MdOutlineKeyboardArrowRight className="right-arrow"/></button>
+                        <button className="view-all" >View All &gt;</button>
                         <div className="home-popular-cards">
                             <div className="results">
                             {popular_recipes.length > 0 ? (
