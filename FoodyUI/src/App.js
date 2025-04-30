@@ -5,6 +5,7 @@ import RecipeDisplay from './Components/RecipeDisplay';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
+import Blog from './Components/Blog';
 import Recipe from './Components/Recipe';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/search" element={<RecipeSearch />} />
         <Route path="/recipe" element={<Recipe />} />
         <Route path="/recipes" element={<RecipeDisplay />} />
+        <Route path="/blog" element={<Blog/>} />
       </Routes>
      
       <Footer/>

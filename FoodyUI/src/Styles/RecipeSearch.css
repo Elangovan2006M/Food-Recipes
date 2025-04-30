@@ -13,7 +13,7 @@
   border: 1px solid #d0cece;
   border-radius: 10px;
   width: 127px;
-  margin-top: 70px;
+  margin-top: 100px;
   margin-right: 20px;
   height: 100%;
 }
@@ -127,6 +127,12 @@ input[type="checkbox"] {
 
 .results{
   padding: 20px 20px 20px 20px;
+}
+
+.filters .filter-line{
+  background-color: #ff7b00;
+  height: 1px;
+  border: none;
 }
 
 .suggestions-dropdown {
