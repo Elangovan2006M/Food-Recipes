@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,10 +37,12 @@ public class Recipe {
     @Column(columnDefinition = "TEXT")
     private String overview;
 
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Instruction> instructions;
+    @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private Instruction instructions;
 
     @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Nutrition nutrition;
 
     public Integer getTotalViews() {
@@ -48,6 +52,7 @@ public class Recipe {
     public void setTotalViews(Integer totalViews) {
         this.totalViews = totalViews;
     }
+
 
 
 }

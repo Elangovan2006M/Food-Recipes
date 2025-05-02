@@ -1,5 +1,6 @@
 package com.example.foody.controller;
 
+import com.example.foody.model.Nutrition;
 import com.example.foody.model.Recipe;
 import com.example.foody.service.RecipeService;
 
@@ -8,8 +9,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import com.example.foody.model.Instruction;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -91,15 +95,28 @@ public class RecipeController {
         String ip = request.getRemoteAddr();
         Recipe updatedRecipe = recipeService.trackView(id, ip);
         return ResponseEntity.ok(updatedRecipe);
-        // return ResponseEntity.ok("View tracked");
-}
+        
+    }
 
 
-    // @PostMapping("/{id}/view")
-    // public ResponseEntity<?> trackRecipeView(@PathVariable Long id, HttpServletRequest request) {
-    //     String ip = request.getRemoteAddr();
-    //     recipeService.trackView(id, ip);
-    //     return ResponseEntity.ok("View tracked");
-    // }
+    @GetMapping("/{id}/instructions")
+    public Instruction getInstructionsByRecipeId(@PathVariable Long id) {
+        return recipeService.getInstructionsByRecipeId(id);
+    }
 
+
+    @GetMapping("/{id}/nutrition")
+    public Nutrition getNutritionByRecipeId(@PathVariable Long id) {
+        return recipeService.getNutritionByRecipeId(id);
+    }
+
+    @PostMapping("/nutrition")
+    public Nutrition createNutrition(@RequestBody Nutrition nutrition) {
+        return recipeService.saveNutrition(nutrition);
+    }
+
+    @PostMapping("/instructions")
+    public Instruction createInstruction(@RequestBody Instruction instruction) {
+        return recipeService.saveInstruction(instruction);
+    }
 }

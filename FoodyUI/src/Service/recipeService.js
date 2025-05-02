@@ -52,9 +52,22 @@ export const searchByDifficulty = (level) => {
   });
 };
 
+
 // Increment total views for a recipe
 export const incrementRecipeViews = (id) => {
   return axios.put(`${API_BASE_URL}/${id}/view`);
 };
 export const getTrendingRecipes = () => axios.get(`${API_BASE_URL}/trending`);
 export const getPopularRecipes  = () => axios.get(`${API_BASE_URL}/popular`);
+
+
+// Get instructions for a recipe (GET /recipes/{id}/instructions)
+export const getInstructionsByRecipeId = (id) => {
+  return axios.get(`${API_BASE_URL}/${id}/instructions`);
+};
+
+
+// Get nutrition for a recipe (GET /recipes/{id}/nutrition)
+export const getNutritionByRecipeId = (id) => {
+  return axios.get(`${API_BASE_URL}/${id}/nutrition`);
+};

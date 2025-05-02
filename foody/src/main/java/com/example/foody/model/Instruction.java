@@ -1,5 +1,7 @@
 package com.example.foody.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,12 +17,11 @@ public class Instruction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int stepNumber;
-
     @Column(columnDefinition = "TEXT")
     private String stepDescription;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "recipe_id")
+    @JsonBackReference
     private Recipe recipe;
 }

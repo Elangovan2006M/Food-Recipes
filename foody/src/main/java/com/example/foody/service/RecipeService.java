@@ -109,7 +109,7 @@ public class RecipeService {
     }
 
 
-    public List<Instruction> getInstructionsByRecipeId(Long recipeId) {
+    public Instruction getInstructionsByRecipeId(Long recipeId) {
         return instructionRepository.findByRecipeId(recipeId);
     }
 
@@ -117,4 +117,10 @@ public class RecipeService {
         return nutritionRepository.findByRecipeId(recipeId);
     }
 
+    public Instruction saveInstruction(Instruction instruction) {
+        return instructionRepository.save(instruction);
+    }
+    public Nutrition saveNutrition(Nutrition nutrition) {
+        return nutritionRepository.save(nutrition);
+    }   
 }
