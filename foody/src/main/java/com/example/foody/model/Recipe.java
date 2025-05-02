@@ -49,5 +49,6 @@ public class Recipe {
         this.totalViews = totalViews;
     }
 
+    
 
 }

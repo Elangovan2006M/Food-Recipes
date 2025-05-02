@@ -116,4 +116,10 @@ public class RecipeService {
         return nutritionRepository.findByRecipeId(recipeId);
     }
 
+    public Instruction saveInstruction(Instruction instruction) {
+        return instructionRepository.save(instruction);
+    }
+    public Nutrition saveNutrition(Nutrition nutrition) {
+        return nutritionRepository.save(nutrition);
+    }   
 }
