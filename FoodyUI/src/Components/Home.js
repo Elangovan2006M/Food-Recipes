@@ -14,8 +14,9 @@ import { useNavigate } from 'react-router-dom';
 import { useRecipe } from "../Service/RecipeContext";
 import Blog from '../Assests/Blog.png';
 import logo from '../Assests/round-logo.png';
-import { BiSolidVideos } from "react-icons/bi";
-import { FaGlobe, FaUtensils, FaAppleAlt } from "react-icons/fa";
+import {BiSolidVideos} from 'react-icons/bi';
+import {FaGlobe, FaUtensils, FaAppleAlt} from 'react-icons/fa';
+
 
 const Home = () => {
   const [trendingRecipes, setTrendingRecipes] = useState([]);
@@ -70,28 +71,27 @@ const Home = () => {
                     <img src={Brand_Img} alt="brand-image" className="brand-image"></img>
                 </div>
 
-                {/* Trending Section */}
-                <section className="home-trending">
-                <div className="full-align">
-                    <h2>See <span className="home-highlight-style">Trending</span> Recipes</h2>
-                    <button className="view-all">
-                    View All &gt;
-                    </button>
-                </div>
-                <h3 className="button-front">
-                    Trending recipes <MdTrendingUp size={24} color="#ffffff" />
-                </h3>
-                <div className="card-grid">
-                    {trendingRecipes.length > 0
-                    ? trendingRecipes.map(recipe => (
-                        <TrendingCard key={recipe.id} recipe={recipe} />
-                        ))
-                    : <p>Loading trending…</p>
-                    }
-                </div>
-                </section>
+        {/* Trending Section */}
+        <section className="home-trending">
+          <div className="full-align">
+            <h2>See <span className="home-highlight-style">Trending</span> Recipes</h2>
+            <button className="view-all">
+              View All &gt;
+            </button>
+          </div>
+          <h3 className="button-front">
+            Trending recipes <MdTrendingUp size={24} color="#ffffff" />
+          </h3>
+          <div className="card-grid">
+            {trendingRecipes.length > 0
+              ? trendingRecipes.map(recipe => (
+                  <TrendingCard key={recipe.id} recipe={recipe} />
+                ))
+              : <p>Loading trending…</p>
+            }
+          </div>
+        </section>
 
-               
 
                 <div className="home-cuisines">
                     <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
@@ -201,7 +201,7 @@ const Home = () => {
                         <div className="feature-banner">
                             <div className="feature-left">
                                 <h3>
-                                <img src={logo}/> is your all-in-one cooking companion — a platform designed to help you to <b>watch</b>, <b>learn</b>, and <b>cook</b> delicious meals easily.
+                                <img src={logo} alt="logo"/> is your all-in-one cooking companion — a platform designed to help you to <b>watch</b>, <b>learn</b>, and <b>cook</b> delicious meals easily.
                                 </h3>
                                 <div className="cta-box">
                                 <p>
