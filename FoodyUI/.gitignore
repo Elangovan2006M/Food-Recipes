@@ -21,7 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Spring Boot config and logs
-src/main/resources/application.properties
-foody/logs/application.log
