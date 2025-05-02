@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getTrendingRecipes, getPopularRecipes } from "../Service/RecipeService";
 import '../Styles/Home.css';
 import Brand_Img from '../Assests/banner.png';
-import TrendingCard from "./TrendingCard";
+import TrendingRecipeCard from "./TrendingRecipeCard";
 import RecipeCard from "./RecipeCard";
 import { MdTrendingUp } from 'react-icons/md';
 import { FaPepperHot, FaShieldHeart, FaFish } from "react-icons/fa6";
@@ -84,7 +84,7 @@ const Home = () => {
                 <div className="card-grid">
                     {trendingRecipes.length > 0
                     ? trendingRecipes.map(recipe => (
-                        <TrendingCard key={recipe.id} recipe={recipe} />
+                        <TrendingRecipeCard key={recipe.id} recipe={recipe} />
                         ))
                     : <p>Loading trending…</p>
                     }

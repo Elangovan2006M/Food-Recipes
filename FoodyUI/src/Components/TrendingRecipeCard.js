@@ -13,7 +13,7 @@ const TrendingRecipeCard = ({ recipe }) => {
       // Fetch recipe by ID and trigger view tracking from backend
       const response = await getRecipeById(recipe.id);  // Automatically increments views
       setSelectedRecipe(response.data);  // Still needed for state management
-      navigate(`/recipes/${recipe.id}`);
+      navigate(`/recipes`);
     } catch (error) {
       console.error("Error fetching recipe", error);
       navigate('/recipes');  // Fallback even if there's an error
@@ -31,7 +31,7 @@ const TrendingRecipeCard = ({ recipe }) => {
         className="view-button"
         onClick={handleClick}
       >
-        View Recipe
+        View <span className='highlight-style'>Recipe</span>
       </button>
     </div>
   );
