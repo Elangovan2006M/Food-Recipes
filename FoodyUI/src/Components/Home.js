@@ -71,6 +71,7 @@ const Home = () => {
                 </div>
 
                 {/* Trending Section */}
+
                 <section className="home-trending">
                 <div className="full-align">
                     <h2>See <span className="home-highlight-style">Trending</span> Recipes</h2>
@@ -80,17 +81,20 @@ const Home = () => {
                         <h3 className="button-front">Trending recipes <MdTrendingUp size={24} color="#ffffff" /></h3>
                     </div>
                     <button className="view-all" >View All &gt;</button>
-                <div className="card-grid">
-                    {trendingRecipes.length > 0
-                    ? trendingRecipes.map(recipe => (
-                        <TrendingRecipeCard key={recipe.id} recipe={recipe} />
-                        ))
-                    : <p>Loading trending…</p>
-                    }
-                </div>
+                    <div className="home-trending-cards">
+                        <div className="results">
+                        {trendingRecipes.length > 0 ? (
+                            <div className="card-grid">
+                            {trendingRecipes.map(recipe => (
+                            <TrendingRecipeCard key={recipe.id} recipe={recipe} />
+                            ))}
+                            </div>
+                        ) : (<p>Loading trending...</p>)}
+                        </div>
+                    </div>
                 </section>
 
-               
+                {/* Cuisines Section*/}
 
                 <div className="home-cuisines">
                     <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
@@ -144,6 +148,8 @@ const Home = () => {
                     </div>
                 </div>
 
+                {/* Popular Recipe Section */}
+
                 <div className="home-popular">
                     <div className="full-align">
                         <h2><span className="home-highlight-style">Our</span> Most <span className="home-highlight-style">Popular</span> recipes</h2>
@@ -165,6 +171,8 @@ const Home = () => {
                             </div>
                         </div>
                 </div>
+
+                {/* Blog Section */}
 
                 <div className="blog">
                     <h2><span className="home-highlight-style">From Our</span> Blog</h2>
@@ -189,6 +197,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* About Section */}
 
                 <div className="about">
                     <h2><span className="home-highlight-style">About</span> Us</h2>
