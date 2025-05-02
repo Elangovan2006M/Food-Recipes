@@ -1,15 +1,22 @@
 package com.example.foody.service;
 
+import com.example.foody.model.Nutrition;
 import com.example.foody.model.Recipe;
 import com.example.foody.model.ViewRecipe;
 import com.example.foody.repository.RecipeRepository;
 import com.example.foody.repository.ViewRecipeRepository;
+
 import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import com.example.foody.model.Instruction;
+import com.example.foody.repository.InstructionRepository;
+import com.example.foody.repository.NutritionRepository;
 
 @Service
 public class RecipeService {
@@ -18,6 +25,13 @@ public class RecipeService {
 
     @Autowired
     private RecipeRepository recipeRepository;
+
+    @Autowired
+    private InstructionRepository instructionRepository;
+
+    @Autowired
+    private NutritionRepository nutritionRepository;
+
 
     RecipeService(ViewRecipeRepository viewRecipeRepository) {
         this.viewRecipeRepository = viewRecipeRepository;
@@ -91,6 +105,15 @@ public class RecipeService {
         List<Long> recipeIds = trending;
 
         return recipeRepository.findAllById(recipeIds);
+    }
+
+
+    public List<Instruction> getInstructionsByRecipeId(Long recipeId) {
+        return instructionRepository.findByRecipeId(recipeId);
+    }
+
+    public Nutrition getNutritionByRecipeId(Long recipeId) {
+        return nutritionRepository.findByRecipeId(recipeId);
     }
 
 }
