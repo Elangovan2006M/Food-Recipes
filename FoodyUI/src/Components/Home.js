@@ -211,7 +211,7 @@ const Home = () => {
                                 </p>
                                 <strong className="cta-highlight">Stream. <span>Cook</span>. Taste. <span>Repeat</span>.</strong>
                                 </div>
-                                <button className="read-more" onClick={handleBlog}>Read More Articles &gt;&gt;&gt;</button>
+                                <button className="about-us-button" onClick={handleBlog}>about us &gt;&gt;&gt;</button>
                             </div>
 
                             <div className="Gap">
