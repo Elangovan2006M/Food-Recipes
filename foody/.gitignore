@@ -40,3 +40,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore application.properties
+**/application.properties
+
+# Ignore all log files
+logs/
+*.log
