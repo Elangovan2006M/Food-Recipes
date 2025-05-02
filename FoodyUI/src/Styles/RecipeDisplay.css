@@ -1,51 +1,123 @@
-.recipe-container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .recipe-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .recipe-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-  
-  .recipe-details p {
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .ingredients, .nutrition, .instructions {
-    margin-top: 20px;
-  }
-  
-  h3 {
-    font-size: 20px;
-    color: #444;
-  }
-  
-  ul, ol {
-    padding-left: 20px;
-  }
-  
-  li {
-    font-size: 16px;
-    color: #666;
-  }
+.recipe-display-container {
+  padding: 20px;
+  margin: 40px 40px 10px 40px;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.recipe-title {
+  color: #f28c28;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.media-section {
+  display: flex;
+  gap: 20px;
+}
+
+.video-box iframe {
+  width: 500px;
+  height: 280px;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.side-panel {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.ingredients-box {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.ingredients-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.ingredients-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #f97316; /* orange text */
+}
+
+.nutrition-box {
+  flex: 1;
+  margin-left: 20px;
+  background: #fff4ec;
+  padding: 20px;
+  border-radius: 10px;
+  color: #333;
+}
+
+.nutrition-box h3 span {
+  color: #f28c28;
+}
+
+.metadata-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.meta-box span {
+  display: block;
+  font-weight: bold;
+}
+
+.meta-box p {
+  margin-top: 5px;
+  color: #f97316;
+}
+
+.overview-box {
+  background-color: #fff7f0;
+  border-left: 4px solid #f97316;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.overview-box h3 span {
+  color: #f97316;
+}
+
+.instructions-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.instructions-section h3 span {
+  color: #f97316;
+}
+
+.follow-button {
+  background: #f97316;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.instruction-step {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 4px solid #f97316;
+}
+
+.instruction-step h4 {
+  font-size: 20px;
+  color: #f97316;
+}

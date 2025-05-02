@@ -108,7 +108,7 @@ public class RecipeController {
 
 
     @GetMapping("/{id}/instructions")
-    public List<Instruction> getInstructionsByRecipeId(@PathVariable Long id) {
+    public Instruction getInstructionsByRecipeId(@PathVariable Long id) {
         return recipeService.getInstructionsByRecipeId(id);
     }
 

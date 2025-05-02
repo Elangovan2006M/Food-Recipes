@@ -108,7 +108,7 @@ public class RecipeService {
     }
 
 
-    public List<Instruction> getInstructionsByRecipeId(Long recipeId) {
+    public Instruction getInstructionsByRecipeId(Long recipeId) {
         return instructionRepository.findByRecipeId(recipeId);
     }
 
