@@ -74,13 +74,12 @@ const Home = () => {
                 <section className="home-trending">
                 <div className="full-align">
                     <h2>See <span className="home-highlight-style">Trending</span> Recipes</h2>
-                    <button className="view-all">
-                    View All &gt;
-                    </button>
                 </div>
-                <h3 className="button-front">
-                    Trending recipes <MdTrendingUp size={24} color="#ffffff" />
-                </h3>
+                    <div className="button-stack">
+                        <div className="button-back"></div>
+                        <h3 className="button-front">Trending recipes <MdTrendingUp size={24} color="#ffffff" /></h3>
+                    </div>
+                    <button className="view-all" >View All &gt;</button>
                 <div className="card-grid">
                     {trendingRecipes.length > 0
                     ? trendingRecipes.map(recipe => (

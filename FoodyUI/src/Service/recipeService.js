@@ -52,11 +52,11 @@ export const searchByDifficulty = (level) => {
   });
 };
 
-// // Increment total views for a recipe
-// export const incrementRecipeViews = (id) => {
-//   return axios.put(`${API_BASE_URL}/${id}/increment-views`);
-// };
 
+// Increment total views for a recipe
+export const incrementRecipeViews = (id) => {
+  return axios.put(`${API_BASE_URL}/${id}/view`);
+};
 export const getTrendingRecipes = () => axios.get(`${API_BASE_URL}/trending`);
 export const getPopularRecipes  = () => axios.get(`${API_BASE_URL}/popular`);
 

@@ -90,27 +90,20 @@ public class RecipeController {
         return recipeService.getTrendingRecipes();
     }
 
-//     @PutMapping("/{id}/increment-views")
-//     public ResponseEntity<Recipe> incrementRecipeViews(@PathVariable Long id) {
-//         Recipe updatedRecipe = recipeService.incrementViews(id);
-//         return ResponseEntity.ok(updatedRecipe);
-// }
-
-
-    @PostMapping("/recipes/{id}/view")
+    @PutMapping("/{id}/view")
     public ResponseEntity<?> trackRecipeView(@PathVariable Long id, HttpServletRequest request) {
         String ip = request.getRemoteAddr();
-        recipeService.trackView(id, ip);
-        return ResponseEntity.ok("View tracked");
+        Recipe updatedRecipe = recipeService.trackView(id, ip);
+        return ResponseEntity.ok(updatedRecipe);
         
     }
-
 
 
     @GetMapping("/{id}/instructions")
     public Instruction getInstructionsByRecipeId(@PathVariable Long id) {
         return recipeService.getInstructionsByRecipeId(id);
     }
+
 
     @GetMapping("/{id}/nutrition")
     public Nutrition getNutritionByRecipeId(@PathVariable Long id) {

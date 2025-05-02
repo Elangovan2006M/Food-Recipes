@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecipe } from '../Service/RecipeContext';
+import { incrementRecipeViews } from '../Service/RecipeService';
 import '../Styles/RecipeCard.css';
 import { IoTimeOutline } from "react-icons/io5";
 import { PiCookingPotLight } from "react-icons/pi";
@@ -12,9 +13,15 @@ const RecipeCard = ({ recipe }) => {
   const navigate = useNavigate();
   const { setSelectedRecipe } = useRecipe();
 
-  const handleClick = () => {
-    setSelectedRecipe(recipe);
-    navigate('/recipes');
+  const handleClick = async () => {
+    try {
+      await incrementRecipeViews(recipe.id);
+      setSelectedRecipe(recipe);
+      navigate('/recipes');
+    }
+    catch(error) {
+      console.log("Failed to update view count: ", error);
+    }
   };
 
   return (
