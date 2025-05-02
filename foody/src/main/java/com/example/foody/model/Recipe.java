@@ -1,13 +1,11 @@
 package com.example.foody.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -33,4 +31,23 @@ public class Recipe {
 
     @Column(name = "total_views")
     private Integer totalViews;
+
+    @Column(columnDefinition = "TEXT")
+    private String overview;
+
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Instruction> instructions;
+
+    @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private Nutrition nutrition;
+
+    public Integer getTotalViews() {
+        return totalViews;
+    }
+
+    public void setTotalViews(Integer totalViews) {
+        this.totalViews = totalViews;
+    }
+
+
 }
