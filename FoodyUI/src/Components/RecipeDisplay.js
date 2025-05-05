@@ -13,46 +13,42 @@ const RecipeDisplay = () => {
     <div className="recipe-display-container">
       <h2 className="recipe-title">{selectedRecipe.foodName}</h2>
 
-      {/* Image and Video Section */}
-      <div className="media-section">
+      {/*Video Section */}
+      <div className="media-ingredients-wrapper">
         <div className="video-box">
           <iframe
             src={selectedRecipe.videoUrl}
             title="Recipe Video"
             allowFullScreen
+            className="recipe-video"
           ></iframe>
         </div>
-        
+
+        {/* Ingredients Section */}
         <div className="ingredients-box">
           <h3>Ingredients</h3>
           <ul>
-            {selectedRecipe.ingredients.split(',').map((item, index) => (
-              <li key={index}>{item.trim()}</li>
+            {selectedRecipe.ingredients.split('$').map((item, index) => (
+              <span className='ingredient'><li key={index}>{item.trim()}</li></span>
             ))}
           </ul>
         </div>
-
-
       </div>
 
+      {/* Metadata and Overview */}
+      <div className="metadata-overview-wrapper">
+        <div>
+          <div className="metadata-row">
+            <div className="meta-box"><span>Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
+            <div className="meta-box"><span>Prep time</span><p>{selectedRecipe.prepTime} Min</p></div>
+            <div className="meta-box"><span>Cuisine</span><p>{selectedRecipe.cuisines}</p></div>
+            <div className="meta-box"><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
+          </div>
 
-      {/* Metadata Row */}
-      <div className="metadata-row">
-        <div className="meta-box">
-          <span>Cook time</span>
-          <p>{selectedRecipe.cookTime} Min</p>
-        </div>
-        <div className="meta-box">
-          <span>Prep time</span>
-          <p>{selectedRecipe.prepTime} Min</p>
-        </div>
-        <div className="meta-box">
-          <span>cuisine</span>
-          <p>{selectedRecipe.cuisines}</p>
-        </div>
-        <div className="meta-box">
-          <span>Difficulty</span>
-          <p>{selectedRecipe.difficulty}</p>
+          <div className="overview-box">
+            <h3>Over<span>View</span></h3>
+            <p>{selectedRecipe.overview || selectedRecipe.description}</p>
+          </div>
         </div>
         <div className="nutrition-box">
           <h3>Nutrition <span>Facts</span> <small>(Per Serving)</small></h3>
@@ -64,30 +60,24 @@ const RecipeDisplay = () => {
           <p><strong>Carbohydrates:</strong> {selectedRecipe.nutrition.carbohydrates} g</p>
         </div>
       </div>
-      {/* Ingredients and Nutrition Section */}
-      <div className="side-panel">
-
-      </div>
-
-      {/* Overview */}
-      <div className="overview-box">
-        <h3>Over<span>View</span></h3>
-        <p>{selectedRecipe.overview || selectedRecipe.description}</p>
-      </div>
 
       {/* Instructions */}
       <div className="instructions-section">
-        <h3><span>Started</span> Cooking?</h3>
-        <button className="follow-button">Follow The Instructions</button>
 
-        {selectedRecipe.instructions.stepDescription
-          .split(',')
-          .map((step, index) => (
-            <div key={index} className="instruction-step">
-              <h4>{index + 1 < 10 ? `0${index + 1}` : index + 1}</h4>
-              <p>{step.trim()}</p>
-            </div>
-          ))}
+        <div className="full-align">
+            <h2><span className="home-highlight-style">Started</span> Cooking?</h2>
+        </div>
+        <div className="button-stack">
+          <div className="button-back"></div>
+          <h3 className="button-front"> Follow The Instructions</h3>
+        </div>
+
+        {selectedRecipe.instructions.stepDescription.split('$').map((step, index) => (
+          <div key={index} className="instruction-step">
+            <h4>{index + 1 < 10 ? `0${index + 1}` : index + 1}</h4>
+            <p>{step.trim()}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
