@@ -15,7 +15,7 @@ const TrendingRecipeCard = ({ recipe }) => {
       const response = await getRecipeById(recipe.id);  // Automatically increments views
       await incrementRecipeViews(recipe.id);
       setSelectedRecipe(response.data);  // Still needed for state management
-      navigate(`/recipes`);
+      navigate('/recipes');
     } catch (error) {
       console.error("Error fetching recipe", error);
       navigate('/recipes');  // Fallback even if there's an error

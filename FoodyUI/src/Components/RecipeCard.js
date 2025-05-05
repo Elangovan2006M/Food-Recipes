@@ -8,7 +8,6 @@ import { PiCookingPotLight } from "react-icons/pi";
 import { GrSteps } from "react-icons/gr";
 
 const RecipeCard = ({ recipe }) => {
-  // if (!recipe) return null;
 
   const navigate = useNavigate();
   const { setSelectedRecipe } = useRecipe();
