@@ -51,25 +51,26 @@ const RecipeDisplay = () => {
                 <div><MdSignalCellularAlt style={{color:"#e86b00"}}/><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
               </div>
             </div>
-            <div>
+            <div className="overview-text">
               <h3>Over<span>View</span></h3>
               <p>{selectedRecipe.overview || selectedRecipe.description}</p>
             </div>
           </div>
           <div className="nutrition-box">
             <h3>Nutrition <span>Facts</span> <small>(Per Serving)</small></h3>
+            <div className='nutrition-facts'>
             <p><strong>Calories:</strong> {selectedRecipe.nutrition.calories} kcal</p>
             <p><strong>Sugar:</strong> {selectedRecipe.nutrition.sugar} g</p>
             <p><strong>Protein:</strong> {selectedRecipe.nutrition.protein} g</p>
             <p><strong>Fat:</strong> {selectedRecipe.nutrition.fat} g</p>
             <p><strong>Fiber:</strong> {selectedRecipe.nutrition.fiber} g</p>
             <p><strong>Carbohydrates:</strong> {selectedRecipe.nutrition.carbohydrates} g</p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Instructions */}
-      <div className="instructions-section">
 
         <div className="full-align">
             <h2><span className="home-highlight-style">Started</span> Cooking?</h2>
@@ -86,7 +87,6 @@ const RecipeDisplay = () => {
           </div>
         ))}
       </div>
-    </div>
   );
 };
 
