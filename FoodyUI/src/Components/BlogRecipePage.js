@@ -15,12 +15,12 @@ const RecipeBlogPage= () => {
             <img className="main-img" src={selectedBlog.recipeImgUrl} alt={selectedBlog.recipeName} />
 
             <section className="overview">
-                <h2>Overview</h2>
+                <h2 className="blog-page-titles">Overview</h2>
                 <p>{selectedBlog.overview}</p>
             </section>
 
             <section className="history">
-                <h2>History</h2>
+                <h2 className="blog-page-titles">History</h2>
                 <p>{selectedBlog.history}</p>
                 <div className="history-images">
                     <img src={selectedBlog.historyImg1} alt="history 1" />
@@ -29,26 +29,26 @@ const RecipeBlogPage= () => {
             </section>
 
             <section className="variations">
-                <h2>Variations</h2>
+                <h2 className="blog-page-titles">Variations</h2>
                 {selectedBlog.variations.split("\n").map((v, i) => (
                     <p key={i}>🔸 {v}</p>
                 ))}
             </section>
 
             <section className="pro-tips">
-                <h2>Pro Tips</h2>
+                <h2 className="blog-page-titles">Pro Tips</h2>
                 {selectedBlog.proTips.split("\n").map((tip, i) => (
                     <p key={i}>✅ {tip}</p>
                 ))}
             </section>
 
             <section className="also-known">
-                <h2>Also Known As</h2>
+                <h2 className="blog-page-titles">Also Known As</h2>
                 <p>{selectedBlog.alsoKnownAs}</p>
             </section>
 
             <section className="best-served">
-                <h2>Best Served With</h2>
+                <h2 className="blog-page-titles">Best Served With</h2>
                 <p>{selectedBlog.bestServedWith}</p>
             </section>
         </div>
