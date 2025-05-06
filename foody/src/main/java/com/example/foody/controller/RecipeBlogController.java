@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/blogs/view")
+@RequestMapping("/api/blogs")
 @CrossOrigin(origins = "http://localhost:3000")  // allow your React dev server
 public class RecipeBlogController {
 
