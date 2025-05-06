@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getAllBlogs } from "../Service/BlogService";
+import RecentBlogCard from "./RecentBlogCard";
 import BlogCard from "./BlogCard";
 import { useBlog } from "../Service/BlogContext";
 
@@ -26,13 +27,15 @@ const Blog = () => {
         <div className="blog-container">
             {/*  Section 1: Recent Blog */}
             <div className="blog-recent">
-                <h2>Recent <span>Posts</span></h2>
-                <div className="recent-subcard">
-                    <button className="recent-filter">Read Recent Articles 🗂</button>
+                <h1>Recent <span className="blog-highlight-style ">Posts</span></h1>
+                <div className="blog-stack">
+                    <div className="blog-back"></div>
+                    <button className="blog-front">Read Recent Articles 🗂</button>
                 </div>
+                
                 <div className="blog-recent-card">
                     {filteredBlogs.length > 0 && (
-                        <BlogCard blog={filteredBlogs[0]} />
+                        <RecentBlogCard blog={filteredBlogs[0]} />
                     )}
                 </div>
             </div>
@@ -40,9 +43,10 @@ const Blog = () => {
             {/*  Section 2: All Blogs */}
             <div className="our-blog">
                 <div className="blog-title">
-                    <h2>Our <span>Blog</span></h2>
-                    <div className="blog-subcard">
-                        <button className="blog-subbtn">Insights you can use ↗</button>
+                    <h1>Our <span className="blog-highlight-style ">Blog</span></h1>
+                    <div className="blog-stack">
+                        <div className="blog-back"></div>
+                        <button className="blog-front">Insights you can use ↗</button>
                     </div>
                 </div>
 

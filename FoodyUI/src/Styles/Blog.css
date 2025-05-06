@@ -1,4 +1,7 @@
 /* Blog.css */
+.blog-container {
+    margin: 100px 80px;
+}
 .blog-recent-card .blog-card.featured {
     flex-direction: row;
     max-width: 100%;
@@ -10,6 +13,44 @@
     max-width: 300px;
     height: auto;
     margin-right: 20px;
+}
+
+.blog-stack {
+    position: relative;
+    display: inline-block;
+}
+.blog-back {
+    background-color: #FFA837F0;
+    box-shadow: 0 4px 8px rgba(238, 154, 9, 0.4);
+    height: 45px;
+    width: 260px;
+    /* border-radius: 5px; */
+    position: absolute;
+    opacity: 80%;
+    margin-top:8px ;
+    rotate: 3deg;
+}
+.blog-front {
+    background-color: #FF7C00;
+    color: #ffffff;
+    height: 50px;
+    width: 260px;
+    /* border-radius: 5px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: 85%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);
+
+}
+
+.blog-highlight-style {
+    color: #EA7300;
+    font-size: 32px;
 }
 .recent-filter, .blog-subbtn {
     background: #ff7900;

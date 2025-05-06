@@ -1,0 +1,51 @@
+.recent-blog-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .recent-img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .recent-content {
+    padding: 1.5rem;
+  }
+  
+  .recent-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .recent-content a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+.recent-tags {
+    display: flex;
+    gap: 20px;
+}
+
+.recent-tags span {
+    font-size: 0.85rem;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.recent-tags span:nth-child(1) {
+    background-color: #f59e0b;  /* Tips badge - orange */
+}
+
+.recent-tags span:nth-child(2) {
+    background-color: #6366f1; /* Recipe badge - indigo */
+}
