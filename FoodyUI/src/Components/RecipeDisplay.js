@@ -1,6 +1,9 @@
 import React from 'react';
 import { useRecipe } from '../Service/RecipeContext';
 import '../Styles/RecipeDisplay.css';
+import { GiCampCookingPot, GiKnifeFork } from "react-icons/gi";
+import { BiWorld } from "react-icons/bi";
+import { MdSignalCellularAlt } from "react-icons/md";
 
 const RecipeDisplay = () => {
   const { selectedRecipe } = useRecipe();
@@ -29,7 +32,7 @@ const RecipeDisplay = () => {
           <h3>Ingredients</h3>
           <ul>
             {selectedRecipe.ingredients.split('$').map((item, index) => (
-              <span className='ingredient'><li key={index}>{item.trim()}</li></span>
+              <li key={index} ><span className='ingredient'>{item.trim()}</span></li>
             ))}
           </ul>
         </div>
@@ -37,27 +40,31 @@ const RecipeDisplay = () => {
 
       {/* Metadata and Overview */}
       <div className="metadata-overview-wrapper">
-        <div>
-          <div className="metadata-row">
-            <div className="meta-box"><span>Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
-            <div className="meta-box"><span>Prep time</span><p>{selectedRecipe.prepTime} Min</p></div>
-            <div className="meta-box"><span>Cuisine</span><p>{selectedRecipe.cuisines}</p></div>
-            <div className="meta-box"><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
-          </div>
 
+        <div className="overview-row">
           <div className="overview-box">
-            <h3>Over<span>View</span></h3>
-            <p>{selectedRecipe.overview || selectedRecipe.description}</p>
+            <div className="metadata-row">
+              <div className="meta-box">
+                <div><GiCampCookingPot style={{color:"#e86b00"}}/><span>Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
+                <div><GiKnifeFork style={{color:"#e86b00"}}/><span>Prep time </span><p>{selectedRecipe.prepTime} Min</p></div>
+                <div><BiWorld style={{color:"#e86b00"}}/><span>Cuisine </span><p>{selectedRecipe.cuisines}</p></div>
+                <div><MdSignalCellularAlt style={{color:"#e86b00"}}/><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
+              </div>
+            </div>
+            <div>
+              <h3>Over<span>View</span></h3>
+              <p>{selectedRecipe.overview || selectedRecipe.description}</p>
+            </div>
           </div>
-        </div>
-        <div className="nutrition-box">
-          <h3>Nutrition <span>Facts</span> <small>(Per Serving)</small></h3>
-          <p><strong>Calories:</strong> {selectedRecipe.nutrition.calories} kcal</p>
-          <p><strong>Sugar:</strong> {selectedRecipe.nutrition.sugar} g</p>
-          <p><strong>Protein:</strong> {selectedRecipe.nutrition.protein} g</p>
-          <p><strong>Fat:</strong> {selectedRecipe.nutrition.fat} g</p>
-          <p><strong>Fiber:</strong> {selectedRecipe.nutrition.fiber} g</p>
-          <p><strong>Carbohydrates:</strong> {selectedRecipe.nutrition.carbohydrates} g</p>
+          <div className="nutrition-box">
+            <h3>Nutrition <span>Facts</span> <small>(Per Serving)</small></h3>
+            <p><strong>Calories:</strong> {selectedRecipe.nutrition.calories} kcal</p>
+            <p><strong>Sugar:</strong> {selectedRecipe.nutrition.sugar} g</p>
+            <p><strong>Protein:</strong> {selectedRecipe.nutrition.protein} g</p>
+            <p><strong>Fat:</strong> {selectedRecipe.nutrition.fat} g</p>
+            <p><strong>Fiber:</strong> {selectedRecipe.nutrition.fiber} g</p>
+            <p><strong>Carbohydrates:</strong> {selectedRecipe.nutrition.carbohydrates} g</p>
+          </div>
         </div>
       </div>
 
