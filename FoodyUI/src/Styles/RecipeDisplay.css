@@ -165,7 +165,7 @@
   border: 1px solid #e86b00;
   margin-top: 20px;
   border-radius: 10px;
-  width: 830px;
+  /* width: 830px; */
 }
 
 
@@ -265,32 +265,25 @@
   background-color: #FFA837F0;
   box-shadow: 0 4px 8px rgba(238, 154, 9, 0.4);
   height: 45px;
-  width: 250px;
-  border-radius: 5px;
+  width: 260px;
   position: absolute;
   opacity: 80%;
-  /* margin-top:1px; */
-  /* top: 6px; */
-  /*left: 4px; */
-  /* z-index: -1; */
-  rotate: -3deg;
+  margin-top:8px ;
+  border-radius: 0px;
+  rotate: 3deg;
 }
 .button-stack .button-front {
   background-color: #FF7C00;
   color: #ffffff;
   height: 50px;
-  width: 250px;
-  border-radius: 10px;
+  width: 260px;
+  border-radius: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   font-weight: 600;
   font-size: 16px;
-  /* position: relative; */
-  /* top: -10px; */
-  /*left: 6px; */
-  /* z-index: 0; */
   opacity: 85%;
   border: none;
   box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);

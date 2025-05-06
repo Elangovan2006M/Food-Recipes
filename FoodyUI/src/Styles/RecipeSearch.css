@@ -171,18 +171,13 @@ input[type="checkbox"] {
   }
 
   .filters {
-    width: 100%;
+    width:25%;
     margin-top: 20px;
     margin-right: 0;
   }
 
   .search-input {
     width: 100%;
-  }
-
-  .search-button, .filter-button {
-    width: 100%;
-    margin: 10px 0;
   }
 
   .results .card-grid {

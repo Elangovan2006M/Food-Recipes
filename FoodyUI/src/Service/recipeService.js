@@ -2,10 +2,41 @@ import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:8080/api/recipes';
 
-// Get all recipes
-export const getAllRecipes = () => {
-  return axios.get(`${API_BASE_URL}`);
+// Get all recipes with pagination
+export const getAllRecipes = (page = 0, size = 10) => {
+  return axios.get(`${API_BASE_URL}`, {
+    params: { page, size }
+  });
 };
+
+// Search by cuisines
+export const searchByCuisines = (cuisines, page = 0, size = 10) => {
+  return axios.get(`${API_BASE_URL}/search/cuisines`, {
+    params: { cuisines, page, size }
+  });
+};
+
+// Search by total time
+export const searchByTotalTime = (time, page = 0, size = 10) => {
+  return axios.get(`${API_BASE_URL}/search/totalTime`, {
+    params: { time, page, size }
+  });
+};
+
+// Search by food type
+export const searchByFoodType = (type, page = 0, size = 10) => {
+  return axios.get(`${API_BASE_URL}/search/foodType`, {
+    params: { type, page, size }
+  });
+};
+
+// Search by difficulty level
+export const searchByDifficulty = (level, page = 0, size = 10) => {
+  return axios.get(`${API_BASE_URL}/search/difficulty`, {
+    params: { level, page, size }
+  });
+};
+
 
 // Get recipe by ID
 export const getRecipeById = (id) => {
@@ -24,33 +55,7 @@ export const searchByFoodName = (name) => {
   });
 };
 
-// Search by cuisines (GET /search/cuisines?cuisines=Indian)
-export const searchByCuisines = (cuisines) => {
-  return axios.get(`${API_BASE_URL}/search/cuisines`, {
-    params: { cuisines }
-  });
-};
 
-// Search by total time (GET /search/totalTime?time=30)
-export const searchByTotalTime = (time) => {
-  return axios.get(`${API_BASE_URL}/search/totalTime`, {
-    params: { time }
-  });
-};
-
-// Search by food type (GET /search/foodType?type=Breakfast)
-export const searchByFoodType = (type) => {
-  return axios.get(`${API_BASE_URL}/search/foodType`, {
-    params: { type }
-  });
-};
-
-// Search by difficulty level (GET /search/difficulty?level=Easy)
-export const searchByDifficulty = (level) => {
-  return axios.get(`${API_BASE_URL}/search/difficulty`, {
-    params: { level }
-  });
-};
 
 
 // Increment total views for a recipe

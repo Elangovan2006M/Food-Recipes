@@ -28,10 +28,26 @@ const RecipeSearch = () => {
   const [selectedDifficulties, setSelectedDifficulties] = useState([]);
   const [selectedTimes, setSelectedTimes] = useState([]);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const pageSize = 10;
+
   // Initial load to fetch all recipes
   useEffect(() => { 
     handleInitialLoad();
   }, []);
+
+  // Fetch recipes with pagination
+  const handleInitialLoad = async () => {
+    try {
+      const res = await getAllRecipes(currentPage, pageSize);
+      setSearchResults(res.data.content); 
+      setTotalPages(res.data.totalPages); 
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   // Handle search input and fetch suggestions
   const handleSearchInput = async (query) => {
@@ -50,13 +66,6 @@ const RecipeSearch = () => {
     }
   };
 
-
-  // Initial load to fetch all recipes
-  const handleInitialLoad = async () => {
-    const  res = await getAllRecipes();
-    setSearchResults(res.data);
-  }
-
   // Handle checkbox changes for filters
   const handleCheckboxChange = (value, setter, selectedArray) => {
     if (selectedArray.includes(value)) {
@@ -70,43 +79,42 @@ const RecipeSearch = () => {
   const handleFilterSearch = async () => {
     try {
       let results = [];
-  
-      //Fetch all data initially from API
-      const allData = await getAllRecipes();
-  
-      results = allData.data;
-  
-      //Apply filters on the fetched list
+
+      // Fetch filtered data based on current page
+      const filteredData = await getAllRecipes(currentPage, pageSize); // Include pagination in API call
+
+      results = filteredData.data.content; // Assuming 'content' holds the filtered list of recipes
+
+      // Apply filters on the fetched list
       if (selectedCuisines.length > 0) {
         results = results.filter(item =>
           selectedCuisines.includes(item.cuisines)
         );
       }
-  
+
       if (selectedFoodTypes.length > 0) {
         results = results.filter(item =>
           selectedFoodTypes.includes(item.foodType)
         );
       }
-  
+
       if (selectedDifficulties.length > 0) {
         results = results.filter(item =>
           selectedDifficulties.includes(item.difficulty)
         );
       }
-  
+
       if (selectedTimes.length > 0) {
         results = results.filter(item =>
           item.totalTime <= Math.max(...selectedTimes)
         );
       }
-  
+
       setSearchResults(results);
     } catch (error) {
       console.error(error);
     }
   };
-  
 
   // Handle search button click
   const handleSearchClick = async () => {
@@ -119,6 +127,12 @@ const RecipeSearch = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  // Handle page change
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    handleInitialLoad();
   };
 
   return (
@@ -143,7 +157,8 @@ const RecipeSearch = () => {
             </label>
           ))}
         </div>
-        {showCuisines ?<hr className='filter-line'/>: null}
+        {showCuisines ? <hr className='filter-line' /> : null}
+
         {/* FOOD TYPE */}
         <div className="filter-group">
           <h4 onClick={() => setShowFoodTypes(!showFoodTypes)} style={{ cursor: 'pointer' }}>
@@ -160,24 +175,8 @@ const RecipeSearch = () => {
             </label>
           ))}
         </div>
-        {showFoodTypes ?<hr className='filter-line'/>: null}
-        {/* DURATION */}
-        <div className="filter-group">
-          <h4 onClick={() => setShowDurations(!showDurations)} style={{ cursor: 'pointer' }}>
-            Duration {showDurations ? <FiChevronUp /> : <FiChevronDown />}
-          </h4>
-          {showDurations && timeOptions.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedTimes.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedTimes, selectedTimes)}
-              />
-              Under {item} min
-            </label>
-          ))}
-        </div>
-        {showDurations ?<hr className='filter-line'/>: null}
+        {showFoodTypes ? <hr className='filter-line' /> : null}
+
         {/* DIFFICULTY */}
         <div className="filter-group">
           <h4 onClick={() => setShowDifficulties(!showDifficulties)} style={{ cursor: 'pointer' }}>
@@ -194,7 +193,27 @@ const RecipeSearch = () => {
             </label>
           ))}
         </div>
+        {showDifficulties ? <hr className='filter-line' /> : null}
 
+        {/* DURATION */}
+        <div className="filter-group">
+          <h4 onClick={() => setShowDurations(!showDurations)} style={{ cursor: 'pointer' }}>
+            Duration {showDurations ? <FiChevronUp /> : <FiChevronDown />}
+          </h4>
+          {showDurations && timeOptions.map((item) => (
+            <label key={item} className="filter-option">
+              <input
+                type="checkbox"
+                checked={selectedTimes.includes(item)}
+                onChange={() => handleCheckboxChange(item, setSelectedTimes, selectedTimes)}
+              />
+              Under {item} min
+            </label>
+          ))}
+        </div>
+        {showDurations ? <hr className='filter-line' /> : null}
+
+        
         <button onClick={handleFilterSearch} className="filter-button">
           Apply
         </button>
@@ -202,7 +221,7 @@ const RecipeSearch = () => {
 
       {/* Main Content */}
       <section className="content">
-      <div className="search-header">
+        <div className="search-header">
           <div style={{ position: 'relative', width: '45%' }}>
             <input
               type="search"
@@ -234,7 +253,6 @@ const RecipeSearch = () => {
           </button>
         </div>
 
-
         <div className="results">
           {searchResults.length > 0 ? (
             <div className="card-grid">
@@ -245,6 +263,23 @@ const RecipeSearch = () => {
           ) : (
             <p>No results to display.</p>
           )}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="pagination-controls">
+          <button 
+            onClick={() => handlePageChange(currentPage - 1)} 
+            disabled={currentPage === 0}
+          >
+            Previous
+          </button>
+          <span>{`Page ${currentPage + 1} of ${totalPages}`}</span>
+          <button 
+            onClick={() => handlePageChange(currentPage + 1)} 
+            disabled={currentPage === totalPages - 1}
+          >
+            Next
+          </button>
         </div>
       </section>
     </div>

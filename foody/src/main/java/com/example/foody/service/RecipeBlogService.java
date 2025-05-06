@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RecipeBlogService {
 
-    private final RecipeBlogRepository recipeBlogRepository;
+    private  RecipeBlogRepository recipeBlogRepository;
 
     public List<RecipeBlog> getAllBlogs() {
         return recipeBlogRepository.findAll();

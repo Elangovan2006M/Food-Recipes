@@ -8,6 +8,17 @@ const Recipe = () => {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const { selectedCuisine } = useRecipe(); // Get cuisine from context
 
+   // Pagination state
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(1);
+    const pageSize = 10;
+
+    // Handle page change
+    const handlePageChange = (newPage) => {
+      setCurrentPage(newPage);
+      fetchAllRecipes();
+    };
+
   useEffect(() => {
     if (selectedCuisine) {
       fetchRecipesByCuisine(selectedCuisine);
@@ -17,13 +28,15 @@ const Recipe = () => {
   }, [selectedCuisine]);
 
   const fetchAllRecipes = async () => {
-    try {
-      const response = await getAllRecipes();
-      setFilteredRecipes(response.data);
-    } catch (error) {
-      console.log("Error displaying all recipes:", error);
-    }
-  };
+      try {
+        const res = await getAllRecipes(currentPage, pageSize);
+        setFilteredRecipes(res.data.content); 
+        setTotalPages(res.data.totalPages); 
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
 
   const fetchRecipesByCuisine = async (cuisine) => {
     try {
@@ -52,6 +65,22 @@ const Recipe = () => {
           )}
         </div>
       </div>
+      {/* Pagination Controls */}
+      <div className="pagination-controls">
+          <button 
+            onClick={() => handlePageChange(currentPage - 1)} 
+            disabled={currentPage === 0}
+          >
+            Previous
+          </button>
+          <span>{`Page ${currentPage + 1} of ${totalPages}`}</span>
+          <button 
+            onClick={() => handlePageChange(currentPage + 1)} 
+            disabled={currentPage === totalPages - 1}
+          >
+            Next
+          </button>
+        </div>
     </div>
   );
 };

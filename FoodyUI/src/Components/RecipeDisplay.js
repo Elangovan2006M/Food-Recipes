@@ -77,7 +77,7 @@ const RecipeDisplay = () => {
         </div>
         <div className="button-stack">
           <div className="button-back"></div>
-          <h3 className="button-front"> Follow The Instructions</h3>
+          <button className="button-front"> Follow The Instructions</button>
         </div>
 
         {selectedRecipe.instructions.stepDescription.split('$').map((step, index) => (
