@@ -18,7 +18,8 @@ section {
     margin-top: 2rem;
 }
 
-h2 {
+.blog-page-titles
+{
     margin-bottom: 0.5rem;
     color: #ff6f00;
 }

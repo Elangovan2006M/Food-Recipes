@@ -180,7 +180,7 @@ const Home = () => {
                         <div className="button-back"></div>
                         <button className="button-front">Best Articles For You  <IoNewspaperOutline  className="topic-icons"/></button>
                     </div>
-                    <div className="blog-container">
+                    <div className="home-blog-container">
                         <div className="kitchen-banner">
                             <div className="kitchen-text">
                                 <h2>

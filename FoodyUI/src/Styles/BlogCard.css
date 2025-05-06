@@ -64,7 +64,7 @@
   justify-content: space-between;
 }
 
-.view-button {
+.blog-info .view-button {
   background: none;
   border: none;
   color: #f97316; /* orange-500 */
