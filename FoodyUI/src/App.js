@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Blog from './Components/Blog';
 import Recipe from './Components/Recipe';
+import BlogRecipePage from './Components/BlogRecipePage';
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
           <Route path="/search" element={<RecipeSearch />} />
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/recipes" element={<RecipeDisplay />} />
-          <Route path="/blogs/view" element={<Blog/>} />
+          <Route path="/blogs" element={<Blog/>} />
+          <Route path="/blogs/view" element={<BlogRecipePage/>}/>
         </Routes>
       
         <Footer/>
