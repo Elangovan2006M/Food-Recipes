@@ -3,7 +3,9 @@ package com.example.foody.controller;
 import com.example.foody.model.Nutrition;
 import com.example.foody.model.Recipe;
 import com.example.foody.service.RecipeService;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,7 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping
-    public List<Recipe> getAllRecipes() {
-        return recipeService.getAllRecipes();
-    }
-
+    
 //     @GetMapping("/{id}")
 //     public ResponseEntity<Recipe> getRecipeAndTrackView(@PathVariable Long id, HttpServletRequest request) {
 //         String ip = request.getRemoteAddr();
@@ -60,24 +58,45 @@ public class RecipeController {
         return recipeService.searchByFoodName(name);
     }
 
-    @GetMapping("/search/cuisines")
-    public List<Recipe> searchByCuisines(@RequestParam String cuisines) {
-        return recipeService.searchByCuisines(cuisines);
+    @GetMapping
+    public ResponseEntity<?> getAllRecipes(@RequestParam(defaultValue = "0") Integer page,
+                                        @RequestParam(defaultValue = "10") Integer size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return ResponseEntity.ok(recipeService.getAllRecipes(pageable));
     }
 
+
+    @GetMapping("/search/cuisines")
+    public Page<Recipe> searchByCuisines(@RequestParam String cuisines,
+                                        @RequestParam(defaultValue = "0") int page,
+                                        @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeService.searchByCuisines(cuisines, pageable);
+    }
+
+
     @GetMapping("/search/totalTime")
-    public List<Recipe> searchByTotalTime(@RequestParam double time) {
-        return recipeService.searchByTotalTime(time);
+    public Page<Recipe> searchByTotalTime(@RequestParam double time,
+                                        @RequestParam(defaultValue = "0") int page,
+                                        @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeService.searchByTotalTime(time, pageable);
     }
 
     @GetMapping("/search/foodType")
-    public List<Recipe> searchByFoodType(@RequestParam String type) {
-        return recipeService.searchByFoodType(type);
+    public Page<Recipe> searchByFoodType(@RequestParam String type,
+                                        @RequestParam(defaultValue = "0") int page,
+                                        @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeService.searchByFoodType(type, pageable);
     }
 
     @GetMapping("/search/difficulty")
-    public List<Recipe> searchByDifficulty(@RequestParam String level) {
-        return recipeService.searchByDifficulty(level);
+    public Page<Recipe> searchByDifficulty(@RequestParam String level,
+                                        @RequestParam(defaultValue = "0") int page,
+                                        @RequestParam(defaultValue = "10") int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return recipeService.searchByDifficulty(level,pageable);
     }
     @GetMapping("/popular")
     public List<Recipe> getPopularRecipes() {

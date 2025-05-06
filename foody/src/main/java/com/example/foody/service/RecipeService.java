@@ -5,7 +5,8 @@ import com.example.foody.model.Recipe;
 import com.example.foody.model.ViewRecipe;
 import com.example.foody.repository.RecipeRepository;
 import com.example.foody.repository.ViewRecipeRepository;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,21 +55,27 @@ public class RecipeService {
         return recipeRepository.findByFoodNameContainingIgnoreCase(foodName);
     }
     
-    public List<Recipe> searchByCuisines(String cuisines) {
-        return recipeRepository.findByCuisinesContainingIgnoreCase(cuisines);
+    
+    public Page<Recipe> getAllRecipes(Pageable pageable) {
+        return recipeRepository.findAll(pageable);
     }
     
-    public List<Recipe> searchByTotalTime(double totalTime) {
-        return recipeRepository.findByTotalTimeLessThanEqual(totalTime);
+    public Page<Recipe> searchByCuisines(String cuisines, Pageable pageable) {
+        return recipeRepository.findByCuisinesContainingIgnoreCase(cuisines, pageable);
     }
     
-    public List<Recipe> searchByFoodType(String foodType) {
-        return recipeRepository.findByFoodTypeIgnoreCase(foodType);
+    public Page<Recipe> searchByTotalTime(double totalTime, Pageable pageable) {
+        return recipeRepository.findByTotalTimeLessThanEqual(totalTime, pageable);
     }
     
-    public List<Recipe> searchByDifficulty(String difficulty) {
-        return recipeRepository.findByDifficultyIgnoreCase(difficulty);
+    public Page<Recipe> searchByFoodType(String foodType, Pageable pageable) {
+        return recipeRepository.findByFoodTypeIgnoreCase(foodType, pageable);
     }
+    
+    public Page<Recipe> searchByDifficulty(String difficulty, Pageable pageable) {
+        return recipeRepository.findByDifficultyIgnoreCase(difficulty, pageable);
+    }
+    
     
     //View Recipe - Trending and popular
     
