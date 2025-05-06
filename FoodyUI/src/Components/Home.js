@@ -78,7 +78,7 @@ const Home = () => {
                 </div>
                     <div className="button-stack">
                         <div className="button-back"></div>
-                        <h3 className="button-front">Trending recipes <MdTrendingUp size={24} color="#ffffff" /></h3>
+                        <button className="button-front">Trending recipes <MdTrendingUp size={24} color="#ffffff" /></button>
                     </div>
                     <button className="view-all" >View All &gt;</button>
                     <div className="home-trending-cards">
@@ -100,7 +100,7 @@ const Home = () => {
                     <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
-                        <h3 className="button-front">Explore By Cuisines <FaMapMarkedAlt className="topic-icons" /></h3>
+                        <button className="button-front">Explore By Cuisines <FaMapMarkedAlt className="topic-icons" /></button>
                     </div>
                     <div className="cuisine-container">
                         <div className="cuisine-box" onClick={() => handleCuisineSelect('Indian')}>
@@ -156,7 +156,7 @@ const Home = () => {
                     </div>
                         <div className="button-stack">
                             <div className="button-back"></div>
-                        <h3 className="button-front">Popular Picks<FaShieldHeart className="topic-icons" /></h3>
+                            <button className="button-front">Popular Picks<FaShieldHeart className="topic-icons" /></button>
                         </div>
                         <button className="view-all" >View All &gt;</button>
                         <div className="home-popular-cards">
@@ -178,7 +178,7 @@ const Home = () => {
                     <h2><span className="home-highlight-style">From Our</span> Blog</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
-                        <h3 className="button-front">Best Articles For You  <IoNewspaperOutline  className="topic-icons"/></h3>
+                        <button className="button-front">Best Articles For You  <IoNewspaperOutline  className="topic-icons"/></button>
                     </div>
                     <div className="blog-container">
                         <div className="kitchen-banner">
@@ -204,7 +204,7 @@ const Home = () => {
                     <h2><span className="home-highlight-style">About</span> Us</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
-                        <h3 className="button-front">Best Articles For You  <LuMessagesSquare  className="topic-icons"/></h3>
+                        <button className="button-front">Best Articles For You  <LuMessagesSquare  className="topic-icons"/></button>
                     </div>
                     <div className="about-container">
                         <div className="feature-banner">

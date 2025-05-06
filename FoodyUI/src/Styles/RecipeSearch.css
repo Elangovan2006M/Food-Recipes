@@ -162,3 +162,30 @@ input[type="checkbox"] {
   background: #ff7b00;
   color: white;
 }
+
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .filters {
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-button, .filter-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .results .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
