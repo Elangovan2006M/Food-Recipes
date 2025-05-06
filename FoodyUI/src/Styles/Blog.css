@@ -1,0 +1,26 @@
+/* Blog.css */
+.blog-recent-card .blog-card.featured {
+    flex-direction: row;
+    max-width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+.blog-recent-card .blog-card.featured img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+.recent-filter, .blog-subbtn {
+    background: #ff7900;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.recent-filter:hover, .blog-subbtn:hover {
+    background: #e66e00;
+}

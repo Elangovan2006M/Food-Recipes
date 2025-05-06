@@ -37,7 +37,7 @@ const handleSearch = () =>
         <div className={`nav-content ${isMobileMenuOpen ? 'open' : ''}`}>
           <li><a href="/">Home</a></li>
           <li><a href="/recipe">Recipes</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="/blogs/view">Blog</a></li>
           <li><a href="/">About Us</a></li>
         <div className='nav-search'>
           <FiSearch className='search-icon' onClick={handleSearch}/>

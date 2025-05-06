@@ -22,7 +22,7 @@ const Home = () => {
   const [popularRecipes, setPopularRecipes]   = useState([]);
 
     const handleBlog = () => {
-        navigate('/blog');
+        navigate('/blogs/view');
     }
 
 
