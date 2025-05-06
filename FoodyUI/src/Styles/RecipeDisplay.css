@@ -297,3 +297,86 @@
 
 }
 
+
+@media screen and (max-width: 768px) {
+
+  .recipe-display-container {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  .media-ingredients-wrapper {
+    flex-direction: column;
+  }
+
+  .video-box {
+    padding-top: 56.25%; /* Adjust to 16:9 aspect ratio for narrow screens */
+    width: 100%;
+  }
+
+  .recipe-video {
+    left: 0;
+    width: 100%;
+  }
+
+  .ingredients-box {
+    padding: 15px;
+    border-left: none;
+    border-top: 2px solid #e86b00;
+    margin-top: 20px;
+  }
+
+  .metadata-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .meta-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .overview-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .overview-box .overview-text {
+    width: 100%;
+  }
+
+  .nutrition-box {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .instructions-section {
+    padding: 15px;
+  }
+
+  .instruction-step {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .instruction-step h4 {
+    width: auto;
+  }
+
+  .full-align {
+    flex-direction: column;
+    gap: 15px;
+    top: 0;
+  }
+
+  .button-stack {
+    width: 100%;
+    bottom: 0;
+  }
+
+  .button-stack .button-back,
+  .button-stack .button-front {
+    width: 100%;
+  }
+}
