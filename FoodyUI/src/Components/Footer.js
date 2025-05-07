@@ -14,7 +14,7 @@ const Footer = () =>
     const {setSelectedDifficulty} = useRecipe();
     const {setSelectedTime} = useRecipe();
 
-    const handleCuisineLink = (cuisine) => {
+    const handleCuisineSelect = (cuisine) => {
         setSelectedCuisine(cuisine);
         setSelectedDifficulty('');
         setSelectedFoodType('');
@@ -80,6 +80,7 @@ const Footer = () =>
                     <li className="quick-link" onClick={() => handleFoodTypeLink('Breakfast')}style={{ cursor:"pointer"}}>Breakfast Ideas</li>
                     <li className="quick-link" onClick={() => handleDifficultyLink('Easy')}style={{ cursor:"pointer"}}>Easy Recipes</li>
                     <li className="quick-link" onClick={() => handleTimeLink(15)}style={{ cursor:"pointer"}}>15 minute Meals</li>
+
                     </ul>
                 </div>
 
