@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FiChevronDown, FiChevronUp, FiSearch } from 'react-icons/fi';
 import RecipeCard from './RecipeCard';
+import { MdOutlineKeyboardArrowLeft,MdOutlineKeyboardArrowRight } from "react-icons/md";
 import {
   searchByFoodName,
   getAllRecipes,
@@ -29,7 +30,7 @@ const RecipeSearch = () => {
   const [selectedTimes, setSelectedTimes] = useState([]);
 
   // Pagination state
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const pageSize = 10;
 
@@ -271,14 +272,14 @@ const RecipeSearch = () => {
             onClick={() => handlePageChange(currentPage - 1)} 
             disabled={currentPage === 0}
           >
-            Previous
+            <MdOutlineKeyboardArrowLeft />
           </button>
           <span>{`Page ${currentPage + 1} of ${totalPages}`}</span>
           <button 
             onClick={() => handlePageChange(currentPage + 1)} 
             disabled={currentPage === totalPages - 1}
           >
-            Next
+            <MdOutlineKeyboardArrowRight />
           </button>
         </div>
       </section>
