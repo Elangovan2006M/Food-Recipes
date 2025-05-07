@@ -1,4 +1,4 @@
-.recipe-container {
+.recipe-page-container {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -6,17 +6,17 @@
     margin-bottom: 20px;
   }
   
-  .card-content {
+  .recipe-card-content {
     /* REMOVE display: flex and justify-content: center */
     /* Let the grid inside take full width */
     width: 100%;
   }
   
-  .result {
+  .recipe-result {
     width: 100%;
   }
   
-  .card-grid {
+  .recipe-card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
     gap: 20px;

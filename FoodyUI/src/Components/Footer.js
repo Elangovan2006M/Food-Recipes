@@ -1,10 +1,20 @@
-import React from "react";
+import React, { use } from "react";
+import { useNavigate } from "react-router-dom";
+import { useRecipe } from "../Service/RecipeContext";
+
 import '../Styles/Footer.css';
 import PlateStream from '../Assests/Platestream.png';
 import { FaFacebook, FaTwitter, FaInstagram , FaWhatsapp} from "react-icons/fa";
 
 const Footer = () =>
 {
+    const navigate = useNavigate();
+    const {setSelectedCuisine} = useRecipe();
+
+    const handleCuisineLink = (cuisine) => {
+        setSelectedCuisine(cuisine);
+        navigate('/recipe');
+    }
     return (
         <div className="footer-container">
             <div className="footer">
@@ -26,7 +36,7 @@ const Footer = () =>
                     <ul>
                     <li><a href="\">Home</a></li>
                     <li><a href="\recipe">Recipes</a></li>
-                    <li><a href="\blog">Blog</a></li>
+                    <li><a href="\blogs">Blog</a></li>
                     <li><a href="\aboutus">About Us</a></li>
                     <li><a href="\contact">Contact</a></li>
                     </ul>
@@ -35,7 +45,7 @@ const Footer = () =>
                     <h3>Popular Categories</h3>
                     <ul>
                     <li><a href="\">Trending Recipes</a></li>
-                    <li><a href="\">Indian Recipes</a></li>
+                    <li onClick={() => handleCuisineLink('Indian')}>Indian Recipes</li>
                     <li><a href="\">Breakfast Ideas</a></li>
                     <li><a href="\">Easy Recipes</a></li>
                     <li><a href="\">5 minute Meals</a></li>
