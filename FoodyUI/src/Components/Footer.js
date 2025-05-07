@@ -10,11 +10,42 @@ const Footer = () =>
 {
     const navigate = useNavigate();
     const {setSelectedCuisine} = useRecipe();
+    const {setSelectedFoodType} = useRecipe();
+    const {setSelectedDifficulty} = useRecipe();
+    const {setSelectedTime} = useRecipe();
 
     const handleCuisineLink = (cuisine) => {
         setSelectedCuisine(cuisine);
+        setSelectedDifficulty('');
+        setSelectedFoodType('');
+        setSelectedTime('');
         navigate('/recipe');
     }
+
+    const handleFoodTypeLink = (foodType) => {
+        setSelectedFoodType(foodType);
+        setSelectedCuisine('');
+        setSelectedDifficulty('');
+        setSelectedTime('');
+        navigate('/recipe');
+    }
+
+    const handleDifficultyLink = (difficulty) => {
+        setSelectedDifficulty(difficulty);
+        setSelectedCuisine('');
+        setSelectedFoodType('');
+        setSelectedTime('');
+        navigate('/recipe');
+    }
+
+    const handleTimeLink = (time) => {
+        setSelectedTime(time);
+        setSelectedCuisine('');
+        setSelectedFoodType('');
+        setSelectedDifficulty('');
+        navigate('/recipe');
+    }
+
     return (
         <div className="footer-container">
             <div className="footer">
@@ -44,11 +75,11 @@ const Footer = () =>
                 <div className="categories">
                     <h3>Popular Categories</h3>
                     <ul>
-                    <li><a href="\">Trending Recipes</a></li>
-                    <li onClick={() => handleCuisineLink('Indian')}>Indian Recipes</li>
-                    <li><a href="\">Breakfast Ideas</a></li>
-                    <li><a href="\">Easy Recipes</a></li>
-                    <li><a href="\">5 minute Meals</a></li>
+                    <li className="quick-link"><a href="\">Trending Recipes</a></li>
+                    <li className="quick-link" onClick={() => handleCuisineLink('Indian')} style={{ cursor:"pointer"}}>Indian Recipes</li>
+                    <li className="quick-link" onClick={() => handleFoodTypeLink('Breakfast')}style={{ cursor:"pointer"}}>Breakfast Ideas</li>
+                    <li className="quick-link" onClick={() => handleDifficultyLink('Easy')}style={{ cursor:"pointer"}}>Easy Recipes</li>
+                    <li className="quick-link" onClick={() => handleTimeLink(15)}style={{ cursor:"pointer"}}>15 minute Meals</li>
                     </ul>
                 </div>
 

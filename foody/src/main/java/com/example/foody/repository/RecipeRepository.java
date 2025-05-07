@@ -26,7 +26,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     //Fetch recipes by difficulty with pagination
     Page<Recipe> findByDifficultyIgnoreCase(String difficulty, Pageable pageable);
     //Popular views
-    @Query("SELECT r FROM Recipe r ORDER BY r.totalViews DESC")
+    @Query("SELECT r FROM Recipe r ORDER BY r.totalViews DESC LIMIT 10")
     List<Recipe> findTopViewedRecipes();
 
 }
