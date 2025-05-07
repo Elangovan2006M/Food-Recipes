@@ -69,7 +69,10 @@ const Home = () => {
                 <div className="home-banner">
                     <img src={Brand_Img} alt="brand-image" className="brand-image"></img>
                 </div>
-
+                <div className="home-welcome">
+                    <h1>Vanakkam! <span className="brand-name">Plate Stream</span></h1>
+                    <p>Binge-worthy bites, one recipe video at a time.</p>
+                </div>
                 {/* Trending Section */}
 
                 <section className="home-trending">

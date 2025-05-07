@@ -11,7 +11,7 @@ const Footer = () =>
     const navigate = useNavigate();
     const {setSelectedCuisine} = useRecipe();
 
-    const handleCuisineLink = (cuisine) => {
+    const handleCuisineSelect = (cuisine) => {
         setSelectedCuisine(cuisine);
         navigate('/recipe');
     }
@@ -45,7 +45,7 @@ const Footer = () =>
                     <h3>Popular Categories</h3>
                     <ul>
                     <li><a href="\">Trending Recipes</a></li>
-                    <li onClick={() => handleCuisineLink('Indian')}>Indian Recipes</li>
+                    <li onClick={() => handleCuisineSelect('Indian')}>Indian Recipes</li>
                     <li><a href="\">Breakfast Ideas</a></li>
                     <li><a href="\">Easy Recipes</a></li>
                     <li><a href="\">5 minute Meals</a></li>
