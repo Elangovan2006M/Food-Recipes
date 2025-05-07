@@ -9,6 +9,7 @@ import Home from './Components/Home';
 import Blog from './Components/Blog';
 import Recipe from './Components/Recipe';
 import BlogRecipePage from './Components/BlogRecipePage';
+import AboutUs from './Components/About';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/recipes" element={<RecipeDisplay />} />
           <Route path="/blogs" element={<Blog/>} />
           <Route path="/blogs/view" element={<BlogRecipePage/>}/>
+          <Route path='/aboutus' element={<AboutUs/>}/>
         </Routes>
       
         <Footer/>
