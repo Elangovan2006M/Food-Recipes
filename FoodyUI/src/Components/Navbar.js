@@ -37,7 +37,7 @@ const Navbar = () => {
           <li><a href="/">Home</a></li>
           <li><a href="/recipe">Recipes</a></li>
           <li><a href="/blogs">Blog</a></li>
-          <li><a href="/">About Us</a></li>
+          <li><a href="/aboutus">About Us</a></li>
           <li className="mobile-search">
             <FiSearch className="search-icon" onClick={handleSearch} />
           </li>
