@@ -1,0 +1,124 @@
+.about-us-container {
+    margin: 40px 60px;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .about-us-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .about-us-header h1 {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .about-us-header h1 span {
+    color: #ff6f00;
+  }
+  
+  .about-us-header p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .about-us-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .about-us-left {
+    flex: 1 1 45%;
+  }
+  .about-us-banner {
+    width: 100%;
+    border-radius: 25px;
+    margin-bottom: 20px;
+  }
+
+  .about-us-title {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .about-us-logo {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-left h2 {
+    color: #ff6f00;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-left p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-right {
+    flex: 1 1 45%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .about-us-feature {
+    width: 45%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .about-us-feature:hover {
+    transform: translateY(-5px);
+  }
+  
+  .about-icon {
+    font-size: 32px;
+    color: #ff6f00;
+    margin-bottom: 10px;
+  }
+  
+  .about-us-feature p {
+    margin: 0;
+    color: #444;
+  }
+  
+  .about-us-cta {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .about-us-cta h3 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .about-us-cta button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .about-us-cta button:hover {
+    background-color: #e44a2b;
+  }
+  
