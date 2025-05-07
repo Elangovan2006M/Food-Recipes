@@ -22,4 +22,43 @@
     gap: 20px;
   }
   
+  .pagination-controls{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .prev-button {
+    padding: 10px 10px;
+    background-color: #ff7b00;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 20px; */
+    display: flex;
+  }
+  .next-button {
+    padding: 10px 10px;
+    background-color: #ff7b00;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    display: flex;
+  }
+  .page-numbers {
+    font-size: 14px;
+    color: #828282;
+    margin: 0px 5px 0px 5px;
+
+  }
   

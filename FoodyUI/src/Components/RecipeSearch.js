@@ -12,7 +12,7 @@ const RecipeSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [foodName, setFoodName] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-
+  // Filter options
   const cuisines = ['Indian', 'French', 'Italian', 'Japanese','Chinese','Mexican','Thai','Malaysian','Australian','American','Korean'];
   const foodTypes = ['Breakfast', 'Lunch', 'Dinner'];
   const difficulties = ['Easy', 'Medium', 'Hard'];
@@ -24,6 +24,7 @@ const RecipeSearch = () => {
   const [showDurations, setShowDurations] = useState(false);
   const [showDifficulties, setShowDifficulties] = useState(false);
 
+  // Filter states
   const [selectedCuisines, setSelectedCuisines] = useState([]);
   const [selectedFoodTypes, setSelectedFoodTypes] = useState([]);
   const [selectedDifficulties, setSelectedDifficulties] = useState([]);
@@ -32,23 +33,24 @@ const RecipeSearch = () => {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  const pageSize = 10;
+  const pageSize = 8;
 
   // Initial load to fetch all recipes
   useEffect(() => { 
     handleInitialLoad();
   }, []);
 
-  // Fetch recipes with pagination
-  const handleInitialLoad = async () => {
+ // Fetch recipes with pagination
+  const handleInitialLoad = async (page = currentPage) => {
     try {
-      const res = await getAllRecipes(currentPage, pageSize);
+      const res = await getAllRecipes(page, pageSize);
       setSearchResults(res.data.content); 
       setTotalPages(res.data.totalPages); 
     } catch (error) {
       console.error(error);
     }
   };
+
 
   // Handle search input and fetch suggestions
   const handleSearchInput = async (query) => {
@@ -133,8 +135,9 @@ const RecipeSearch = () => {
   // Handle page change
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    handleInitialLoad();
+    handleInitialLoad(newPage); 
   };
+  
 
   return (
     <div className="main-container">
@@ -268,14 +271,14 @@ const RecipeSearch = () => {
 
         {/* Pagination Controls */}
         <div className="pagination-controls">
-          <button 
+          <button className='prev-button'
             onClick={() => handlePageChange(currentPage - 1)} 
             disabled={currentPage === 0}
           >
             <MdOutlineKeyboardArrowLeft />
           </button>
-          <span>{`Page ${currentPage + 1} of ${totalPages}`}</span>
-          <button 
+          <span className='page-numbers'>{`${currentPage + 1} of ${totalPages}`}</span>
+          <button  className='next-button'
             onClick={() => handlePageChange(currentPage + 1)} 
             disabled={currentPage === totalPages - 1}
           >
