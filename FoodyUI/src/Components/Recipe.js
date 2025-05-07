@@ -48,14 +48,14 @@ const Recipe = () => {
   };
 
   return (
-    <div className='recipe-container'>
+    <div className='recipe-page-container'>
       <h2 className='recipe-heading'>
         {selectedCuisine ? `${selectedCuisine} Recipes` : "All Recipes"}
       </h2>
-      <div className='card-content'>
-        <div className='result'>
+      <div className='recipe-card-content'>
+        <div className='recipe-result'>
           {filteredRecipes.length > 0 ? (
-            <div className='card-grid'>
+            <div className='recipe-card-grid'>
               {filteredRecipes.map((recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}
