@@ -14,7 +14,7 @@ const Footer = () =>
     const {setSelectedDifficulty} = useRecipe();
     const {setSelectedTime} = useRecipe();
 
-    const handleCuisineSelect = (cuisine) => {
+    const handleCuisineLink = (cuisine) => {
         setSelectedCuisine(cuisine);
         setSelectedDifficulty('');
         setSelectedFoodType('');
