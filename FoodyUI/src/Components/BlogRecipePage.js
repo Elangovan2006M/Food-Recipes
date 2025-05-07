@@ -1,19 +1,24 @@
 import React from "react";
 import { useBlog } from "../Service/BlogContext";
+import { FiChevronRight, FiCheckCircle } from "react-icons/fi";
 
 import "../Styles/BlogPage.css";
 
-const RecipeBlogPage= () => {
+const RecipeBlogPage = () => {
     const { selectedBlog } = useBlog();
 
-    if(!selectedBlog){
+    if (!selectedBlog) {
         return <h2>Blog not found!</h2>;
-      }
+    }
+
     return (
         <div className="recipe-container">
+            <div className="recipes-content">
             <h1>{selectedBlog.recipeName}</h1>
             <img className="main-img" src={selectedBlog.recipeImgUrl} alt={selectedBlog.recipeName} />
-
+            <button className="view-recipe-button">View Recipe</button>
+            </div>
+            <div>
             <section className="overview">
                 <h2 className="blog-page-titles">Overview</h2>
                 <p>{selectedBlog.overview}</p>
@@ -31,14 +36,18 @@ const RecipeBlogPage= () => {
             <section className="variations">
                 <h2 className="blog-page-titles">Variations</h2>
                 {selectedBlog.variations.split("\n").map((v, i) => (
-                    <p key={i}>🔸 {v}</p>
+                    <p key={i}>
+                        <FiChevronRight className="contrast-icon" /> {v}
+                    </p>
                 ))}
             </section>
 
             <section className="pro-tips">
                 <h2 className="blog-page-titles">Pro Tips</h2>
                 {selectedBlog.proTips.split("\n").map((tip, i) => (
-                    <p key={i}>✅ {tip}</p>
+                    <p key={i}>
+                        <FiCheckCircle className="contrast-icon" /> {tip}
+                    </p>
                 ))}
             </section>
 
@@ -51,6 +60,7 @@ const RecipeBlogPage= () => {
                 <h2 className="blog-page-titles">Best Served With</h2>
                 <p>{selectedBlog.bestServedWith}</p>
             </section>
+            </div>
         </div>
     );
 };
