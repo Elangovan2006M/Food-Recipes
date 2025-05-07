@@ -3,7 +3,7 @@ import { getAllBlogs } from "../Service/BlogService";
 import RecentBlogCard from "./RecentBlogCard";
 import BlogCard from "./BlogCard";
 import { useBlog } from "../Service/BlogContext";
-
+import { GrArticle } from "react-icons/gr";
 import '../Styles/Blog.css';
 
 const Blog = () => {
@@ -30,7 +30,7 @@ const Blog = () => {
                 <h1>Recent <span className="blog-highlight-style ">Posts</span></h1>
                 <div className="blog-stack">
                     <div className="blog-back"></div>
-                    <button className="blog-front">Read Recent Articles 🗂</button>
+                    <button className="blog-front">Read Recent Articles <GrArticle /></button>
                 </div>
                 
                 <div className="blog-recent-card">
@@ -43,7 +43,7 @@ const Blog = () => {
             {/*  Section 2: All Blogs */}
             <div className="our-blog">
                 <div className="blog-title">
-                    <h1>Our <span className="blog-highlight-style ">Blog</span></h1>
+                    <h1>Our <span className="blog-highlight-style ">Blogs</span></h1>
                     <div className="blog-stack">
                         <div className="blog-back"></div>
                         <button className="blog-front">Insights you can use ↗</button>

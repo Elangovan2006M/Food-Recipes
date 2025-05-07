@@ -1,3 +1,4 @@
+/* Container */
 .navbar-container {
   width: 100%;
   display: flex;
@@ -9,9 +10,9 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  /* margin-bottom: 80px; */
 }
 
+/* Main Nav Wrapper */
 .navbar {
   display: flex;
   align-items: center;
@@ -23,17 +24,14 @@
   flex-wrap: wrap;
 }
 
+/* Brand + Logo */
 .nav-brand {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
-.nav-brand h2:hover{
-  color: #000000;
-}
-
-.navbar img {
+.nav-brand img {
   height: 35px;
   width: 35px;
   object-fit: contain;
@@ -47,7 +45,12 @@
   color: #ffffff;
 }
 
-.nav-content {
+.nav-brand h2:hover {
+  color: #000000;
+}
+
+/* Nav Links */
+.nav-links {
   display: flex;
   gap: 30px;
   list-style: none;
@@ -55,17 +58,18 @@
   padding: 0;
 }
 
-.nav-content li a {
+.nav-links li a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.nav-content li a:hover {
+.nav-links li a:hover {
   color: #000000;
 }
 
+/* Search Icon */
 .nav-search {
   position: relative;
   display: flex;
@@ -74,22 +78,19 @@
 }
 
 .search-icon {
-  position: absolute;
-  right: 10px;
   font-size: 20px;
   font-weight: bold;
   color: white;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
-.search-icon:hover
-{
+.search-icon:hover {
   color: #000000;
-  text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+  text-shadow: 0 0 10px #000000;
 }
 
-/* Hamburger Menu */
+/* Hamburger Icon */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -97,18 +98,28 @@
   cursor: pointer;
 }
 
-/* Responsive Design
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .nav-content {
+  .nav-links {
     flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     display: none;
     background-color: #EA7300;
-    padding: 10px 0;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
 
-  .nav-content.open {
+  .nav-links.open {
     display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 10px 0;
   }
 
   .nav-search {
@@ -116,11 +127,7 @@
     width: 100%;
   }
 
-  .nav-search input {
-    width: 100%;
-  }
-
   .hamburger {
     display: block;
   }
-} */
+}

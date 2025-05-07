@@ -120,83 +120,7 @@ const RecipeSearch = () => {
 
   return (
     <div className="main-container">
-      <div className="filters">
-        <h3 className="filter-word">Filters</h3>
-
-        {/* CUISINES */}
-        <div className="filter-group">
-          <h4 onClick={() => setShowCuisines(!showCuisines)} style={{ cursor: 'pointer' }}>
-            Cuisines {showCuisines ? <FiChevronUp /> : <FiChevronDown />}
-          </h4>
-          {showCuisines && cuisines.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedCuisines.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedCuisines, selectedCuisines)}
-              />
-              {item}
-            </label>
-          ))}
-        </div>
-        {showCuisines && <hr className='filter-line' />}
-
-        {/* FOOD TYPES */}
-        <div className="filter-group">
-          <h4 onClick={() => setShowFoodTypes(!showFoodTypes)} style={{ cursor: 'pointer' }}>
-            Food Type {showFoodTypes ? <FiChevronUp /> : <FiChevronDown />}
-          </h4>
-          {showFoodTypes && foodTypes.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedFoodTypes.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedFoodTypes, selectedFoodTypes)}
-              />
-              {item}
-            </label>
-          ))}
-        </div>
-        {showFoodTypes && <hr className='filter-line' />}
-
-        {/* DIFFICULTY */}
-        <div className="filter-group">
-          <h4 onClick={() => setShowDifficulties(!showDifficulties)} style={{ cursor: 'pointer' }}>
-            Difficulty {showDifficulties ? <FiChevronUp /> : <FiChevronDown />}
-          </h4>
-          {showDifficulties && difficulties.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedDifficulties.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedDifficulties, selectedDifficulties)}
-              />
-              {item}
-            </label>
-          ))}
-        </div>
-        {showDifficulties && <hr className='filter-line' />}
-
-        {/* DURATION */}
-        <div className="filter-group">
-          <h4 onClick={() => setShowDurations(!showDurations)} style={{ cursor: 'pointer' }}>
-            Duration {showDurations ? <FiChevronUp /> : <FiChevronDown />}
-          </h4>
-          {showDurations && timeOptions.map((item) => (
-            <label key={item} className="filter-option">
-              <input
-                type="checkbox"
-                checked={selectedTimes.includes(item)}
-                onChange={() => handleCheckboxChange(item, setSelectedTimes, selectedTimes)}
-              />
-              Under {item} min
-            </label>
-          ))}
-        </div>
-
-        <button onClick={() => handleFilterSearch(0)} className="filter-button">Apply</button>
-      </div>
-
+     
       <section className="content">
         <div className="search-header">
           <div style={{ position: 'relative', width: '45%' }}>
@@ -222,31 +146,109 @@ const RecipeSearch = () => {
           </button>
         </div>
 
-        <div className="results">
-          {searchResults.length > 0 ? (
-            <div className="card-grid">
-              {searchResults.map((recipe) => (
-                <RecipeCard key={recipe.id} recipe={recipe} />
+        <div className="below-search">
+
+          <div className="filters">
+            <h3 className="filter-word">Filters</h3>
+            {/* CUISINES */}
+            <div className="filter-group">
+              <h4 onClick={() => setShowCuisines(!showCuisines)} style={{ cursor: 'pointer' }}>
+                Cuisines {showCuisines ? <FiChevronUp /> : <FiChevronDown />}
+              </h4>
+              {showCuisines && cuisines.map((item) => (
+                <label key={item} className="filter-option">
+                  <input
+                    type="checkbox"
+                    checked={selectedCuisines.includes(item)}
+                    onChange={() => handleCheckboxChange(item, setSelectedCuisines, selectedCuisines)}
+                  />
+                  {item}
+                </label>
               ))}
             </div>
-          ) : (<div className='no-results'>
-            <MdOutlineScreenSearchDesktop style={{fontSize:"80px"}} />
-            <h3 style={{color:"black"}}>No results found</h3>
-          </div>
-          )}
-        </div>
+            {showCuisines && <hr className='filter-line' />}
+            {/* FOOD TYPES */}
+            <div className="filter-group">
+              <h4 onClick={() => setShowFoodTypes(!showFoodTypes)} style={{ cursor: 'pointer' }}>
+                Food Type {showFoodTypes ? <FiChevronUp /> : <FiChevronDown />}
+              </h4>
+              {showFoodTypes && foodTypes.map((item) => (
+                <label key={item} className="filter-option">
+                  <input
+                    type="checkbox"
+                    checked={selectedFoodTypes.includes(item)}
+                    onChange={() => handleCheckboxChange(item, setSelectedFoodTypes, selectedFoodTypes)}
+                  />
+                  {item}
+                </label>
+              ))}
+            </div>
+            {showFoodTypes && <hr className='filter-line' />}
+            {/* DIFFICULTY */}
+            <div className="filter-group">
+              <h4 onClick={() => setShowDifficulties(!showDifficulties)} style={{ cursor: 'pointer' }}>
+                Difficulty {showDifficulties ? <FiChevronUp /> : <FiChevronDown />}
+              </h4>
+              {showDifficulties && difficulties.map((item) => (
+                <label key={item} className="filter-option">
+                  <input
+                    type="checkbox"
+                    checked={selectedDifficulties.includes(item)}
+                    onChange={() => handleCheckboxChange(item, setSelectedDifficulties, selectedDifficulties)}
+                  />
+                  {item}
+                </label>
+              ))}
+            </div>
+            {showDifficulties && <hr className='filter-line' />}
 
-        {searchResults.length > 0 ? (
-          <div className="pagination-controls">
-            <button className='prev-button' onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 0}>
-              <MdOutlineKeyboardArrowLeft />
-            </button>
-            <span className='page-numbers'>{`${currentPage + 1} of ${totalPages}`}</span>
-            <button className='next-button' onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage >= totalPages - 1}>
-              <MdOutlineKeyboardArrowRight />
-            </button>
+            {/* DURATION */}
+            <div className="filter-group">
+              <h4 onClick={() => setShowDurations(!showDurations)} style={{ cursor: 'pointer' }}>
+                Duration {showDurations ? <FiChevronUp /> : <FiChevronDown />}
+              </h4>
+              {showDurations && timeOptions.map((item) => (
+                <label key={item} className="filter-option">
+                  <input
+                    type="checkbox"
+                    checked={selectedTimes.includes(item)}
+                    onChange={() => handleCheckboxChange(item, setSelectedTimes, selectedTimes)}
+                  />
+                  Under {item} min
+                </label>
+              ))}
+            </div>
+
+            <button onClick={() => handleFilterSearch(0)} className="filter-button">Apply</button>
+        </div>
+        <div className="results-section">
+          <div className="results">
+            {searchResults.length > 0 ? (
+              <div className="card-grid">
+                {searchResults.map((recipe) => (
+                  <RecipeCard key={recipe.id} recipe={recipe} />
+                ))}
+              </div>
+            ) : (<div className='no-results'>
+              <MdOutlineScreenSearchDesktop style={{fontSize:"80px"}} />
+              <h3 style={{color:"black"}}>No results found</h3>
+            </div>
+            )}
           </div>
-      ): null}
+
+          {searchResults.length > 0 ? (
+              <div className="pagination-controls">
+                <button className='prev-button' onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 0}>
+                  <MdOutlineKeyboardArrowLeft />
+                </button>
+                <span className='page-numbers'>{`${currentPage + 1} of ${totalPages}`}</span>
+                <button className='next-button' onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage >= totalPages - 1}>
+                  <MdOutlineKeyboardArrowRight />
+                </button>
+              </div>
+            ):null}
+          </div>
+        </div>
       </section>
     </div>
   );

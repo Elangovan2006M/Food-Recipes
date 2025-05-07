@@ -3,20 +3,31 @@
   font-family: 'Segoe UI', sans-serif;
   padding: 20px 50px 20px 50px;
   margin-top: 50px;
-  background-color: #fff;
+  background-color: #fffaf7;
 }
 
-.filters {
-  padding-right: 20px;
-  padding-left: 25px;
-  padding-bottom: 20px;
-  border: 1px solid #d0cece;
-  border-radius: 10px;
-  width: 127px;
-  margin-top: 100px;
-  margin-right: 20px;
-  height: 100%;
+.below-search {
+  display: flex;
+  margin-top: 20px;
 }
+
+/* Updated filters to remove top margin and set a fixed width */
+.filters {
+  padding: 20px 20PX 20px 30px;
+  border: 1px solid #f6f6f6;
+  border-radius: 10px;
+  width: 140px;
+  margin-right: 20px;
+  margin-top: 20PX; /* Remove old top margin */
+  height: fit-content;
+  background-color: white;
+}
+
+/* Results section next to filters */
+.results-section {
+  flex: 1;
+}
+
 
 .filter-word{
   padding-left: 35px;
@@ -70,7 +81,7 @@
   border: 2px solid #f5f5f5;
   border-radius: 10px;
   outline: none;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   margin-right: 10px;
 }
 
@@ -214,7 +225,7 @@ input[type="checkbox"] {
   }
 
   .filters {
-    width:25%;
+    width:20%;
     margin-top: 20px;
     margin-right: 0;
   }

@@ -107,7 +107,7 @@ const Recipe = () => {
           : selectedDifficulty
           ? `${selectedDifficulty} Recipes`
           : selectedTime
-          ? `${selectedTime} Minutes Recipes`
+          ? `${selectedTime} Minute Recipes`
           : "All Recipes"}
       </h2>
 

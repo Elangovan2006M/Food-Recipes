@@ -26,6 +26,10 @@ const Home = () => {
     }
 
 
+    const gotoRecipes = () => {
+        navigate('/recipe');
+    }
+
   useEffect(() => {
     (async () => {
       try {
@@ -77,13 +81,13 @@ const Home = () => {
 
                 <section className="home-trending">
                 <div className="full-align">
-                    <h2>See <span className="home-highlight-style">Trending</span> Recipes</h2>
+                    <h2 style={{"margin-top":"5px","margin-bottom":"10px"}}>See <span className="home-highlight-style">Trending</span> Recipes</h2>
                 </div>
                     <div className="button-stack">
                         <div className="button-back"></div>
                         <button className="button-front">Trending recipes <MdTrendingUp size={24} color="#ffffff" /></button>
                     </div>
-                    <button className="view-all" >View All &gt;</button>
+                    <button className="view-all" onClick={()=>gotoRecipes()} >View All &gt;</button>
                     <div className="home-trending-cards">
                         <div className="results">
                         {trendingRecipes.length > 0 ? (
@@ -161,7 +165,7 @@ const Home = () => {
                             <div className="button-back"></div>
                             <button className="button-front">Popular Picks<FaShieldHeart className="topic-icons" /></button>
                         </div>
-                        <button className="view-all" >View All &gt;</button>
+                        <button className="view-all" onClick={()=>gotoRecipes()} >View All &gt;</button>
                         <div className="home-popular-cards">
                             <div className="results">
                             {popularRecipes.length > 0 ? (
@@ -223,7 +227,7 @@ const Home = () => {
                                 </p>
                                 <strong className="cta-highlight">Stream. <span>Cook</span>. Taste. <span>Repeat</span>.</strong>
                                 </div>
-                                <button className="about-us-button" onClick={handleBlog}>about us &gt;&gt;&gt;</button>
+                                <button className="about-us-button" onClick={handleBlog}>About Us &gt;&gt;&gt;</button>
                             </div>
 
                             <div className="Gap">
