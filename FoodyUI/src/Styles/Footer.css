@@ -104,6 +104,10 @@
     margin-right: 15px;
 }
 
+.categories .quick-link:hover{
+    color: black;
+}
+
 .connect
 {
     margin-right: 15px;

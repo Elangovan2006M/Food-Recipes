@@ -129,6 +129,15 @@ input[type="checkbox"] {
   padding: 20px 20px 20px 20px;
 }
 
+.results .no-results {
+  text-align: center;
+  font-size: 25px;
+  color: #ff7b00;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
 .filters .filter-line{
   background-color: #ff7b00;
   height: 1px;
@@ -137,17 +146,17 @@ input[type="checkbox"] {
 
 .suggestions-dropdown {
   position: absolute;
-  top: 100%; /* Push just below the search input */
+  top: 100%;
   left: 0;
-  width: 96%; /* Same width as parent */
+  width: 96%;
   background: white;
   border: 1px solid #f5f5f5;
-  border-top: none; /* no double border */
+  border-top: none; 
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 1000; /* stay on top */
-  border-radius: 10px 10px 10px 10px; /* rounded bottom corners */
+  z-index: 1000;
+  border-radius: 10px 10px 10px 10px;
   overflow: hidden;
 }
 
