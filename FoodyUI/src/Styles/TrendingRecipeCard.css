@@ -8,8 +8,8 @@
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  transition: transform .2s ease, box-shadow .2s ease;
-  padding: 10px 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px;
 }
 
 .trending-recipe-card:hover {
@@ -17,7 +17,15 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.trending-recipe-card .recipe-image {
+.image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-image {
   width: 90%;
   height: 260px;
   object-fit: cover;
@@ -26,7 +34,20 @@
   transition: opacity 0.3s ease;
 }
 
-.trending-recipe-card .view-button {
+.image-overlay {
+  position: absolute;
+  top: 15px;
+  left: 13px;
+  right: 13px;
+  bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.trending-view-button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,15 +60,13 @@
   font-size: 14px;
   cursor: pointer;
   background: #fff;
-  display: none;
-  z-index: 1;
+  z-index: 2;
 }
 
-.trending-recipe-card:hover .view-button {
-  display: block;
-  color: black;
+.image-container:hover .image-overlay {
+  opacity: 1;
 }
 
-.trending-recipe-card .highlight-style {
+.highlight-style {
   color: #e67600;
 }
