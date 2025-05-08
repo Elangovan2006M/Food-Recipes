@@ -28,9 +28,9 @@ const Contact = () => {
                     <h2>Connect with Us</h2>
                 </div>
                 <div className='Links-body'>
-                    <a href="platestram@gmail.com" className="email-link" target='new' style={{backgroundColor:" #d44638"}}><IoIosMail />/platestream@gmail.com</a>
-                    <a href="https://www.instagram.com/platestram/" className="instagram-link" target='new' style={{background: "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf)"}}><FaInstagram/>/PlateStream</a>
-                    <a href="https://www.facebook.com/platestram" className="facebook-link" target='new' style={{backgroundColor:" #3b5998"}}><FaFacebook/>/PlateStream</a>
+                    <a href="platestream@gmail.com" className="email-link" target='new' style={{backgroundColor:" #d44638"}}><IoIosMail />/platestream@gmail.com</a>
+                    <a href="https://www.instagram.com/platestream/" className="instagram-link" target='new' style={{background: "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf)"}}><FaInstagram/>/PlateStream</a>
+                    <a href="https://www.facebook.com/platestream" className="facebook-link" target='new' style={{backgroundColor:" #3b5998"}}><FaFacebook/>/PlateStream</a>
                     <a href="https://www.twitter.com/platestream" className="linkedin-link" target='new' style={{backgroundColor:" #0077b5"}}><FaTwitter/>/PlateStream</a>
                 </div>
             </div>

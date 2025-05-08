@@ -43,9 +43,9 @@
 }
 
 .recent-tags span:nth-child(1) {
-    background-color: #f59e0b;  /* Tips badge - orange */
+    background-color: #f59e0b;
 }
 
 .recent-tags span:nth-child(2) {
-    background-color: #6366f1; /* Recipe badge - indigo */
+    background-color: #6366f1;
 }

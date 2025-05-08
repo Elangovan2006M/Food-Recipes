@@ -7,8 +7,6 @@
   }
   
   .recipe-card-content {
-    /* REMOVE display: flex and justify-content: center */
-    /* Let the grid inside take full width */
     width: 100%;
   }
   
@@ -18,7 +16,7 @@
   
   .recipe-card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Force 4 columns */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
   
@@ -39,7 +37,6 @@
     cursor: pointer;
     justify-content: center;
     align-items: center;
-    /* margin-left: 20px; */
     display: flex;
   }
   .next-button {

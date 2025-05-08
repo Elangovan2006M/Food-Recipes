@@ -51,7 +51,6 @@
 
   
   .Links {
-    /* margin: 40px auto; */
     padding: 10px 30px 30px 30px;
     max-width: 400px;
     background-color: #fffef9;
@@ -65,7 +64,6 @@
   .Links-title h2 {
     font-size: 26px;
     color: #e86b00;
-    /* margin-bottom: 25px; */
     font-weight: 700;
   }
   
@@ -97,12 +95,10 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
   
-  /* Optional: Add icon size consistency */
   .Links-body svg {
     font-size: 20px;
   }
   
-  /* Responsive layout */
   @media (max-width: 600px) {
     .Links {
       padding: 20px;

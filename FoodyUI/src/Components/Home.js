@@ -132,8 +132,8 @@ const Home = () => {
                             <GiTacos className="cuisine-icons"/>
                             <p>Mexican</p>
                         </div>
-                    </div>
-                    <div className="cuisine-container">
+                    {/* </div>
+                    <div className="cuisine-container"> */}
                         <div className="cuisine-box" onClick={() => handleCuisineSelect('Korean')}>
                             <GiBowlOfRice className="cuisine-icons" />
                             <p>Korean</p>
@@ -155,6 +155,7 @@ const Home = () => {
                             <p>Malaysian</p>
                         </div>
                     </div>
+                    
                 </div>
 
                 {/* Popular Recipe Section */}
