@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.recipe-card {
+.recipes-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -15,11 +15,11 @@
   width: 100%;
 }
 
-.recipe-card:hover {
+.recipes-card:hover {
   transform: scale(1.05);
 }
 
-.recipe-card .recipe-image {
+.recipes-card .recipes-image {
   border: none;
   width: 100%;
   height: 130px;

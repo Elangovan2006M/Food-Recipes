@@ -5,6 +5,8 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "recipe_blog")
 @Data
@@ -49,4 +51,8 @@ public class RecipeBlog {
 
     @Column(name = "created_at", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP", updatable = false, insertable = false)
     private LocalDateTime createdAt;
+
+    @OneToOne
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 }
