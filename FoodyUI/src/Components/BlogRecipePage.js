@@ -41,14 +41,14 @@ const RecipeBlogPage = () => {
             <img className="main-img" src={selectedBlog.recipeImgUrl} alt={selectedBlog.recipeName} />
             <button className="view-recipe-button" onClick={handleViewRecipe}>View Recipe</button>
             </div>
-            <div>
+            <div className="overview-container-blog">
             <section className="overview">
-                <h2 className="blog-page-titles">Overview</h2>
-                <p>{selectedBlog.overview}</p>
+                <h2 className="blog-page-titles">Over<span className="blog-highlight-style"> View</span></h2>
+                <div><p>{selectedBlog.overview}</p></div>
             </section>
 
             <section className="history">
-                <h2 className="blog-page-titles">History</h2>
+                <h2 className="blog-page-titles"><span className="blog-highlight-style"> History</span> Speaks</h2>
                 <p>{selectedBlog.history}</p>
                 <div className="history-images">
                     <img src={selectedBlog.historyImg1} alt="history 1" />
@@ -57,31 +57,31 @@ const RecipeBlogPage = () => {
             </section>
 
             <section className="variations">
-                <h2 className="blog-page-titles">Variations</h2>
-                {selectedBlog.variations.split("\n").map((v, i) => (
+                <h2 className="blog-page-titles">How recipe <span className="blog-highlight-style"> Varies</span> across <span className="blog-highlight-style"> Region</span></h2>
+                <div>{selectedBlog.variations.split("\n").map((v, i) => (
                     <p key={i}>
                         <FiChevronRight className="contrast-icon" /> {v}
                     </p>
-                ))}
+                ))}</div>
             </section>
 
             <section className="pro-tips">
-                <h2 className="blog-page-titles">Pro Tips</h2>
-                {selectedBlog.proTips.split("\n").map((tip, i) => (
+                <h2 className="blog-page-titles">Pro <span className="blog-highlight-style"> Tips</span></h2>
+                <div>{selectedBlog.proTips.split("\n").map((tip, i) => (
                     <p key={i}>
                         <FiCheckCircle className="contrast-icon" /> {tip}
                     </p>
-                ))}
+                ))}</div>
             </section>
 
             <section className="also-known">
-                <h2 className="blog-page-titles">Also Known As</h2>
-                <p>{selectedBlog.alsoKnownAs}</p>
+                <h2 className="blog-page-titles">Also <span className="blog-highlight-style"> Known</span> As</h2>
+                <div><p>{selectedBlog.alsoKnownAs}</p></div>
             </section>
 
             <section className="best-served">
-                <h2 className="blog-page-titles">Best Served With</h2>
-                <p>{selectedBlog.bestServedWith}</p>
+                <h2 className="blog-page-titles"> <span className="blog-highlight-style">Best </span>Served <span className="blog-highlight-style"> With</span></h2>
+                <div><p>{selectedBlog.bestServedWith}</p></div>
             </section>
             </div>
         </div>
