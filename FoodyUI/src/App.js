@@ -10,6 +10,7 @@ import Blog from './Components/Blog';
 import Recipe from './Components/Recipe';
 import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
+import Contact from './Components/Contact';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/blogs" element={<Blog/>} />
           <Route path="/blogs/view" element={<BlogRecipePage/>}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
+          <Route path='/contact' element={<Contact/>}/>
         </Routes>
       
         <Footer/>

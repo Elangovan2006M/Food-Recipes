@@ -69,6 +69,7 @@
   color: black;
 }
 
+
 .image-container:hover .image-overlay {
   opacity: 1;
 }
