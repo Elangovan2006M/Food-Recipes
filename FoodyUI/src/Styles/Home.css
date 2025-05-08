@@ -170,7 +170,7 @@
 
 .home-popular-cards .results .card-grid {
   display: grid;
-  grid-template-columns: repeat(10, minmax(260px, 1fr));
+  grid-template-columns: repeat(10, minmax(300px, 1fr));
   gap: 20px;
   scroll-snap-align: start;
 }
@@ -204,24 +204,7 @@
 .home-trending-cards::-webkit-scrollbar {
   display: none;
 }
-.home-trending-cards .results .card-grid {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  scroll-snap-align: start;
-}
 
-.home-trending-cards {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scroll-snap-type: x mandatory;
-  padding: 12px 16px;
-}
-
-.home-trending-cards::-webkit-scrollbar {
-  display: none;
-}
 
 
 /* Blog section */

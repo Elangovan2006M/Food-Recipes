@@ -24,11 +24,11 @@ const RecipeCard = ({ recipe }) => {
   };
 
   return (
-    <div className="recipe-card">
+    <div className="recipes-card">
       <img
         src={recipe.imageUrl || 'https://via.placeholder.com/300'}
         alt={recipe.foodName}
-        className="recipe-image"
+        className="recipes-image"
       />
       <div className="recipe-details">
         <div className="recipe-header">
