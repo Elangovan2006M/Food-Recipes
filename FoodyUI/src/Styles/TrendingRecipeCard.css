@@ -63,6 +63,7 @@
   z-index: 2;
 }
 
+
 .image-container:hover .image-overlay {
   opacity: 1;
 }

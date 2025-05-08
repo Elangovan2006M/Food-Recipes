@@ -16,7 +16,7 @@ const RecipeDisplay = () => {
     <div className="recipe-display-container">
       <h2 className="recipe-title">{selectedRecipe.foodName}</h2>
 
-      {/*Video Section */}
+     {/* Video & Ingredients Section */}
       <div className="media-ingredients-wrapper">
         <div className="video-box">
           <iframe
@@ -27,16 +27,16 @@ const RecipeDisplay = () => {
           ></iframe>
         </div>
 
-        {/* Ingredients Section */}
         <div className="ingredients-box">
           <h3>Ingredients</h3>
           <ul>
             {selectedRecipe.ingredients.split('$').map((item, index) => (
-              <li key={index} ><span className='ingredient'>{item.trim()}</span></li>
+              <li key={index}><span className="ingredient">{item.trim()}</span></li>
             ))}
           </ul>
         </div>
       </div>
+
 
       {/* Metadata and Overview */}
       <div className="metadata-overview-wrapper">
@@ -45,10 +45,10 @@ const RecipeDisplay = () => {
           <div className="overview-box">
             <div className="metadata-row">
               <div className="meta-box">
-                <div><GiCampCookingPot style={{color:"#e86b00"}}/><span>Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
-                <div><GiKnifeFork style={{color:"#e86b00"}}/><span>Prep time </span><p>{selectedRecipe.prepTime} Min</p></div>
-                <div><BiWorld style={{color:"#e86b00"}}/><span>Cuisine </span><p>{selectedRecipe.cuisines}</p></div>
-                <div><MdSignalCellularAlt style={{color:"#e86b00"}}/><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
+                <div><GiCampCookingPot style={{color:"#e86b00",fontSize:"20px"}}/><span>Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
+                <div><GiKnifeFork style={{color:"#e86b00",fontSize:"20px"}}/><span>Prep time </span><p>{selectedRecipe.prepTime} Min</p></div>
+                <div><BiWorld style={{color:"#e86b00",fontSize:"20px"}}/><span>Cuisine </span><p>{selectedRecipe.cuisines}</p></div>
+                <div><MdSignalCellularAlt style={{color:"#e86b00",fontSize:"20px"}}/><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
               </div>
             </div>
             <div className="overview-text">

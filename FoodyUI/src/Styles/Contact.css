@@ -1,0 +1,117 @@
+.contact-us-container {
+    margin: 40px 60px;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .contact-us-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .contact-us-header h1 {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .contact-us-header h1 span {
+    color: #ff6f00;
+  }
+  
+  .contact-us-header p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 0px;
+  }
+  
+  .contact-us-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .contact-us {
+    flex: 1 1 45%;
+    margin-right: 5%;
+  }
+
+  .contact-us-title {
+    display: flex;
+    gap: 10px;
+  }
+  
+
+  .contact-us-logo {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+
+  
+  .Links {
+    /* margin: 40px auto; */
+    padding: 10px 30px 30px 30px;
+    max-width: 400px;
+    background-color: #fffef9;
+    border: 2px solid #ffe5c4;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .Links-title h2 {
+    font-size: 26px;
+    color: #e86b00;
+    /* margin-bottom: 25px; */
+    font-weight: 700;
+  }
+  
+  .Links-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  
+  .Links-body a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 220px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .Links-body a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  /* Optional: Add icon size consistency */
+  .Links-body svg {
+    font-size: 20px;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 600px) {
+    .Links {
+      padding: 20px;
+    }
+  
+    .Links-body a {
+      width: 100%;
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+  
