@@ -22,14 +22,18 @@ const TrendingRecipeCard = ({ recipe }) => {
 
   return (
     <div className='trending-recipe-card' onClick={handleClick}>
-      <img
-        src={recipe.imageUrl || 'https://via.placeholder.com/300'}
-        alt={recipe.foodName}
-        className="recipe-image"
-      />
-      <button className="view-button">
-        View <span className='highlight-style'>Recipe</span>
-      </button>
+      <div className='image-container'>
+
+        <img
+          src={recipe.imageUrl || 'https://via.placeholder.com/300'}
+          alt={recipe.foodName}
+          className="recipe-image"
+          />
+          <div className='image-overlay'></div>
+        <button className="trending-view-button">
+          View <span className='highlight-style'>Recipe</span>
+        </button>
+      </div>
     </div>
   );
 };
