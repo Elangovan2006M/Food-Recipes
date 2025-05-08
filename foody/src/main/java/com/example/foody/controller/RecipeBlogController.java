@@ -1,5 +1,6 @@
 package com.example.foody.controller;
 
+import com.example.foody.model.Recipe;
 import com.example.foody.model.RecipeBlog;
 import com.example.foody.service.RecipeBlogService;
 
@@ -49,5 +50,9 @@ public class RecipeBlogController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(blog);
+    }
+    @GetMapping("/{id}/recipes")
+    public Recipe getRecipeFromBlog(@PathVariable Integer id) {
+        return svc.getRecipeFromBlog(id);
     }
 }

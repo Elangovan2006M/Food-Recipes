@@ -13,3 +13,13 @@ export const getBlogById = (id) => {
 export const getRecentBlogs = () =>  {
     return axios.get(`${API_BASE_URL}/recent-blog`)
 }
+
+export const getRecipeFromBlog = async (id) => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/${id}/recipes`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching recipe:', error);
+        throw error;
+    }
+};

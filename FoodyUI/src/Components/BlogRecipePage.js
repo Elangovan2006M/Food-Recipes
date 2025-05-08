@@ -1,22 +1,45 @@
 import React from "react";
 import { useBlog } from "../Service/BlogContext";
+import { useNavigate } from 'react-router-dom';
+import { useRecipe } from '../Service/RecipeContext';
+import { getRecipeFromBlog} from '../Service/BlogService';
+import { incrementRecipeViews } from "../Service/RecipeService";
 import { FiChevronRight, FiCheckCircle } from "react-icons/fi";
 
 import "../Styles/BlogPage.css";
 
 const RecipeBlogPage = () => {
+
+    const navigate = useNavigate();
     const { selectedBlog } = useBlog();
+    const { setSelectedRecipe } = useRecipe();
 
     if (!selectedBlog) {
         return <h2>Blog not found!</h2>;
     }
+
+    const handleViewRecipe = async () => {
+        try {
+            if (!selectedBlog || !selectedBlog.blogId) {
+                console.error("No valid blog ID found.");
+                return;
+            }
+            const recipe = await getRecipeFromBlog(selectedBlog.blogId); // Fetch recipe by ID
+            await incrementRecipeViews(recipe.id);
+            setSelectedRecipe(recipe); // Set recipe in context
+            navigate('/recipes'); // Navigate to the recipe page
+        } catch (error) {
+            console.error("Error fetching recipe", error);
+            navigate('/recipes'); // Optional: Handle navigation if error occurs
+        }
+    };
 
     return (
         <div className="recipe-container">
             <div className="recipes-content">
             <h1>{selectedBlog.recipeName}</h1>
             <img className="main-img" src={selectedBlog.recipeImgUrl} alt={selectedBlog.recipeName} />
-            <button className="view-recipe-button">View Recipe</button>
+            <button className="view-recipe-button" onClick={handleViewRecipe}>View Recipe</button>
             </div>
             <div>
             <section className="overview">
