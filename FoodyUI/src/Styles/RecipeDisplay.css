@@ -6,7 +6,7 @@
 }
 
 .recipe-title {
-  color: #e86b00;
+  color: #000000;
   font-size: 1.6rem;
   margin-bottom: 20px;
 }
@@ -20,7 +20,7 @@
 .video-box {
   flex: 2;
   position: relative;
-  padding-top: 40.25%; /* 16:9 aspect ratio */
+  padding-top: 40.25%; 
   /* width: 200px; */
   border-radius: 10px;
   overflow: hidden;
@@ -31,7 +31,6 @@
   position: absolute;
   top: 0;
   left: 10px;
-  /* padding-top: 0; */
   height: 100%;
   width: 100%;
   border-radius: 10px;
@@ -40,8 +39,8 @@
 .ingredients-box {
   flex: 1;
   background: #fff;
-  border-left: 2px solid #e86b00;
-  border-bottom: 2px solid #e86b00;
+  border-left: 4px solid #e86b00;
+  border-bottom: 4px solid #e86b00;
   border-radius: 8px;
   padding-top:2px ;
   padding-left: 30px;
@@ -72,9 +71,10 @@
 .metadata-row {
   display: flex;
   /* justify-content: space-between; */
-  
-  gap: 20px;
-  
+  gap: 20px;  
+  margin-top: 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 .meta-box {
@@ -85,21 +85,17 @@
   padding: 15px 30px 15px 30px;
   border: 1px solid #e86b00;
   border-radius: 10px;
-  background-color: #fdfdfd;
+  background-color: #ffd8b0;
   font-family: Arial, sans-serif;
   font-size: 15px;
 }
 
 .meta-box div {
   display: flex;
-  /* justify-content: space-between; */
   gap: 5px;
   padding: 5px 0;
 }
 
-/* .meta-box div:last-child {
-  border-bottom: none;
-} */
 
 .meta-box span {
   font-weight: bold;
@@ -111,15 +107,14 @@
 
 .overview-row {
   display: flex;
-  justify-content: space-evenly; /* Adjust spacing for better balance */
-  align-items: stretch; /* Ensure both boxes maintain equal height */
-  gap: 50px; /* Increase gap for better separation */
-  margin-top: 20px;
+  justify-content: space-evenly;
+  align-items: stretch; 
+  gap: 50px; 
+  margin-top: 0px;
 }
 
 .overview-box {
   flex: 1;
-  min-width: 280px; /* Slightly widen for better readability */
   border-radius: 10px;
   padding: 10px 20px;
   margin-top: 0; /* Remove top margin for better row alignment */
@@ -131,11 +126,11 @@
 .nutrition-box {
   flex: 1;
   max-width: 320px; /* Allow more width */
-  border: 2px solid #e86b00;
+  border: 1px solid #e86b00;
   border-radius: 10px;
   padding: 25px;
   background-color: #fdfdfd;
-  margin-top: 20px; /* Remove top margin to align with overview */
+  margin-top: 15px; /* Remove top margin to align with overview */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Ensure balanced alignment */
@@ -156,6 +151,7 @@
 .overview-box h3 {
   color: #e86b00;
   margin-bottom: 10px;
+
 }
 
 .overview-box h3 span {
@@ -167,13 +163,12 @@
   border: 1px solid #e86b00;
   margin-top: 20px;
   border-radius: 10px;
-  /* width: 830px; */
+  background-color: #ffd8b0;
 }
 
 
 .nutrition-box h3 {
   font-size: 18px;
-  /* margin-bottom: 10px; */
   text-align: center;
 }
 

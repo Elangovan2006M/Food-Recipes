@@ -73,7 +73,7 @@ const RecipeDisplay = () => {
       {/* Instructions */}
 
         <div className="full-align">
-            <h2><span className="home-highlight-style">Started</span> Cooking?</h2>
+            <h2>Started<span className="home-highlight-style">Cooking</span>?</h2>
         </div>
         <div className="button-stack">
           <div className="button-back"></div>

@@ -22,9 +22,11 @@ const Home = () => {
   const [popularRecipes, setPopularRecipes]   = useState([]);
 
     const handleBlog = () => {
-        navigate('/blogs/view');
+        navigate('/blogs');
     }
-
+    const handleAbout = () => {
+        navigate('/aboutus');
+    }
 
     const gotoRecipes = () => {
         navigate('/recipe');
@@ -227,7 +229,7 @@ const Home = () => {
                                 </p>
                                 <strong className="cta-highlight">Stream. <span>Cook</span>. Taste. <span>Repeat</span>.</strong>
                                 </div>
-                                <button className="about-us-button" onClick={handleBlog}>About Us &gt;&gt;&gt;</button>
+                                <button className="about-us-button" onClick={handleAbout}>About Us &gt;&gt;&gt;</button>
                             </div>
 
                             <div className="Gap">
