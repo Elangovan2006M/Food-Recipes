@@ -24,13 +24,13 @@ const RecipeBlogPage = () => {
                 console.error("No valid blog ID found.");
                 return;
             }
-            const recipe = await getRecipeFromBlog(selectedBlog.blogId); // Fetch recipe by ID
+            const recipe = await getRecipeFromBlog(selectedBlog.blogId); 
             await incrementRecipeViews(recipe.id);
-            setSelectedRecipe(recipe); // Set recipe in context
-            navigate('/recipes'); // Navigate to the recipe page
+            setSelectedRecipe(recipe);
+            navigate('/recipes'); 
         } catch (error) {
             console.error("Error fetching recipe", error);
-            navigate('/recipes'); // Optional: Handle navigation if error occurs
+            navigate('/recipes'); 
         }
     };
 

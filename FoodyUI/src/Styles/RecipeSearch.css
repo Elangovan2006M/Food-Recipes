@@ -180,6 +180,12 @@
   border: none;
 }
 
+input[type="checkbox"] {
+  accent-color: #ff7b00;
+  cursor: pointer;
+}
+
+
 .suggestions-dropdown {
   position: absolute;
   top: 100%;
