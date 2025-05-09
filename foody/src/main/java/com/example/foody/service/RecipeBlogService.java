@@ -30,7 +30,7 @@ public class RecipeBlogService {
     }
 
     public RecipeBlog getRecentBlog() {
-        return recipeBlogRepository.findTopByOrderByCreatedAtDesc();
+        return recipeBlogRepository.findTop1ByOrderByCreatedAtDesc();
     }
 
     public Recipe getRecipeFromBlog(Integer blogId) {

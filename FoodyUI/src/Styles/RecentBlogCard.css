@@ -10,13 +10,16 @@
   
   .recent-img {
     width: 300px;
-    height: auto;
+    height: 300px;
     object-fit: cover;
+    padding-bottom: 0px;
   }
   
   .recent-content {
     padding: 1.5rem;
+    padding-bottom: 0px;
   }
+
   
   .recent-content h3 {
     font-size: 1.8rem;
