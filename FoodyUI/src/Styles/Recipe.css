@@ -1,15 +1,10 @@
-.recipe-page-container {
+  .recipe-page-container {
     padding: 20px;
     max-width: 1200px;
-    margin: auto;
-    margin-top: 80px;
-    margin-bottom: 20px;
+    margin: 80px auto 20px auto;
   }
   
-  .recipe-card-content {
-    width: 100%;
-  }
-  
+  .recipe-card-content,
   .recipe-result {
     width: 100%;
   }
@@ -20,42 +15,82 @@
     gap: 20px;
   }
   
-  .pagination-controls{
+  .pagination-controls {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
-
-  .prev-button {
-    padding: 10px 10px;
-    background-color: #ff7b00;
-    border-radius: 20px;
-    color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
+  
+  .prev-button,
   .next-button {
-    padding: 10px 10px;
+    padding: 10px 20px;
     background-color: #ff7b00;
     border-radius: 20px;
     color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
   }
+  
   .page-numbers {
     font-size: 14px;
     color: #828282;
-    margin: 0px 5px 0px 5px;
-
+    margin: 5px;
   }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .recipe-card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .prev-button,.next-button {
+      width: 50%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recipe-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .pagination-controls {
+      /* justify-content: center; */
+    }
+    
+    .prev-button,.next-button {
+      width: 10%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .recipe-card-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .pagination-controls {
+      justify-content: center;
+
+    }
+
+    .prev-button,.next-button {
+      width: 10%;
+      padding: 10px;
+      margin: 0px;
+    }
+  
+    .page-numbers {
+      text-align: center;
+      width: 20%;
+    }
+  }
+  
   

@@ -6,6 +6,9 @@ import com.example.foody.service.RecipeBlogService;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +27,10 @@ public class RecipeBlogController {
      * GET /api/blogs
      */
     @GetMapping
-    public List<RecipeBlog> getAllBlogs() {
-        return svc.getAllBlogs();
+    public Page<RecipeBlog> getAllBlogs(@RequestParam(defaultValue = "0") Integer page,
+                                        @RequestParam(defaultValue = "10") Integer size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return svc.getAllBlogs(pageable);
     }
 
     /**

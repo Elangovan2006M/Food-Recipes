@@ -387,7 +387,6 @@
     color: #333;
   }
   
-  /* Optional spacing container */
   .feature-gap {
     padding-left: 150px;
     margin-right: 40px;
@@ -396,11 +395,10 @@
   
 
   /* Responsive Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 220px) {
   .home-container
   {
-
-      margin: 70px 10px 30px 10px;
+    margin: 70px 10px 30px 10px;
   }
 
   .brand-name {
@@ -414,6 +412,10 @@
 
   .kitchen-image img{
     border-radius: 0px 0px 25px 25px;
+  }
+
+  .platform-name {
+    margin-right: 0px;
   }
 
   .cuisine-container {
@@ -434,15 +436,27 @@
   .feature-banner {
     flex-direction: column;
   }
+  
+  .feature-left{
+    padding-left: 2px;
+    width: 50%;
+    align-items: center;
 
+  }
+
+  .about-container {
+    /* scale: 0.9; */
+  }
+
+ 
   .kitchen-banner {
     flex-direction: column;
   }
 
   .icon-box {
     width: 60%;
-    aspect-ratio: 5 / 4;
-    margin-left:35px ;
+    aspect-ratio: 5 / 3;
+    margin-left: 10px;
   }
 
   .kitchen-text {
@@ -451,5 +465,10 @@
 
   .home-welcome h1 {
     font-size: 1.5rem;
+  }
+
+  .view-all {
+    margin-right: 0px;
+    scale: 0.8;
   }
 }

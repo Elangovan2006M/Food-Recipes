@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 public class RecipeBlog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer blogId;
 
     @Column(nullable = false, length = 100)
@@ -55,4 +55,8 @@ public class RecipeBlog {
     @OneToOne
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
+
+    public Recipe getRecipe() {
+        return recipe;
+    }   
 }
