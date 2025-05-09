@@ -126,21 +126,17 @@ const Recipe = () => {
       </div>
 
       {/* Pagination Controls */}
-      <div className="pagination-controls">
-          <button className='prev-button'
-            onClick={() => handlePageChange(currentPage - 1)} 
-            disabled={currentPage === 0}
-          >
+      {totalPages > 0 ? (
+        <div className="pagination-controls">
+          <button className='prev-button' onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 0}>
             <MdOutlineKeyboardArrowLeft />
           </button>
           <span className='page-numbers'>{`${currentPage + 1} of ${totalPages}`}</span>
-          <button  className='next-button'
-            onClick={() => handlePageChange(currentPage + 1)} 
-            disabled={currentPage === totalPages - 1}
-          >
+          <button className='next-button' onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage >= totalPages - 1}>
             <MdOutlineKeyboardArrowRight />
           </button>
         </div>
+      ):null}
     </div>
   );
 };
