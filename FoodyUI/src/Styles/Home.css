@@ -106,14 +106,17 @@
 }
 
 .cuisine-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
     justify-content: center;
     gap: 20px;
+    padding-left: 270px;
+    padding-right: 270px;
     margin-bottom: 10px;
 }
 
 .cuisine-box {
-    width: 300px;
+    width: 250px;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -123,6 +126,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     background-color: white;
+    margin-top: 10px;
     gap: 10px;
 }
 .cuisine-box:hover {
@@ -147,10 +151,8 @@
     position: absolute;
     right: 0;
     margin-right: 45px;
-    /* margin-left: 950px; */
     height: 45px;
     width: 130px;
-    /* padding: 0px 20px; */
     color: #ffffff;
     background: linear-gradient(to left, #ff9a0e, #ffba26);
     border-radius: 20px;
@@ -294,11 +296,11 @@
   /* About Us section */
   .feature-banner {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
     background-color: #ffa726;
     border-radius: 15px;
-    padding: 2rem;
-    gap: 2rem;
-    flex-wrap: wrap;
   }
   
   .feature-left {
@@ -311,19 +313,19 @@
   }
   
   .feature-left h3 {
-    color: white;
+    margin-bottom: 1.5rem;
     font-size: 1.25rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    color: white;
   }
   
   .platform-name {
-    color: white;
-    background-color: #ff5722;
-    padding: 6px 12px;
-    border-radius: 50px;
-    margin-right: 8px;
     display: inline-block;
+    margin-right: 8px;
+    padding: 6px 12px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50px;
   }
   
   .cta-box {
@@ -340,43 +342,37 @@
   }
   
   .cta-highlight {
-    color: #e65100;
-    font-weight: bold;
-    font-size: 1.5rem;
     display: block;
     margin-top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e65100;
   }
   
   .cta-highlight span {
     color: #000000;
   }
   
-  .Gap{
-    padding-left: 150px;
-    margin-right: 40px;
-  }
-
   .feature-right {
     flex: 1;
     min-width: 300px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding: 15px 0 15px 0;
+    padding: 15px 0;
   }
   
   .icon-box {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    background-color: white;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
   .icon-box .icon {
@@ -386,8 +382,74 @@
   }
   
   .icon-box p {
-    font-size: 0.80rem;
-    color: #333;
     margin: 0;
+    font-size: 0.8rem;
+    color: #333;
   }
   
+  /* Optional spacing container */
+  .feature-gap {
+    padding-left: 150px;
+    margin-right: 40px;
+  }
+  
+  
+
+  /* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  .home-container
+  {
+
+      margin: 70px 10px 30px 10px;
+  }
+
+  .brand-name {
+    font-size: 2.5rem;
+  }
+
+  .button-stack .button-front,
+  .button-stack .button-back {
+    width: 100%;
+  }
+
+  .kitchen-image img{
+    border-radius: 0px 0px 25px 25px;
+  }
+
+  .cuisine-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: start;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .cuisine-box{
+    width: 60%;
+    height: 60%;
+  }
+
+  .feature-banner {
+    flex-direction: column;
+  }
+
+  .kitchen-banner {
+    flex-direction: column;
+  }
+
+  .icon-box {
+    width: 60%;
+    aspect-ratio: 5 / 4;
+    margin-left:35px ;
+  }
+
+  .kitchen-text {
+    padding: 20px;
+  }
+
+  .home-welcome h1 {
+    font-size: 1.5rem;
+  }
+}

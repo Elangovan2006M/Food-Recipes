@@ -4,7 +4,7 @@ import { useRecipe } from "../Service/RecipeContext";
 
 import '../Styles/Footer.css';
 import PlateStream from '../Assests/Platestream.png';
-import { FaFacebook, FaTwitter, FaInstagram , FaWhatsapp} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
 
 const Footer = () =>
 {
@@ -56,10 +56,10 @@ const Footer = () =>
                     </div>
                     <p>Watch. Cook. Share. Your favorite recipes-streamed fresh every day.</p>
                     <div className="socialmedia">
-                        <FaFacebook className="footer-socialmedia" size={24} />
-                        <FaTwitter className="footer-socialmedia" size={24} />
-                        <FaInstagram className="footer-socialmedia" size={24}  />
-                        <FaWhatsapp className="footer-socialmedia" size={24}  />
+                        <a href="https://www.facebook.com/platestream/"target="new" ><FaFacebook className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href="https://www.twitter.com/platestream/" target="new"><FaTwitter className="footer-socialmedia" size={24} color="white" /></a>
+                        <a href="https://www.instagram.com/platestream/" target="new"><FaInstagram className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href="https://www.linkedin.com/platestream/" target="new"><FaLinkedin className="footer-socialmedia" size={24} color="white"/></a>
                     </div>
                 </div>
                 <div className="quick-links">

@@ -11,19 +11,17 @@
   margin-top: 20px;
 }
 
-/* Updated filters to remove top margin and set a fixed width */
 .filters {
   padding: 20px 20PX 20px 30px;
   border: 1px solid #f6f6f6;
   border-radius: 10px;
   width: 140px;
   margin-right: 20px;
-  margin-top: 20PX; /* Remove old top margin */
+  margin-top: 20PX;
   height: fit-content;
   background-color: white;
 }
 
-/* Results section next to filters */
 .results-section {
   flex: 1;
 }
@@ -228,6 +226,15 @@ input[type="checkbox"] {
     width:20%;
     margin-top: 20px;
     margin-right: 0;
+    position: sticky;
+  }
+
+  .filter-word{
+    padding-left: 0px;
+  }
+
+  .filter-button{
+    margin-left: 0px;
   }
 
   .search-input {
