@@ -9,8 +9,10 @@
   overflow: hidden;
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 400px;
+  max-width: 600px;
   margin: 1rem auto;
+  width: 75%;
+  height: 90%;
 }
 
 .blog-card:hover {
@@ -20,7 +22,7 @@
 
 .blog-image {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -28,7 +30,8 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  width: 90%;
 }
 
 .blog-header {
@@ -38,19 +41,19 @@
 }
 
 .blog-header h4 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
   color: #333;
 }
 
 .blog-header span {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: #666;
 }
 
 .blog-description {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #555;
   margin: 0;
   line-height: 1.4;
@@ -71,7 +74,7 @@
   font-weight: 600;
   cursor: pointer;
   padding: 0;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   text-decoration: underline;
 }
 
@@ -80,7 +83,7 @@
 }
 
 .blog-info span {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   padding: 0.3rem 0.6rem;
   border-radius: 20px;
   font-weight: 500;
@@ -99,4 +102,61 @@
   color: #888;
   background: none;
   padding: 0;
+}
+
+/* Responsive shrink for medium screens */
+@media (max-width: 768px) {
+  .blog-card {
+    max-width: 500px;
+    width: 85%;
+  }
+
+  .blog-image {
+    height: 140px;
+  }
+
+  .blog-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .blog-description {
+    font-size: 0.95rem;
+  }
+
+  .blog-info .view-button {
+    font-size: 0.85rem;
+  }
+
+  .blog-info span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive shrink for small screens */
+@media (max-width: 600px) {
+  .blog-card {
+    max-width: 95%;
+    width: 95%;
+  }
+
+  .blog-image {
+    height: 120px;
+  }
+
+  .blog-header h4 {
+    font-size: 1rem;
+  }
+
+  .blog-description {
+    font-size: 0.9rem;
+  }
+
+  .blog-info .view-button {
+    font-size: 0.8rem;
+  }
+
+  .blog-info span {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
 }
