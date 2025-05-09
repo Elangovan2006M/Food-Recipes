@@ -9,8 +9,9 @@
   overflow: hidden;
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 400px;
+  max-width: 600px;
   margin: 1rem auto;
+  width: 90%;
 }
 
 .blog-card:hover {
@@ -20,7 +21,7 @@
 
 .blog-image {
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: cover;
 }
 
@@ -99,4 +100,61 @@
   color: #888;
   background: none;
   padding: 0;
+}
+
+/* Responsive shrink for medium screens */
+@media (max-width: 768px) {
+  .blog-card {
+    max-width: 500px;
+    width: 85%;
+  }
+
+  .blog-image {
+    height: 140px;
+  }
+
+  .blog-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .blog-description {
+    font-size: 0.95rem;
+  }
+
+  .blog-info .view-button {
+    font-size: 0.85rem;
+  }
+
+  .blog-info span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive shrink for small screens */
+@media (max-width: 480px) {
+  .blog-card {
+    max-width: 95%;
+    width: 95%;
+  }
+
+  .blog-image {
+    height: 120px;
+  }
+
+  .blog-header h4 {
+    font-size: 1rem;
+  }
+
+  .blog-description {
+    font-size: 0.9rem;
+  }
+
+  .blog-info .view-button {
+    font-size: 0.8rem;
+  }
+
+  .blog-info span {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
 }

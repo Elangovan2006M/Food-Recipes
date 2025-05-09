@@ -47,6 +47,14 @@
     box-shadow: 0 4px 8px rgba(255, 125, 0, 0.3);
 
 }
+.all-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+  
 
 .blog-highlight-style {
     color: #EA7300;
