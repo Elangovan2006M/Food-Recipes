@@ -5,22 +5,37 @@ import BlogCard from "./BlogCard";
 import { useBlog } from "../Service/BlogContext";
 import { GrArticle } from "react-icons/gr";
 import '../Styles/Blog.css';
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+
 
 const Blog = () => {
     const [filteredBlogs, setFilteredBlogs] = useState([]);
     const { selectedBlog } = useBlog();
 
+
+    // Pagination states
+      const [currentPage, setCurrentPage] = useState(0);
+      const [totalPages, setTotalPages] = useState(1);
+      const pageSize = 3;
+
     useEffect(() => {
-        fetchAllBlogs();
+        fetchAllBlogs(0);
     }, [selectedBlog]);
 
-    const fetchAllBlogs = async () => {
+    const fetchAllBlogs = async (page) => {
         try {
-            const response = await getAllBlogs();
-            setFilteredBlogs(response.data);
+            const res = await getAllBlogs(page, pageSize);
+                  setFilteredBlogs(res.data.content);
+                  setTotalPages(res.data.totalPages);
+                  setCurrentPage(page);
         } catch (error) {
             console.log("Error displaying all recipes: ", error);
         }
+    };
+
+    
+    const handlePageChange = (newPage) => {
+        fetchAllBlogs(newPage);
     };
 
     return (
@@ -55,6 +70,22 @@ const Blog = () => {
                         <BlogCard key={index} blog={blog} />
                     ))}
                 </div>
+            </div>
+            {/* Pagination Controls */}
+            <div className="pagination-controls">
+                <button className='prev-button'
+                onClick={() => handlePageChange(currentPage - 1)} 
+                disabled={currentPage === 0}
+                >
+                <MdOutlineKeyboardArrowLeft />
+                </button>
+                <span className='page-numbers'>{`${currentPage + 1} of ${totalPages}`}</span>
+                <button  className='next-button'
+                onClick={() => handlePageChange(currentPage + 1)} 
+                disabled={currentPage === totalPages - 1}
+                >
+                <MdOutlineKeyboardArrowRight />
+                </button>
             </div>
         </div>
     );

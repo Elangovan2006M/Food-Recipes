@@ -162,3 +162,8 @@ hr{
     height: 1px;
 }
 
+@media screen {
+    .footer-container {
+        padding: 20px 30px;
+    }
+}

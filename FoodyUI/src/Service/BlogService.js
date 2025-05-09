@@ -2,9 +2,11 @@ import axios from "axios";
 
 const API_BASE_URL = 'http://localhost:8080/api/blogs';
 
-export const getAllBlogs = () => {
-    return axios.get(`${API_BASE_URL}`);
-}
+export const getAllBlogs = (page = 0, size = 10) => {
+    return axios.get(`${API_BASE_URL}`, {
+      params: { page, size }
+    });
+  };
 
 export const getBlogById = (id) => {
     return axios.get(`${API_BASE_URL}/${id}`);

@@ -336,7 +336,7 @@
   }
 
   .ingredients-box {
-    max-width: 100%;
+    max-width: 92%;
     padding: 15px;
     border-left: 4px solid #e86b00;
     border-bottom: 4px solid #e86b00;
@@ -350,17 +350,20 @@
   }
 
   .meta-box {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10%;
   }
 
   .overview-row {
     flex-direction: column;
   }
 
-  .overview-box,
-  .nutrition-box {
+  .overview-box {
     width: 100%;
+  }
+
+  .nutrition-box {
+    width: 90%;
   }
 
   .button-stack .button-back,
@@ -370,28 +373,5 @@
 
   .instruction-step {
     flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .meta-box {
-    grid-template-columns: 1fr;
-  }
-
-  .button-stack .button-front {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .recipe-title {
-    font-size: 1.2rem;
-  }
-
-  .instructions-section h3 {
-    font-size: 1.2rem;
-  }
-
-  .instruction-step h4 {
-    font-size: 1rem;
   }
 }

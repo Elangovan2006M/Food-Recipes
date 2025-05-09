@@ -123,7 +123,7 @@ const RecipeSearch = () => {
      
       <section className="content">
         <div className="search-header">
-          <div style={{ position: 'relative', width: '45%' }}>
+          <div className='search-title'>
             <input
               type="search"
               value={foodName}

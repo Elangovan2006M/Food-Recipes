@@ -2,6 +2,9 @@ package com.example.foody.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.foody.model.Recipe;
@@ -15,10 +18,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RecipeBlogService {
 
-    private final RecipeBlogRepository recipeBlogRepository;
+    @Autowired
+    private RecipeBlogRepository recipeBlogRepository;
 
-    public List<RecipeBlog> getAllBlogs() {
-        return recipeBlogRepository.findAll();
+    public Page<RecipeBlog> getAllBlogs(Pageable pageable) {
+        return recipeBlogRepository.findAll(pageable);
     }
 
     public RecipeBlog getBlogById(Integer id) {
