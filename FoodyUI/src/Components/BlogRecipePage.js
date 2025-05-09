@@ -67,7 +67,7 @@ const RecipeBlogPage = () => {
 
             <section className="pro-tips">
                 <h2 className="blog-page-titles">Pro <span className="blog-highlight-style"> Tips</span></h2>
-                <div>{selectedBlog.proTips.split("\n").map((tip, i) => (
+                <div>{selectedBlog.proTips.split(".").map((tip, i) => (
                     <p key={i}>
                         <FiCheckCircle className="contrast-icon" /> {tip}
                     </p>
