@@ -49,3 +49,28 @@
 .recent-tags span:nth-child(2) {
     background-color: #6366f1;
 }
+
+@media only screen and (max-width: 768px) {
+  .recent-blog-card {
+    flex-direction: column;
+  }
+  .recent-blog-card >div:first-child {
+    margin: 1rem auto;
+    margin-top: 1.5rem;
+  }
+
+  .recent-blog-card img {
+    border-radius: 10px;
+  }
+
+  .recent-content {
+    padding: 1rem;
+  }
+
+  .recent-content h3 {
+    font-size: 1.3rem;
+  }
+  .recent-content p {
+    font-size: 1rem;
+  }
+}

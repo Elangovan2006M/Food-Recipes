@@ -18,7 +18,7 @@ const RecentBlogCard = ({ blog }) => {
     };
   return (
     <div className="recent-blog-card">
-      <img src={blog.recipeImgUrl} alt={blog.recipeName} className="recent-img" />
+      <div><img src={blog.recipeImgUrl} alt={blog.recipeName} className="recent-img" /></div>
       <div className="recent-content">
             <div className="recent-tags">
             <span>Tips</span>
