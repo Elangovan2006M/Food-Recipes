@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RecipeBlogRepository extends JpaRepository<RecipeBlog, Integer> {
 
-    RecipeBlog findTopByOrderByCreatedAtDesc();
+
+    RecipeBlog findTop1ByOrderByCreatedAtDesc();
     // List<RecipeBlog> findByRecipeNameContainingIgnoreCase(String name);
 
 }
