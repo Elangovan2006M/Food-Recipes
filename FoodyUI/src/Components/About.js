@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Styles/About.css';
-import logo from '../Assests/round-logo.png';
-import AboutUsBanner from '../Assests/aboutusbanner.png';
 import { BiSolidVideos } from "react-icons/bi";
 import { FaGlobe, FaUtensils, FaAppleAlt } from "react-icons/fa";
+import { useLogo } from '../Service/LogoContext';
 
 const AboutUs = () => {
+    const{roundLogo, aboutUsBanner} = useLogo();
     return (
         <div className="about-us-container">
             <div className="about-us-header">
@@ -15,9 +15,9 @@ const AboutUs = () => {
 
             <div className="about-us-body">
                 <div className="about-us-left">
-                    <img src={AboutUsBanner} alt='About Us Banner' className='about-us-banner'/>
+                    <img src={aboutUsBanner.imageUrl} alt={aboutUsBanner.imageName} className='about-us-banner'/>
                     <div className='about-us-title'>
-                        <img src={logo} alt="Plate Stream Logo" className="about-us-logo" />
+                        <img src={roundLogo.imageUrl} alt={roundLogo.imageName}className="about-us-logo" />
                         <h2>Welcome to Plate Stream</h2>
                     </div>
                     <p>
