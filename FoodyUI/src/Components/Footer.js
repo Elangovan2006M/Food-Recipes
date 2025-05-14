@@ -1,13 +1,17 @@
-import React, { use } from "react";
+import React, { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecipe } from "../Service/RecipeContext";
-
+import { getAllLogos } from '../Service/LogoService';
+import { useLogo } from '../Service/LogoContext';
 import '../Styles/Footer.css';
-import PlateStream from '../Assests/Platestream.png';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
 
 const Footer = () =>
 {
+
+  const { logo} = useLogo();
+
+
     const navigate = useNavigate();
     const {setSelectedCuisine} = useRecipe();
     const {setSelectedFoodType} = useRecipe();
@@ -51,7 +55,7 @@ const Footer = () =>
             <div className="footer">
                 <div className="footer-about">
                     <div className="footer-about-logo">
-                        <img src={PlateStream} alt="logo-footer"/>
+                        <img src={logo.imageUrl} alt={logo.imageName}/>
                         <h1>Plate Stream</h1>
                     </div>
                     <p>Watch. Cook. Share. Your favorite recipes-streamed fresh every day.</p>

@@ -5,11 +5,13 @@ import com.example.foody.model.Recipe;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+@Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
     // Search by partial or full food name (case-insensitive an Similar)
@@ -26,7 +28,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
     //Fetch recipes by difficulty with pagination
     Page<Recipe> findByDifficultyIgnoreCase(String difficulty, Pageable pageable);
     //Popular views
-    @Query("SELECT r FROM Recipe r ORDER BY r.totalViews DESC LIMIT 10")
+    @Query("SELECT r FROM Recipe r ORDER BY r.totalViews DESC LIMIT 6")
     List<Recipe> findTopViewedRecipes();
 
 }

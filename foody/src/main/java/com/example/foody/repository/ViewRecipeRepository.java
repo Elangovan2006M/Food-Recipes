@@ -13,7 +13,7 @@ public interface ViewRecipeRepository extends JpaRepository<ViewRecipe, Long> {
 
     //Query for trending recipe in the last 7 days
 
-    @Query(value = "SELECT recipe_id FROM view_recipe WHERE viewed_at >= CURRENT_DATE - INTERVAL 7 DAY GROUP BY recipe_id ORDER BY COUNT(*) DESC", nativeQuery = true)
+    @Query(value = "SELECT recipe_id FROM view_recipe WHERE viewed_at >= CURRENT_DATE - INTERVAL 7 DAY GROUP BY recipe_id ORDER BY COUNT(*) DESC LIMIT 6", nativeQuery = true)
     List<Long> findTrendingRecipeIds();
 
 }
