@@ -179,7 +179,7 @@
 
 .home-popular-cards {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 16px;
   scroll-snap-type: x mandatory;
 }

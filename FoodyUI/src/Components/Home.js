@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getTrendingRecipes, getPopularRecipes } from "../Service/RecipeService";
 import '../Styles/Home.css';
-import Brand_Img from '../Assests/banner.png';
 import TrendingRecipeCard from "./TrendingRecipeCard";
 import RecipeCard from "./RecipeCard";
 import { MdTrendingUp } from 'react-icons/md';
@@ -12,14 +11,16 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { FaMapMarkedAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useRecipe } from "../Service/RecipeContext";
-import Blog from '../Assests/Blog.png';
-import logo from '../Assests/round-logo.png';
 import { BiSolidVideos } from "react-icons/bi";
 import { FaGlobe, FaUtensils, FaAppleAlt } from "react-icons/fa";
+import { useLogo } from '../Service/LogoContext';
+
 
 const Home = () => {
   const [trendingRecipes, setTrendingRecipes] = useState([]);
   const [popularRecipes, setPopularRecipes]   = useState([]);
+
+    const { homeBanner, blogBanner, roundLogo } = useLogo();
 
     const handleBlog = () => {
         navigate('/blogs');
@@ -73,7 +74,7 @@ const Home = () => {
         <div className="home-container">
             <div className="home">
                 <div className="home-banner">
-                    <img src={Brand_Img} alt="brand-image" className="brand-image"></img>
+                    <img src={homeBanner.imageUrl} alt={homeBanner.imageName} className="brand-image"></img>
                 </div>
                 <div className="home-welcome">
                     <h1>Vanakkam! <span className="brand-name">Plate Stream</span></h1>
@@ -202,7 +203,7 @@ const Home = () => {
                                 <button className="read-more" onClick={handleBlog}>Read More Articles &gt;&gt;&gt;</button>
                             </div>
                             <div className="kitchen-image">
-                                <img src={Blog} alt="Kitchen Collage" />
+                                <img src={blogBanner.imageUrl} alt={blogBanner.imageName} />
                             </div>
                         </div>
                     </div>
@@ -220,7 +221,7 @@ const Home = () => {
                         <div className="feature-banner">
                             <div className="feature-left">
                                 <h3>
-                                <img src={logo}/> is your all-in-one cooking companion — a platform designed to help you to <b>watch</b>, <b>learn</b>, and <b>cook</b> delicious meals easily.
+                                <img src={roundLogo.imageUrl}/> is your all-in-one cooking companion — a platform designed to help you to <b>watch</b>, <b>learn</b>, and <b>cook</b> delicious meals easily.
                                 </h3>
                                 <div className="cta-box">
                                 <p>

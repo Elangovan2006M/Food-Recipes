@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Styles/Contact.css';
-import logo from '../Assests/round-logo.png';
-import AboutUsBanner from '../Assests/aboutusbanner.png';
 import { IoIosMail } from "react-icons/io";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { useLogo } from '../Service/LogoContext';
 
 const Contact = () => {
+    const{ roundLogo } = useLogo();
     return (
         <div className="contact-us-container">
             <div className="contact-us-header">
@@ -16,7 +16,7 @@ const Contact = () => {
             <div className="contact-us-body">
                 <div className="contact-us">
                     <div className='contact-us-title'>
-                        <img src={logo} alt="Plate Stream Logo" className="contact-us-logo" />
+                        <img src={roundLogo.imageUrl} alt={roundLogo.imageName} className="contact-us-logo" />
                         <h2>Welcome to Plate Stream</h2>
                     </div>
                     <p>
