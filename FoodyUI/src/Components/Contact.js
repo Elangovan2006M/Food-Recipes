@@ -1,11 +1,12 @@
-import React from 'react';
 import '../Styles/Contact.css';
 import { IoIosMail } from "react-icons/io";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { useLogo } from '../Service/LogoContext';
+import { useSocialMedia } from '../Service/SocialMediaContext';
 
 const Contact = () => {
-    const{ roundLogo } = useLogo();
+    const { roundLogo } = useLogo();
+    const { facebook, instagram, twitter, mail } = useSocialMedia();
     return (
         <div className="contact-us-container">
             <div className="contact-us-header">
@@ -28,10 +29,10 @@ const Contact = () => {
                     <h2>Connect with Us</h2>
                 </div>
                 <div className='Links-body'>
-                    <a href="platestream@gmail.com" className="email-link" target='new' style={{backgroundColor:" #d44638"}}><IoIosMail />/platestream@gmail.com</a>
-                    <a href="https://www.instagram.com/platestream/" className="instagram-link" target='new' style={{background: "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf)"}}><FaInstagram/>/PlateStream</a>
-                    <a href="https://www.facebook.com/platestream" className="facebook-link" target='new' style={{backgroundColor:" #3b5998"}}><FaFacebook/>/PlateStream</a>
-                    <a href="https://www.twitter.com/platestream" className="linkedin-link" target='new' style={{backgroundColor:" #0077b5"}}><FaTwitter/>/PlateStream</a>
+                    <a href={mail.url} className="email-link" target='new' style={{backgroundColor:" #d44638"}}><IoIosMail />/platestream@gmail.com</a>
+                    <a href={instagram.url} className="instagram-link" target='new' style={{background: "linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf)"}}><FaInstagram/>/PlateStream</a>
+                    <a href={facebook.url} className="facebook-link" target='new' style={{backgroundColor:" #3b5998"}}><FaFacebook/>/PlateStream</a>
+                    <a href={twitter.url} className="twitter-link" target='new' style={{backgroundColor:" #0077b5"}}><FaTwitter/>/PlateStream</a>
                 </div>
             </div>
             </div>

@@ -26,13 +26,7 @@ public class RecipeController {
     private RecipeService recipeService;
 
     
-//     @GetMapping("/{id}")
-//     public ResponseEntity<Recipe> getRecipeAndTrackView(@PathVariable Long id, HttpServletRequest request) {
-//         String ip = request.getRemoteAddr();
-//         recipeService.trackView(id, ip);
-//         Recipe recipe = recipeService.getRecipeById(id);
-//         return ResponseEntity.ok(recipe);
-// }
+
     @GetMapping("/{id}")
     public ResponseEntity<Recipe> getRecipeById(@PathVariable Long id, HttpServletRequest request) {
         String ipAddress = request.getRemoteAddr();

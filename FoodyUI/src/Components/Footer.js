@@ -1,15 +1,16 @@
-import React, { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecipe } from "../Service/RecipeContext";
-import { getAllLogos } from '../Service/LogoService';
 import { useLogo } from '../Service/LogoContext';
 import '../Styles/Footer.css';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram} from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { useSocialMedia } from '../Service/SocialMediaContext';
 
 const Footer = () =>
 {
 
-  const { logo} = useLogo();
+    const { logo} = useLogo();
+    const { facebook, instagram, twitter, mail } = useSocialMedia();
 
 
     const navigate = useNavigate();
@@ -60,10 +61,10 @@ const Footer = () =>
                     </div>
                     <p>Watch. Cook. Share. Your favorite recipes-streamed fresh every day.</p>
                     <div className="socialmedia">
-                        <a href="https://www.facebook.com/platestream/"target="new" ><FaFacebook className="footer-socialmedia" size={24} color="white"/></a>
-                        <a href="https://www.twitter.com/platestream/" target="new"><FaTwitter className="footer-socialmedia" size={24} color="white" /></a>
-                        <a href="https://www.instagram.com/platestream/" target="new"><FaInstagram className="footer-socialmedia" size={24} color="white"/></a>
-                        <a href="https://www.linkedin.com/platestream/" target="new"><FaLinkedin className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href={facebook.url} target="new" ><FaFacebook className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href={twitter.url} target="new"><FaTwitter className="footer-socialmedia" size={24} color="white" /></a>
+                        <a href={instagram.url} target="new"><FaInstagram className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href={mail.url} target="new"><IoIosMail className="footer-socialmedia" size={28} color="white"/></a>
                     </div>
                 </div>
                 <div className="quick-links">

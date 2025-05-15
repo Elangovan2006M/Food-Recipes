@@ -1,8 +1,9 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { RecipeProvider } from './Service/RecipeContext';
 import { BlogProvider } from './Service/BlogContext';
 import { LogoProvider, useLogo } from './Service/LogoContext';
+import { SocialMediaProvider,useSocialMedia } from './Service/SocialMediaContext';
+
 import Recipe from './Components/Recipe';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -15,15 +16,16 @@ import AboutUs from './Components/About';
 import Contact from './Components/Contact';
 
 const AppContent = () => {
-  const { loading } = useLogo();
+  const { loading: logoLoading } = useLogo();
+  const { loading: socialLoading } = useSocialMedia();
 
-if (loading) {
-  return (
-    <div className="loading-container">
-      <img src="/spinner.gif" alt="Loading..." />
-    </div>
-  );
-}
+  if (logoLoading || socialLoading) {
+    return (
+      <div className="loading-container">
+        <img src="/spinner.gif" alt="Loading..." />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -43,16 +45,21 @@ if (loading) {
   );
 };
 
+
 const App = () => {
-  
   return (
     <RecipeProvider>
       <BlogProvider>
-        <AppContent />
+        <LogoProvider>
+          <SocialMediaProvider>
+            <Router>
+              <AppContent />
+            </Router>
+          </SocialMediaProvider>
+        </LogoProvider>
       </BlogProvider>
     </RecipeProvider>
   );
 };
-
 
 export default App;
