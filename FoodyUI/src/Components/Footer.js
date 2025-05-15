@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useRecipe } from "../Service/RecipeContext";
 import { useLogo } from '../Service/LogoContext';
@@ -5,13 +6,14 @@ import '../Styles/Footer.css';
 import { FaFacebook, FaTwitter, FaInstagram} from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { useSocialMedia } from '../Service/SocialMediaContext';
+import { subscribeWithEmail } from '../Service/SubscribeService';
 
 const Footer = () =>
 {
-
     const { logo} = useLogo();
     const { facebook, instagram, twitter, mail } = useSocialMedia();
-
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
     const {setSelectedCuisine} = useRecipe();
@@ -50,6 +52,27 @@ const Footer = () =>
         setSelectedDifficulty('');
         navigate('/recipe');
     }
+
+    // Subscribe function
+    const handleSubscribe = async () => {
+        if (!email) {
+            setMessage('Please enter a valid email.');
+            return;
+        }
+        try {
+            const response = await subscribeWithEmail(email);
+            if (response.data) {
+            setMessage('Successfully subscribed!');
+            setEmail('');
+            } else {
+            setMessage('Email is already subscribed.');
+            }
+        } catch (error) {
+            setMessage('An error occurred while subscribing.');
+            console.error(error);
+        }
+    };
+
 
     return (
         <div className="footer-container">
@@ -94,8 +117,14 @@ const Footer = () =>
                     <p>Get weekly recipes, video drops, and cooking tips straight to your inbox</p>
 
                     <div className="footer-contact">
-                        <input type="email" placeholder="Enter email to connect"/>
-                        <button type="submit">Subscribe</button>
+                        <input
+                            type="email"
+                            placeholder="Enter email to connect"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button type="button" onClick={handleSubscribe}>Subscribe</button>
+                        {message && <p className="subscribe-message">{message}</p>}
                     </div>
                 </div>
 
