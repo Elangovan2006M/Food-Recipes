@@ -50,6 +50,33 @@ public class RecipeService {
         return recipeRepository.save(recipe);
     }
 
+    public Recipe updateRecipe(Long id, Recipe updatedRecipe) {
+        Recipe existingRecipe = recipeRepository.findById(id)
+            .orElseThrow(() -> new NoSuchElementException("Recipe not found with ID: " + id));
+
+        existingRecipe.setFoodName(updatedRecipe.getFoodName());
+        existingRecipe.setDescription(updatedRecipe.getDescription());
+        existingRecipe.setImageUrl(updatedRecipe.getImageUrl());
+        existingRecipe.setVideoUrl(updatedRecipe.getVideoUrl());
+        existingRecipe.setIngredients(updatedRecipe.getIngredients());
+        existingRecipe.setCuisines(updatedRecipe.getCuisines());
+        existingRecipe.setPrepTime(updatedRecipe.getPrepTime());
+        existingRecipe.setCookTime(updatedRecipe.getCookTime());
+        existingRecipe.setTotalTime(updatedRecipe.getTotalTime());
+        existingRecipe.setDifficulty(updatedRecipe.getDifficulty());
+        existingRecipe.setFoodType(updatedRecipe.getFoodType());
+        existingRecipe.setOverview(updatedRecipe.getOverview());
+
+        return recipeRepository.save(existingRecipe);
+    }
+    
+    @Transactional
+        public void deleteRecipe(Long id) {
+            viewRecipeRepository.deleteByRecipeId(id);  // First delete child records
+            recipeRepository.deleteById(id);            // Then delete parent recipe
+        }
+
+
     // Search Methods
     public List<Recipe> searchByFoodName(String foodName) {
         return recipeRepository.findByFoodNameContainingIgnoreCase(foodName);

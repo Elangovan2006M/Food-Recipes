@@ -25,8 +25,6 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    
-
     @GetMapping("/{id}")
     public ResponseEntity<Recipe> getRecipeById(@PathVariable Long id, HttpServletRequest request) {
         String ipAddress = request.getRemoteAddr();
@@ -39,6 +37,25 @@ public class RecipeController {
         }
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Recipe> updateRecipe(@PathVariable Long id, @RequestBody Recipe updatedRecipe) {
+        try {
+            Recipe recipe = recipeService.updateRecipe(id, updatedRecipe);
+            return ResponseEntity.ok(recipe);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {
+        try {
+            recipeService.deleteRecipe(id);
+            return ResponseEntity.noContent().build();
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
     @PostMapping
@@ -92,6 +109,7 @@ public class RecipeController {
         Pageable pageable = PageRequest.of(page, size);
         return recipeService.searchByDifficulty(level,pageable);
     }
+
     @GetMapping("/popular")
     public List<Recipe> getPopularRecipes() {
     return recipeService.getPopularRecipes();
@@ -111,12 +129,10 @@ public class RecipeController {
         
     }
 
-
     @GetMapping("/{id}/instructions")
     public Instruction getInstructionsByRecipeId(@PathVariable Long id) {
         return recipeService.getInstructionsByRecipeId(id);
     }
-
 
     @GetMapping("/{id}/nutrition")
     public Nutrition getNutritionByRecipeId(@PathVariable Long id) {
