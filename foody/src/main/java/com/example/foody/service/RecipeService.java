@@ -67,6 +67,22 @@ public class RecipeService {
         existingRecipe.setFoodType(updatedRecipe.getFoodType());
         existingRecipe.setOverview(updatedRecipe.getOverview());
 
+        // Update instruction
+        if (updatedRecipe.getInstructions() != null) {
+            Instruction updatedInstruction = updatedRecipe.getInstructions();
+            updatedInstruction.setId(existingRecipe.getInstructions().getId());
+            updatedInstruction.setRecipe(existingRecipe);
+            existingRecipe.setInstructions(updatedInstruction);
+        }
+
+        // Update nutrition
+        if (updatedRecipe.getNutrition() != null) {
+            Nutrition updatedNutrition = updatedRecipe.getNutrition();
+            updatedNutrition.setId(existingRecipe.getNutrition().getId()); 
+            updatedNutrition.setRecipe(existingRecipe);
+            existingRecipe.setNutrition(updatedNutrition);
+        }
+
         return recipeRepository.save(existingRecipe);
     }
     

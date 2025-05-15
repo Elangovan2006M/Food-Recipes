@@ -10,9 +10,8 @@ const TrendingRecipeCard = ({ recipe }) => {
 
   const handleClick = async () => {
     try {
-      const response = await getRecipeById(recipe.id);
       await incrementRecipeViews(recipe.id);
-      setSelectedRecipe(response.data);
+      setSelectedRecipe(recipe);
       navigate('/recipes');
     } catch (error) {
       console.error("Error fetching recipe", error);

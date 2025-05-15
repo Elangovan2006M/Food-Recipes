@@ -20,6 +20,7 @@ const RecipeCard = ({ recipe }) => {
     }
     catch(error) {
       console.log("Failed to update view count: ", error);
+      navigate('/recipes');
     }
   };
 
@@ -35,6 +36,7 @@ const RecipeCard = ({ recipe }) => {
           <h4>{recipe.foodName}</h4>
           <button
             className="view-button"
+            
             onClick={handleClick}
           >
             View

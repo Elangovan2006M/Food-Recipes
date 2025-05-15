@@ -55,13 +55,23 @@ export const searchByFoodName = (name) => {
   });
 };
 
+// Update a recipe by ID
+export const updateRecipe = (id, updatedRecipe) => {
+  return axios.put(`${API_BASE_URL}/${id}`, updatedRecipe);
+};
 
+// Delete a recipe by ID
+export const deleteRecipe = (id) => {
+  return axios.delete(`${API_BASE_URL}/${id}`);
+};
 
 
 // Increment total views for a recipe
-export const incrementRecipeViews = (id) => {
-  return axios.put(`${API_BASE_URL}/${id}/view`);
+export const incrementRecipeViews = async (id) => {
+  const response = await axios.put(`http://localhost:8080/api/recipes/${id}/view`);
+  return response.data;
 };
+
 export const getTrendingRecipes = () => axios.get(`${API_BASE_URL}/trending`);
 export const getPopularRecipes  = () => axios.get(`${API_BASE_URL}/popular`);
 

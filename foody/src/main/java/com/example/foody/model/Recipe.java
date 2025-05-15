@@ -148,7 +148,6 @@ public class Recipe {
         this.nutrition = nutrition;
     }
 
-    @Column(name = "total_views")
     private Integer totalViews;
 
     @Column(columnDefinition = "TEXT")
@@ -158,9 +157,10 @@ public class Recipe {
     @JsonManagedReference
     private Instruction instructions;
 
-    @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL,  orphanRemoval = true)
     @JsonManagedReference
     private Nutrition nutrition;
+
 
     public Integer getTotalViews() {
         return totalViews;
@@ -169,7 +169,5 @@ public class Recipe {
     public void setTotalViews(Integer totalViews) {
         this.totalViews = totalViews;
     }
-
-
 
 }

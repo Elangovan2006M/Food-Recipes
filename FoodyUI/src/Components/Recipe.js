@@ -8,7 +8,6 @@ import { MdOutlineKeyboardArrowLeft,MdOutlineKeyboardArrowRight } from "react-ic
 const Recipe = () => {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const { selectedCuisine, selectedFoodType, selectedDifficulty, selectedTime } = useRecipe(); // Accessing filter states from context
-  const { setSelectedCuisine, setSelectedFoodType, setSelectedDifficulty, setSelectedTime } = useRecipe(); // Accessing filter setters from context
 
 
    // Pagination state

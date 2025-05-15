@@ -14,6 +14,8 @@ import Blog from './Components/Blog';
 import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
 import Contact from './Components/Contact';
+import SideBar from './Admin/Components/SideBar';
+import RecipePage from './Admin/Components/RecipePage';
 
 const AppContent = () => {
   const { loading: logoLoading } = useLogo();
@@ -39,6 +41,8 @@ const AppContent = () => {
         <Route path="/blogs/view" element={<BlogRecipePage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<SideBar/>} />
+        <Route path="/ps-recipes" element={<RecipePage />} />
       </Routes>
       <Footer />
     </>
@@ -48,17 +52,15 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <RecipeProvider>
-      <BlogProvider>
+    <BlogProvider>
         <LogoProvider>
+        <RecipeProvider>
           <SocialMediaProvider>
-            <Router>
               <AppContent />
-            </Router>
           </SocialMediaProvider>
-        </LogoProvider>
-      </BlogProvider>
-    </RecipeProvider>
+        </RecipeProvider>
+      </LogoProvider>
+    </BlogProvider>
   );
 };
 
