@@ -19,6 +19,7 @@ import RecipePage from './Admin/Components/RecipePage';
 import Login from './Admin/Components/Login';
 
 import SideBar from './Admin/Components/SideBar';
+import Register from './Admin/Components/Register';
 
 
 const AppContent = () => {
@@ -41,6 +42,7 @@ const AppContent = () => {
       <SideBar/>
         <Routes>
           <Route path='/admin-login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path="/ps-recipes" element={<RecipePage />} />
         </Routes>
       </>

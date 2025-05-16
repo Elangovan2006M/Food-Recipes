@@ -1,40 +1,40 @@
-// package com.example.foody.dto;
+package com.example.foody.dto;
 
-// import lombok.AllArgsConstructor;
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-// @Data
-// @AllArgsConstructor
-// @NoArgsConstructor
-// public class ChangePasswordRequest {
-//     private String email;
-//     private String oldPassword;
-//     private String newPassword;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ChangePasswordRequest {
+    private String email;
+    private String oldPassword;
+    private String newPassword;
 
-//     // Getters and Setters
+    // Getters and Setters
 
-//     public String getEmail() {
-//         return email;
-//     }
+    public String getEmail() {
+        return email;
+    }
 
-//     public void setEmail(String email) {
-//         this.email = email;
-//     }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-//     public String getOldPassword() {
-//         return oldPassword;
-//     }
+    public String getOldPassword() {
+        return oldPassword;
+    }
 
-//     public void setOldPassword(String oldPassword) {
-//         this.oldPassword = oldPassword;
-//     }
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
 
-//     public String getNewPassword() {
-//         return newPassword;
-//     }
+    public String getNewPassword() {
+        return newPassword;
+    }
 
-//     public void setNewPassword(String newPassword) {
-//         this.newPassword = newPassword;
-//     }
-// }
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+}

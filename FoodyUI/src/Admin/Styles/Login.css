@@ -1,11 +1,11 @@
 /* Desktop & larger screens */
-.admin-register {
+.admin-login {
     text-align: center;
     padding: 40px;
     min-height: 100vh;
 }
 
-.admin-register-heading {
+.admin-login-heading {
     font-size: 28px;
     margin-bottom: 10px;
     color: #333;
@@ -16,14 +16,14 @@
     text-shadow: #333;
 }
 
-.regsiter-container {
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
 }
 
-.register-box {
+.login-box {
     background-color: #fff;
     padding: 40px;
     border-radius: 12px solid #000;
@@ -31,18 +31,18 @@
     width: 400px;
 }
 
-.register-box form {
+.login-box form {
     display: flex;
     flex-direction: column;
 }
 
-.register-box label {
+.login-box label {
     margin-bottom: 6px;
     font-weight: bold;
     text-align: left;
 }
 
-.register-box input {
+.login-box input {
     padding: 12px;
     margin-bottom: 20px;
     font-size: 16px;
@@ -50,7 +50,7 @@
     border-radius: 8px;
 }
 
-.register-box button {
+.login-box button {
     padding: 14px;
     font-size: 16px;
     background-color: #000;
@@ -62,7 +62,7 @@
     transition: background 0.3s ease;
 }
 
-.register-box button:hover {
+.login-box button:hover {
     background-color: #000;
     box-shadow: 5px 5px 5px 5px rgba(82, 69, 47, 0.4);
 }

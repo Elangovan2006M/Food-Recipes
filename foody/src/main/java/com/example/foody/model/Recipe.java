@@ -20,7 +20,10 @@ public class Recipe {
     private String description;
     private String imageUrl;
     private String videoUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String ingredients;
+    
     private String cuisines;
     private double prepTime;
     private double cookTime;
