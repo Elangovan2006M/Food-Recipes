@@ -30,7 +30,7 @@ const RecipeDisplay = () => {
         <div className="ingredients-box">
           <h3>Ingredients</h3>
           <ul>
-            {selectedRecipe.ingredients.split('$').map((item, index) => (
+            {selectedRecipe.ingredients.split('\n').map((item, index) => (
               <li key={index}><span className="ingredient">{item.trim()}</span></li>
             ))}
           </ul>
@@ -80,7 +80,7 @@ const RecipeDisplay = () => {
           <button className="button-front"> Follow The Instructions</button>
         </div>
 
-        {selectedRecipe.instructions.stepDescription.split('$').map((step, index) => (
+        {selectedRecipe.instructions.stepDescription.split('\n').map((step, index) => (
           <div key={index} className="instruction-step">
             <h4>{index + 1 < 10 ? `0${index + 1}` : index + 1}</h4>
             <p>{step.trim()}</p>
