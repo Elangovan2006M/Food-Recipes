@@ -4,7 +4,6 @@ import com.example.foody.model.Recipe;
 import com.example.foody.model.RecipeBlog;
 import com.example.foody.service.RecipeBlogService;
 
-import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
