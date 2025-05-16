@@ -16,6 +16,7 @@ import AboutUs from './Components/About';
 import Contact from './Components/Contact';
 import SideBar from './Admin/Components/SideBar';
 import RecipePage from './Admin/Components/RecipePage';
+import Login from './Admin/Components/Login';
 
 const AppContent = () => {
   const { loading: logoLoading } = useLogo();
@@ -33,6 +34,7 @@ const AppContent = () => {
     <>
       <Navbar />
       <Routes>
+        <Route path='/admin-login' element={<Login/>}/>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<RecipeSearch />} />
         <Route path="/recipe" element={<Recipe />} />
