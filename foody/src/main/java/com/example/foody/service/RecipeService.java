@@ -47,8 +47,28 @@ public class RecipeService {
     }
     
     public Recipe saveRecipe(Recipe recipe) {
+    // Ensure the recipe object is not null
+        if (recipe == null) {
+            throw new IllegalArgumentException("Recipe cannot be null");
+        }
+
+        // Manage Instruction child
+        Instruction instruction = recipe.getInstructions();
+        if (instruction != null) {
+            instruction.setRecipe(recipe);
+            recipe.setInstructions(instruction);
+        }
+
+        // Manage Nutrition child
+        Nutrition nutrition = recipe.getNutrition();
+        if (nutrition != null) {
+            nutrition.setRecipe(recipe);
+            recipe.setNutrition(nutrition);
+        }
+
         return recipeRepository.save(recipe);
     }
+
 
     public Recipe updateRecipe(Long id, Recipe updatedRecipe) {
         Recipe existingRecipe = recipeRepository.findById(id)
@@ -167,10 +187,5 @@ public class RecipeService {
         return nutritionRepository.findByRecipeId(recipeId);
     }
 
-    public Instruction saveInstruction(Instruction instruction) {
-        return instructionRepository.save(instruction);
-    }
-    public Nutrition saveNutrition(Nutrition nutrition) {
-        return nutritionRepository.save(nutrition);
-    }   
+
 }

@@ -8,6 +8,7 @@
   border-collapse: collapse;
 }
 
+
 .recipe-table th,
 .recipe-table td {
   border: 1px solid #ddd;
@@ -22,6 +23,7 @@
 
 .recipe-table textarea,
 .recipe-table input {
+  min-width: 200px;
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
@@ -53,4 +55,18 @@ button {
 
 .new-row {
   background-color: #eafaf1;
+}
+.recipe-content {
+  margin-left: 15%; /* Accounts for the fixed sidebar width */
+  width: 75%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* On mobile, when sidebar is hidden */
+@media (max-width: 768px) {
+  .recipe-content {
+    margin-left: 0;
+    width: 100%;
+  }
 }
