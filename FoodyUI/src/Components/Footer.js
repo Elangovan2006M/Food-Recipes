@@ -1,16 +1,19 @@
-import React, { useEffect, useState} from "react";
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useRecipe } from "../Service/RecipeContext";
-import { getAllLogos } from '../Service/LogoService';
 import { useLogo } from '../Service/LogoContext';
 import '../Styles/Footer.css';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram} from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { useSocialMedia } from '../Service/SocialMediaContext';
+import { subscribeWithEmail } from '../Service/SubscribeService';
 
 const Footer = () =>
 {
-
-  const { logo} = useLogo();
-
+    const { logo} = useLogo();
+    const { facebook, instagram, twitter, mail } = useSocialMedia();
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
     const {setSelectedCuisine} = useRecipe();
@@ -50,6 +53,27 @@ const Footer = () =>
         navigate('/recipe');
     }
 
+    // Subscribe function
+    const handleSubscribe = async () => {
+        if (!email) {
+            setMessage('Please enter a valid email.');
+            return;
+        }
+        try {
+            const response = await subscribeWithEmail(email);
+            if (response.data) {
+            setMessage('Successfully subscribed!');
+            setEmail('');
+            } else {
+            setMessage('Email is already subscribed.');
+            }
+        } catch (error) {
+            setMessage('An error occurred while subscribing.');
+            console.error(error);
+        }
+    };
+
+
     return (
         <div className="footer-container">
             <div className="footer">
@@ -60,10 +84,10 @@ const Footer = () =>
                     </div>
                     <p>Watch. Cook. Share. Your favorite recipes-streamed fresh every day.</p>
                     <div className="socialmedia">
-                        <a href="https://www.facebook.com/platestream/"target="new" ><FaFacebook className="footer-socialmedia" size={24} color="white"/></a>
-                        <a href="https://www.twitter.com/platestream/" target="new"><FaTwitter className="footer-socialmedia" size={24} color="white" /></a>
-                        <a href="https://www.instagram.com/platestream/" target="new"><FaInstagram className="footer-socialmedia" size={24} color="white"/></a>
-                        <a href="https://www.linkedin.com/platestream/" target="new"><FaLinkedin className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href={facebook.url} target="new" ><FaFacebook className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href={twitter.url} target="new"><FaTwitter className="footer-socialmedia" size={24} color="white" /></a>
+                        <a href={instagram.url} target="new"><FaInstagram className="footer-socialmedia" size={24} color="white"/></a>
+                        <a href={mail.url} target="new"><IoIosMail className="footer-socialmedia" size={28} color="white"/></a>
                     </div>
                 </div>
                 <div className="quick-links">
@@ -93,8 +117,14 @@ const Footer = () =>
                     <p>Get weekly recipes, video drops, and cooking tips straight to your inbox</p>
 
                     <div className="footer-contact">
-                        <input type="email" placeholder="Enter email to connect"/>
-                        <button type="submit">Subscribe</button>
+                        <input
+                            type="email"
+                            placeholder="Enter email to connect"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button type="button" onClick={handleSubscribe}>Subscribe</button>
+                        {message && <p className="subscribe-message">{message}</p>}
                     </div>
                 </div>
 

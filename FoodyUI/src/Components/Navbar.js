@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../Styles/Navbar.css';
 import { FiSearch } from 'react-icons/fi';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { getAllLogos } from '../Service/LogoService';
 import { useNavigate } from 'react-router-dom';
 import { useLogo } from '../Service/LogoContext';
 
@@ -10,7 +9,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   
-  const { logo} = useLogo();
+  const {logo} = useLogo();
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);

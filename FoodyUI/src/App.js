@@ -1,8 +1,9 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { RecipeProvider } from './Service/RecipeContext';
 import { BlogProvider } from './Service/BlogContext';
 import { LogoProvider, useLogo } from './Service/LogoContext';
+import { SocialMediaProvider,useSocialMedia } from './Service/SocialMediaContext';
+
 import Recipe from './Components/Recipe';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -13,17 +14,20 @@ import Blog from './Components/Blog';
 import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
 import Contact from './Components/Contact';
+import SideBar from './Admin/Components/SideBar';
+import RecipePage from './Admin/Components/RecipePage';
 
 const AppContent = () => {
-  const { loading } = useLogo();
+  const { loading: logoLoading } = useLogo();
+  const { loading: socialLoading } = useSocialMedia();
 
-if (loading) {
-  return (
-    <div className="loading-container">
-      <img src="/spinner.gif" alt="Loading..." />
-    </div>
-  );
-}
+  if (logoLoading || socialLoading) {
+    return (
+      <div className="loading-container">
+        <img src="/spinner.gif" alt="Loading..." />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -37,22 +41,27 @@ if (loading) {
         <Route path="/blogs/view" element={<BlogRecipePage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<SideBar/>} />
+        <Route path="/ps-recipes" element={<RecipePage />} />
       </Routes>
       <Footer />
     </>
   );
 };
 
+
 const App = () => {
-  
   return (
-    <RecipeProvider>
-      <BlogProvider>
-        <AppContent />
-      </BlogProvider>
-    </RecipeProvider>
+    <BlogProvider>
+        <LogoProvider>
+        <RecipeProvider>
+          <SocialMediaProvider>
+              <AppContent />
+          </SocialMediaProvider>
+        </RecipeProvider>
+      </LogoProvider>
+    </BlogProvider>
   );
 };
-
 
 export default App;
