@@ -36,6 +36,7 @@ const AppContent = () => {
       <>
       <SideBar/>
         <Routes>
+          <Route path="/" element={<Login/>} />
           <Route path="/ps-recipes" element={<RecipePage />} />
         </Routes>
       </>
