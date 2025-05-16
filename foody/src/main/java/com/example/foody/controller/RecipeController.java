@@ -139,13 +139,4 @@ public class RecipeController {
         return recipeService.getNutritionByRecipeId(id);
     }
 
-    @PostMapping("/nutrition")
-    public Nutrition createNutrition(@RequestBody Nutrition nutrition) {
-        return recipeService.saveNutrition(nutrition);
-    }
-
-    @PostMapping("/instructions")
-    public Instruction createInstruction(@RequestBody Instruction instruction) {
-        return recipeService.saveInstruction(instruction);
-    }
 }

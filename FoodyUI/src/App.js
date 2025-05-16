@@ -3,7 +3,7 @@ import { RecipeProvider } from './Service/RecipeContext';
 import { BlogProvider } from './Service/BlogContext';
 import { LogoProvider, useLogo } from './Service/LogoContext';
 import { SocialMediaProvider,useSocialMedia } from './Service/SocialMediaContext';
-
+import { useState } from 'react';
 import Recipe from './Components/Recipe';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -14,13 +14,17 @@ import Blog from './Components/Blog';
 import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
 import Contact from './Components/Contact';
-import SideBar from './Admin/Components/SideBar';
 import RecipePage from './Admin/Components/RecipePage';
+
 import Login from './Admin/Components/Login';
+
+import SideBar from './Admin/Components/SideBar';
+
 
 const AppContent = () => {
   const { loading: logoLoading } = useLogo();
   const { loading: socialLoading } = useSocialMedia();
+  const [admin, setAdmin] = useState(true);
 
   if (logoLoading || socialLoading) {
     return (
@@ -32,21 +36,31 @@ const AppContent = () => {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path='/admin-login' element={<Login/>}/>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<RecipeSearch />} />
-        <Route path="/recipe" element={<Recipe />} />
-        <Route path="/recipes" element={<RecipeDisplay />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/blogs/view" element={<BlogRecipePage />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<SideBar/>} />
-        <Route path="/ps-recipes" element={<RecipePage />} />
-      </Routes>
-      <Footer />
+    {admin ?(
+      <>
+      <SideBar/>
+        <Routes>
+          <Route path='/admin-login' element={<Login/>}/>
+          <Route path="/ps-recipes" element={<RecipePage />} />
+        </Routes>
+      </>
+    ):(
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<RecipeSearch />} />
+          <Route path="/recipe" element={<Recipe />} />
+          <Route path="/recipes" element={<RecipeDisplay />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs/view" element={<BlogRecipePage />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </>
+    )}
+
     </>
   );
 };
