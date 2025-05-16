@@ -15,7 +15,11 @@ import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
 import Contact from './Components/Contact';
 import RecipePage from './Admin/Components/RecipePage';
+
+import Login from './Admin/Components/Login';
+
 import SideBar from './Admin/Components/SideBar';
+
 
 const AppContent = () => {
   const { loading: logoLoading } = useLogo();
@@ -36,7 +40,7 @@ const AppContent = () => {
       <>
       <SideBar/>
         <Routes>
-          <Route path="/" element={<Login/>} />
+          <Route path='/admin-login' element={<Login/>}/>
           <Route path="/ps-recipes" element={<RecipePage />} />
         </Routes>
       </>
@@ -56,6 +60,7 @@ const AppContent = () => {
         <Footer />
       </>
     )}
+
     </>
   );
 };
