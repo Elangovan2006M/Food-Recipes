@@ -36,6 +36,6 @@ public class SubscribeService {
     }
 
     public void deleteSubscriber(Long id) {
-       deleteSubscriber(id);
+       repository.deleteById(id);
     }
 }
