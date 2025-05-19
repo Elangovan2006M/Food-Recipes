@@ -255,25 +255,25 @@ const RecipePage = () => {
         <tbody>
 
           <tr className="new-row">
-            <td><input value={newRecipe.foodName} placeholder="Enter food name" onChange={(e) => setNewRecipe({ ...newRecipe, foodName: e.target.value })} required/></td>
-            <td><textarea value={newRecipe.description} placeholder="Enter a short description" onChange={(e) => setNewRecipe({ ...newRecipe, description: e.target.value })} required/></td>
-            <td><input value={newRecipe.overview} placeholder="Enter an overview of the recipe" onChange={(e) => setNewRecipe({ ...newRecipe, overview: e.target.value })} required/></td>
-            <td><input value={newRecipe.imageUrl} placeholder="Enter image URL" onChange={(e) => setNewRecipe({ ...newRecipe, imageUrl: e.target.value })} required/></td>
-            <td><input value={newRecipe.videoUrl} placeholder="Enter YouTube video URL" onChange={(e) => setNewRecipe({ ...newRecipe, videoUrl: e.target.value })} required/></td>
-            <td><textarea value={newRecipe.ingredients} placeholder="Enter ingredients (e.g., sugar - 200g)" onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value })} required/><div><ul>{newRecipe.ingredients && newRecipe.ingredients.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
-            <td><textarea value={newRecipe.instructions} placeholder="Enter steps (e.g., Boil water)" onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value })} required/><div><ul>{newRecipe.instructions&& newRecipe.instructions.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
-            <td><input value={newRecipe.prepTime} placeholder="Enter preparation time (e.g., 15)" onChange={(e) => setNewRecipe({ ...newRecipe, prepTime: e.target.value })} required/></td>
-            <td><input value={newRecipe.cookTime} placeholder="Enter cooking time (e.g., 30)" onChange={(e) => setNewRecipe({ ...newRecipe, cookTime: e.target.value })} required/></td>
-            <td><input value={newRecipe.totalTime} placeholder="Enter total time (e.g., 45)" onChange={(e) => setNewRecipe({ ...newRecipe, totalTime: e.target.value })} required/></td>
-            <td><input value={newRecipe.difficulty} placeholder="Enter difficulty (e.g., Easy, Medium, Hard)" onChange={(e) => setNewRecipe({ ...newRecipe, difficulty: e.target.value })} required/></td>
-            <td><input value={newRecipe.foodType} placeholder="Enter food type (e.g., Lunch, Breakfast, Dinner)" onChange={(e) => setNewRecipe({ ...newRecipe, foodType: e.target.value })} required/></td>
-            <td><input value={newRecipe.cuisines} placeholder="Enter cuisine type (e.g., Indian, Italian)" onChange={(e) => setNewRecipe({ ...newRecipe, cuisines: e.target.value })} required/></td>
-            <td><input value={newRecipe.calories} placeholder="Enter calorie count (e.g., 200)" onChange={(e) => setNewRecipe({ ...newRecipe, calories: e.target.value })} required/></td>
-            <td><input value={newRecipe.sugar} placeholder="Enter sugar content (e.g., 10)" onChange={(e) => setNewRecipe({ ...newRecipe, sugar: e.target.value })} required/></td>
-            <td><input value={newRecipe.protein} placeholder="Enter protein content (e.g., 8)" onChange={(e) => setNewRecipe({ ...newRecipe, protein: e.target.value })} required/></td>
-            <td><input value={newRecipe.fat} placeholder="Enter fat content (e.g., 5)" onChange={(e) => setNewRecipe({ ...newRecipe, fat: e.target.value })} required/></td>
-            <td><input value={newRecipe.fiber} placeholder="Enter fiber content (e.g., 2)" onChange={(e) => setNewRecipe({ ...newRecipe, fiber: e.target.value })} required/></td>
-            <td><input value={newRecipe.carbohydrates} placeholder="Enter carbohydrates content (e.g., 25)" onChange={(e) => setNewRecipe({ ...newRecipe, carbohydrates: e.target.value })} required/></td>
+            <td><input value={newRecipe.foodName} placeholder="Enter food name" onChange={(e) => setNewRecipe({ ...newRecipe, foodName: e.target.value })} /></td>
+            <td><textarea value={newRecipe.description} placeholder="Enter a short description" onChange={(e) => setNewRecipe({ ...newRecipe, description: e.target.value })} /></td>
+            <td><input value={newRecipe.overview} placeholder="Enter an overview of the recipe" onChange={(e) => setNewRecipe({ ...newRecipe, overview: e.target.value })} /></td>
+            <td><input value={newRecipe.imageUrl} placeholder="Enter image URL" onChange={(e) => setNewRecipe({ ...newRecipe, imageUrl: e.target.value })} /></td>
+            <td><input value={newRecipe.videoUrl} placeholder="Enter YouTube video URL" onChange={(e) => setNewRecipe({ ...newRecipe, videoUrl: e.target.value })} /></td>
+            <td><textarea value={newRecipe.ingredients} placeholder="Enter ingredients (e.g., sugar - 200g)" onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value })} /><div><ul>{newRecipe.ingredients && newRecipe.ingredients.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
+            <td><textarea value={newRecipe.instructions} placeholder="Enter steps (e.g., Boil water)" onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value })} /><div><ul>{newRecipe.instructions&& newRecipe.instructions.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
+            <td><input value={newRecipe.prepTime} placeholder="Enter preparation time (e.g., 15)" onChange={(e) => setNewRecipe({ ...newRecipe, prepTime: e.target.value })} /></td>
+            <td><input value={newRecipe.cookTime} placeholder="Enter cooking time (e.g., 30)" onChange={(e) => setNewRecipe({ ...newRecipe, cookTime: e.target.value })} /></td>
+            <td><input value={newRecipe.totalTime} placeholder="Enter total time (e.g., 45)" onChange={(e) => setNewRecipe({ ...newRecipe, totalTime: e.target.value })} /></td>
+            <td><input value={newRecipe.difficulty} placeholder="Enter difficulty (e.g., Easy, Medium, Hard)" onChange={(e) => setNewRecipe({ ...newRecipe, difficulty: e.target.value })} /></td>
+            <td><input value={newRecipe.foodType} placeholder="Enter food type (e.g., Lunch, Breakfast, Dinner)" onChange={(e) => setNewRecipe({ ...newRecipe, foodType: e.target.value })} /></td>
+            <td><input value={newRecipe.cuisines} placeholder="Enter cuisine type (e.g., Indian, Italian)" onChange={(e) => setNewRecipe({ ...newRecipe, cuisines: e.target.value })} /></td>
+            <td><input value={newRecipe.calories} placeholder="Enter calorie count (e.g., 200)" onChange={(e) => setNewRecipe({ ...newRecipe, calories: e.target.value })} /></td>
+            <td><input value={newRecipe.sugar} placeholder="Enter sugar content (e.g., 10)" onChange={(e) => setNewRecipe({ ...newRecipe, sugar: e.target.value })} /></td>
+            <td><input value={newRecipe.protein} placeholder="Enter protein content (e.g., 8)" onChange={(e) => setNewRecipe({ ...newRecipe, protein: e.target.value })} /></td>
+            <td><input value={newRecipe.fat} placeholder="Enter fat content (e.g., 5)" onChange={(e) => setNewRecipe({ ...newRecipe, fat: e.target.value })} /></td>
+            <td><input value={newRecipe.fiber} placeholder="Enter fiber content (e.g., 2)" onChange={(e) => setNewRecipe({ ...newRecipe, fiber: e.target.value })} /></td>
+            <td><input value={newRecipe.carbohydrates} placeholder="Enter carbohydrates content (e.g., 25)" onChange={(e) => setNewRecipe({ ...newRecipe, carbohydrates: e.target.value })} /></td>
             <td><button onClick={handleAdd} className="add-btn">Add</button></td>
           </tr>
 

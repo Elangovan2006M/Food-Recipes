@@ -19,6 +19,7 @@ import RecipePage from './Admin/Components/RecipePage';
 import Login from './Admin/Components/Login';
 
 import SideBar from './Admin/Components/SideBar';
+import BlogPage from './Admin/Components/BlogPage';
 
 
 const AppContent = () => {
@@ -42,6 +43,7 @@ const AppContent = () => {
         <Routes>
           <Route path='/admin-login' element={<Login/>}/>
           <Route path="/ps-recipes" element={<RecipePage />} />
+          <Route path="/ps-blogs" element={<BlogPage />} />
         </Routes>
       </>
     ):(

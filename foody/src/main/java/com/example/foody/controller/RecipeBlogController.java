@@ -3,7 +3,7 @@ package com.example.foody.controller;
 import com.example.foody.model.Recipe;
 import com.example.foody.model.RecipeBlog;
 import com.example.foody.service.RecipeBlogService;
-
+import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -59,4 +59,40 @@ public class RecipeBlogController {
     public Recipe getRecipeFromBlog(@PathVariable Integer id) {
         return svc.getRecipeFromBlog(id);
     }
+
+    @PostMapping
+    public ResponseEntity<RecipeBlog> createBlog(@RequestBody RecipeBlog blog) {
+        return ResponseEntity.ok(svc.createBlog(blog));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<RecipeBlog> updateBlog(@PathVariable Integer id, @RequestBody RecipeBlog updatedBlog) {
+        return ResponseEntity.ok(svc.updateBlog(id, updatedBlog));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBlog(@PathVariable Integer id) {
+        svc.deleteBlog(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
+    @GetMapping("/search")
+    public ResponseEntity<Page<RecipeBlog>> searchBlogByName(
+            @RequestParam String name,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        Page<RecipeBlog> blogPage = svc.searchBlogByName(name, page, size);
+        if (blogPage.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(blogPage);
+    }
+
+    @GetMapping("/suggestions")
+    public List<String> getSuggestions(@RequestParam String query) {
+        return svc.getRecipeNameSuggestions(query);
+    }
+
 }

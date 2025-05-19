@@ -58,4 +58,104 @@ public class RecipeBlog {
     public Recipe getRecipe() {
         return recipe;
     }   
+
+    public void setBlogId(Integer blogId) {
+        this.blogId = blogId;
+    }
+
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
+    }
+
+    public void setRecipeImgUrl(String recipeImgUrl) {
+        this.recipeImgUrl = recipeImgUrl;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public void setHistory(String history) {
+        this.history = history;
+    }
+
+    public void setHistoryImg1(String historyImg1) {
+        this.historyImg1 = historyImg1;
+    }
+
+    public void setHistoryImg2(String historyImg2) {
+        this.historyImg2 = historyImg2;
+    }
+
+    public void setVariations(String variations) {
+        this.variations = variations;
+    }
+
+    public void setAlsoKnownAs(String alsoKnownAs) {
+        this.alsoKnownAs = alsoKnownAs;
+    }
+
+    public void setProTips(String proTips) {
+        this.proTips = proTips;
+    }
+
+    public void setBestServedWith(String bestServedWith) {
+        this.bestServedWith = bestServedWith;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    public Integer getBlogId() {
+        return blogId;
+    }
+
+    public String getRecipeName() {
+        return recipeName;
+    }
+
+    public String getRecipeImgUrl() {
+        return recipeImgUrl;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public String getHistory() {
+        return history;
+    }
+
+    public String getHistoryImg1() {
+        return historyImg1;
+    }
+
+    public String getHistoryImg2() {
+        return historyImg2;
+    }
+
+    public String getVariations() {
+        return variations;
+    }
+
+    public String getAlsoKnownAs() {
+        return alsoKnownAs;
+    }
+
+    public String getProTips() {
+        return proTips;
+    }
+
+    public String getBestServedWith() {
+        return bestServedWith;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 }
