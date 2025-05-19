@@ -22,6 +22,7 @@ public class Recipe {
     private String videoUrl;
 
     @Column(columnDefinition = "TEXT")
+
     private String ingredients;
     
     private String cuisines;

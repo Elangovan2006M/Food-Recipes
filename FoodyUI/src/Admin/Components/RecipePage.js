@@ -4,11 +4,11 @@ import {
   deleteRecipe,
   updateRecipe,
   createRecipe,
-  getNutritionByRecipeId
+  getNutritionByRecipeId,
+  searchByFoodName
 } from '../../Service/RecipeService';
 import '../Styles/RecipePage.css';
 import SideBar from './SideBar';
-
 const RecipePage = () => {
   const [recipes, setRecipes] = useState([]);
   const [newRecipe, setNewRecipe] = useState({
@@ -33,14 +33,56 @@ const RecipePage = () => {
     fiber: '',
     carbohydrates: ''
   });
-
+  const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(0);
   const pageSize = 5;
   const [totalPages, setTotalPages] = useState(0);
+  const [suggestions, setSuggestions] = useState([]);
 
   useEffect(() => {
     loadRecipes();
   }, [page]);
+
+  useEffect(() => {
+    const checkEmpty = () => {
+      if (searchQuery.trim() === '') {
+        loadRecipes(); 
+      }
+    };
+
+    checkEmpty(); 
+  }, [searchQuery]);
+
+  const handleSearchInput = async (query) => {
+    setSearchQuery(query);
+    if (query.length > 1) {
+      try {
+        const res = await searchByFoodName(query); 
+        setSuggestions(res.data.map((r) => r.foodName));
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleSearchClick = async () => {
+    if (searchQuery.trim() === '') return;
+    try {
+      const res = await searchByFoodName(searchQuery);
+      setRecipes(res.data); 
+      setSuggestions([]);
+      setPage(0);
+      setTotalPages(1); 
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+
+
 
   const loadRecipes = async () => {
     const res = await getAllRecipes(page, pageSize);
@@ -87,6 +129,7 @@ const RecipePage = () => {
         prepTime: Number(newRecipe.prepTime),
         cookTime: Number(newRecipe.cookTime),
         totalTime: Number(newRecipe.totalTime),
+        totalViews: 1, 
         instructions: { stepDescription: newRecipe.instructions },
         nutrition: {
           calories: Number(newRecipe.calories),
@@ -112,6 +155,7 @@ const RecipePage = () => {
         totalTime: '',
         difficulty: '',
         foodType: '',
+        totalViews: '',
         instructions: '',
         calories: '',
         sugar: '',
@@ -145,11 +189,42 @@ const RecipePage = () => {
     <div className="recipe-content">
     <div className="table-container">
       <h2 className='title'>Recipe List </h2>
+    
+      <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+        <input
+          type="search"
+          placeholder="Search by food name"
+          value={searchQuery}
+          onChange={(e) => handleSearchInput(e.target.value)}
+          style={{ marginRight: '0.5rem', padding: '0.3rem' }}
+        />
+        <button onClick={handleSearchClick}>Search</button>
+
+        {suggestions.length > 0 && (
+          <ul className='suggestion-list'>
+            {suggestions.map((s, i) => (
+              <li
+                key={i}
+                onClick={() => {
+                  setSearchQuery(s);
+                  setSuggestions([]);
+                }}
+                style={{ padding: '10px', cursor: 'pointer' }}
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+        )}
+
+      </div>
+
+{/* 
       <div style={{ marginBottom: '1rem' }}>
         <button onClick={() => setPage((p) => Math.max(p - 1, 0))} disabled={page === 0}>Prev</button>
         <span style={{ margin: '0 1rem' }}>Page {page + 1} of {totalPages}</span>
         <button onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))} disabled={page + 1 >= totalPages}>Next</button>
-      </div>
+      </div> */}
 
       <table className="recipe-table">
         <thead>
@@ -185,8 +260,8 @@ const RecipePage = () => {
             <td><input value={newRecipe.overview} placeholder="Enter an overview of the recipe" onChange={(e) => setNewRecipe({ ...newRecipe, overview: e.target.value })} /></td>
             <td><input value={newRecipe.imageUrl} placeholder="Enter image URL" onChange={(e) => setNewRecipe({ ...newRecipe, imageUrl: e.target.value })} /></td>
             <td><input value={newRecipe.videoUrl} placeholder="Enter YouTube video URL" onChange={(e) => setNewRecipe({ ...newRecipe, videoUrl: e.target.value })} /></td>
-            <td><textarea value={newRecipe.ingredients} placeholder="Enter ingredients separated by $ (e.g., sugar$milk$eggs)" onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value })} /><div><ul>{newRecipe.ingredients && newRecipe.ingredients.split('$').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
-            <td><textarea value={newRecipe.instructions} placeholder="Enter steps separated by $ (e.g., Boil water$Add pasta$Cook for 10 mins)" onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value })} /><div><ul>{newRecipe.instructions&& newRecipe.instructions.split('$').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
+            <td><textarea value={newRecipe.ingredients} placeholder="Enter ingredients (e.g., sugar - 200g)" onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value })} /><div><ul>{newRecipe.ingredients && newRecipe.ingredients.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
+            <td><textarea value={newRecipe.instructions} placeholder="Enter steps (e.g., Boil water)" onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value })} /><div><ul>{newRecipe.instructions&& newRecipe.instructions.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
             <td><input value={newRecipe.prepTime} placeholder="Enter preparation time (e.g., 15)" onChange={(e) => setNewRecipe({ ...newRecipe, prepTime: e.target.value })} /></td>
             <td><input value={newRecipe.cookTime} placeholder="Enter cooking time (e.g., 30)" onChange={(e) => setNewRecipe({ ...newRecipe, cookTime: e.target.value })} /></td>
             <td><input value={newRecipe.totalTime} placeholder="Enter total time (e.g., 45)" onChange={(e) => setNewRecipe({ ...newRecipe, totalTime: e.target.value })} /></td>
@@ -209,8 +284,8 @@ const RecipePage = () => {
               <td><input value={recipe.overview || ''} onChange={(e) => handleInputChange(e, idx, 'overview')} /></td>
               <td><input value={recipe.imageUrl || ''} onChange={(e) => handleInputChange(e, idx, 'imageUrl')} /></td>
               <td><input value={recipe.videoUrl || ''} onChange={(e) => handleInputChange(e, idx, 'videoUrl')} /></td>
-              <td><textarea value={recipe.ingredients || ''} onChange={(e) => handleInputChange(e, idx, 'ingredients')} /><div><ul>{recipe.ingredients && recipe.ingredients.split('$').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
-              <td><textarea value={recipe.instructions?.stepDescription || ''} onChange={(e) => handleInputChange(e, idx, 'stepDescription', false, true)} /><div><ul>{recipe.instructions.stepDescription && recipe.instructions.stepDescription.split('$').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
+              <td><textarea value={recipe.ingredients|| ''} onChange={(e) => handleInputChange(e, idx, 'ingredients')} /></td>
+              <td><textarea value={recipe.instructions?.stepDescription || ''} onChange={(e) => handleInputChange(e, idx, 'stepDescription', false, true)} /></td>
               <td><input value={recipe.prepTime || ''} onChange={(e) => handleInputChange(e, idx, 'prepTime')} /></td>
               <td><input value={recipe.cookTime || ''} onChange={(e) => handleInputChange(e, idx, 'cookTime')} /></td>
               <td><input value={recipe.totalTime || ''} onChange={(e) => handleInputChange(e, idx, 'totalTime')} /></td>
@@ -234,7 +309,7 @@ const RecipePage = () => {
         </tbody>
       </table>
 
-      <div style={{ marginBottom: '1rem' }}>
+      <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
         <button onClick={() => setPage((p) => Math.max(p - 1, 0))} disabled={page === 0}>Prev</button>
         <span style={{ margin: '0 1rem' }}>Page {page + 1} of {totalPages}</span>
         <button onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))} disabled={page + 1 >= totalPages}>Next</button>

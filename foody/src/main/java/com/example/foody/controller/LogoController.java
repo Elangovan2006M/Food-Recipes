@@ -39,4 +39,7 @@ public class LogoController {
     public void deleteLogo(@PathVariable Long id) {
         logoService.deleteLogo(id);
     }
+
+    
+
 }

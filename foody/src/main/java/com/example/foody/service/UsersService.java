@@ -9,5 +9,6 @@ public interface UsersService {
     Users saveUser(Users user);
     Optional<Users> findByEmail(String email);
     boolean updatePassword(String email, String oldPassword, String newPassword);
+
     List<Users> getAllAdmins();
 }
