@@ -189,7 +189,7 @@ const BlogPage = () => {
 
         <div className="search-bar" style={{ position: 'relative' }}>
           <input
-            type="text"
+            type="search"
             value={searchQuery}
             onChange={(e) => handleSearchInput(e.target.value)}
             placeholder="Search by recipe name"
