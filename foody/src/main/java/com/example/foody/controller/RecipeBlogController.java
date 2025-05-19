@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/blogs")
-@CrossOrigin(origins = "http://localhost:3000")  // allow your React dev server
+@CrossOrigin(origins = "*") // allow your React dev server
 public class RecipeBlogController {
 
     private final RecipeBlogService svc;
@@ -58,5 +58,10 @@ public class RecipeBlogController {
     @GetMapping("/{id}/recipes")
     public Recipe getRecipeFromBlog(@PathVariable Integer id) {
         return svc.getRecipeFromBlog(id);
+    }
+
+    @GetMapping("/count")
+    public long countAllBlogs() {
+        return svc.countAllBlogs();
     }
 }

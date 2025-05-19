@@ -39,6 +39,11 @@ public class RecipeBlogService {
         return blog.getRecipe(); // Accessing the associated Recipe directly
     }
 
+    public long countAllBlogs()
+    {
+        return recipeBlogRepository.count();
+    }
+
     // public RecipeBlog createBlog(RecipeBlog blog) {
     //     return recipeBlogRepository.save(blog);
     // }

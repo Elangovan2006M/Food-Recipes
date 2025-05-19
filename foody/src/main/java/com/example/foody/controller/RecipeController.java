@@ -17,7 +17,7 @@ import java.util.NoSuchElementException;
 
 import com.example.foody.model.Instruction;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/recipes")
 public class RecipeController {

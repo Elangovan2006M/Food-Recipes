@@ -5,6 +5,7 @@ import com.example.foody.dto.LoginRequest;
 import com.example.foody.model.Users;
 import com.example.foody.service.UsersService;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@CrossOrigin(origins = "http://localhost:3000")
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/admin-user")
 public class UsersController {
 
     @Autowired
     private UsersService userService;
+
+    @GetMapping("/all")
+    public List<Users> getAllAdmins() {
+        return userService.getAllAdmins();
+    }
+    
 
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@RequestBody Users user) {
