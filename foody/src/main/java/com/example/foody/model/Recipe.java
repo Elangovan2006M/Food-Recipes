@@ -20,6 +20,7 @@ public class Recipe {
     private String description;
     private String imageUrl;
     private String videoUrl;
+    @Column(columnDefinition = "TEXT")  // Recommended for long text
     private String ingredients;
     private String cuisines;
     private double prepTime;

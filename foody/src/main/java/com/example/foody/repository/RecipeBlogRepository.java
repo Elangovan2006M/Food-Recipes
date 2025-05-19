@@ -18,7 +18,7 @@ public interface RecipeBlogRepository extends JpaRepository<RecipeBlog, Integer>
     RecipeBlog findTop1ByOrderByCreatedAtDesc();
     // List<RecipeBlog> findByRecipeNameContainingIgnoreCase(String name);
 
-    @Query("SELECT b.recipeName FROM Blog b WHERE LOWER(b.recipeName) LIKE LOWER(CONCAT('%', :query, '%'))")
+    @Query("SELECT b.recipeName FROM RecipeBlog b WHERE LOWER(b.recipeName) LIKE LOWER(CONCAT('%', :query, '%'))")
     List<String> findRecipeNameSuggestions(String query);
 
 }
