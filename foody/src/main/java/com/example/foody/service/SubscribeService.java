@@ -35,7 +35,12 @@ public class SubscribeService {
         return repository.findByEmailContainingIgnoreCase(keyword, pageable);
     }
 
+    public long countAllSubscriber()
+    {
+        return repository.count();
+    }
+
     public void deleteSubscriber(Long id) {
-       deleteSubscriber(id);
+        repository.deleteById(id);
     }
 }

@@ -14,12 +14,17 @@ import Blog from './Components/Blog';
 import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
 import Contact from './Components/Contact';
+
 import RecipePage from './Admin/Components/RecipePage';
-
 import Login from './Admin/Components/Login';
-
 import SideBar from './Admin/Components/SideBar';
+import Register from './Admin/Components/Register';
+import ContactPage from './Admin/Components/ContactPage';
+import AssetsPage from './Admin/Components/AssetsPage';
+import SubscribePage from './Admin/Components/SubscribePage';
+import Dashboard from './Admin/Components/DashBoard';
 import BlogPage from './Admin/Components/BlogPage';
+
 
 
 const AppContent = () => {
@@ -42,7 +47,13 @@ const AppContent = () => {
       <SideBar/>
         <Routes>
           <Route path='/admin-login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path="/ps-recipes" element={<RecipePage />} />
+
+          <Route path='/ps-dashboard' element={<Dashboard/>} />
+          <Route path='/ps-contact' element={<ContactPage/>} />
+          <Route path='/ps-assets' element={<AssetsPage/>} />
+          <Route path='/ps-subscribe' element={<SubscribePage/>} />
           <Route path="/ps-blogs" element={<BlogPage />} />
         </Routes>
       </>

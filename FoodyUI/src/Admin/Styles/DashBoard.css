@@ -1,0 +1,177 @@
+/* Light-themed Dashboard.css */
+
+.dashboard-container {
+    margin-left: 250px;
+    padding: 2rem;
+    color: #0c1926;
+    min-height: 90vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #102f50;
+    margin-bottom: 3rem;
+}
+
+.highlight-style {
+    color: #195591;
+}
+
+.dashboard-counts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+}
+
+.count-box,
+.fill-box {
+    max-width: 200px;
+    max-height: 85px;
+    flex: 1 1 175px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 3.5rem;
+    border: 0.3px solid #0c1926;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 8px rgba(7, 50, 63, 0.5);
+    transition: transform 0.2s ease;
+}
+
+.count-box:hover {
+    transform: scale(1.03);
+}
+
+.count-box-title {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.count-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0077b6;
+}
+
+.fill-box {
+    padding: 35px;
+    min-width: 300px;
+    background-color: #ffffff;
+    color: #34495e;
+    font-style: italic;
+    border: 0.5px solid #0c1926;
+    box-shadow: 0 0 8px rgba(7, 50, 63, 0.5);
+    transition: transform 0.2s ease;
+}
+
+/* Admin + Recipe Listings */
+.dashboard-listing {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    min-height: 400px;
+}
+
+.admin-listing,
+.top-recipes-listing {
+    flex: 1 1 45%;
+    background-color: #ffffff;
+    border: 0.5px solid #0c1926;
+    border-radius: 0px;
+    padding: 1.5rem;
+    box-shadow: 0 0 8px rgba(7, 50, 63, 0.3);
+    transition: transform 0.2s ease;
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05); */
+}
+
+.admin-listing-title {
+    text-align: center;
+    margin: 0px;
+    font-size: 1.3rem;
+    color: #0c1926;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 0.5rem;
+}
+
+.scroll-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.scroll-list p {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.scroll-list p:hover {
+    color: #0077b6;
+    cursor: pointer;
+}
+
+/* Light-themed scrollbar */
+.scroll-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.scroll-list::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+/* Optional button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1e8449;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+        margin-left: 0 !important;
+    }
+
+    .dashboard-counts,
+    .dashboard-listing {
+        flex-direction: column;
+    }
+}

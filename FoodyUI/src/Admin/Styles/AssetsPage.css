@@ -1,0 +1,105 @@
+/* Base styles */
+.asset-content {
+    margin-left: 250px;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Table Container */
+.table-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+/* Table Styles */
+.asset-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+}
+
+.asset-table thead {
+    background-color: #1e2730;
+    color: #fff;
+}
+
+.asset-table th,
+.asset-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.asset-table td input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border 0.3s;
+}
+
+.asset-table td input:focus {
+    border-color: #8798a3;
+    outline: none;
+}
+
+/* New row styling */
+.new-row td {
+    background-color: #f0f8ff;
+}
+
+/* Buttons */
+.asset-table button {
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.asset-table button:first-child {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.asset-table button:first-child:hover {
+    background-color: #1e8449;
+}
+
+.asset-table button:last-child {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.asset-table button:last-child:hover {
+    background-color: #c0392b;
+}
+
+/* On mobile, when sidebar is hidden */
+@media (max-width: 768px) {
+    .contact-content {
+    margin-left: 0 !important;
+    padding: 1rem;
+    }
+    .recipe-content {
+    margin-left: 0 !important;
+    width: 100%;
+    }
+}

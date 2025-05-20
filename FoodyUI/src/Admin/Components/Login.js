@@ -25,11 +25,11 @@ const Login = () => {
         }
     }
   return (
-    <div className='admin-register'>
-        <h2 className='admin-register-heading'>Welcome <span className='highlight-style'>Admin!</span></h2>
+    <div className='admin-login'>
+        <h2 className='admin-login-heading'>Welcome <span className='highlight-style'>Admin!</span></h2>
         <p>Please Login to continue...</p>
-        <div className='regsiter-container'>
-            <div className='register-box'>
+        <div className='login-container'>
+            <div className='login-box'>
                 <form onSubmit={handleLogin}>
                     <label>Username</label>
                     <div className='input-with-icon'>

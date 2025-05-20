@@ -34,6 +34,10 @@ public class SubscribeController {
     public Page<Subscribe> searchSubscribers(@RequestParam String keyword, Pageable pageable) {
         return subscribeService.searchByEmail(keyword, pageable);
     }
+    @GetMapping("/count")
+    public long countAllSubscribers() {
+        return subscribeService.countAllSubscriber();
+    }
 
     @DeleteMapping("/{id}")
     public void deleteSubscriber(@PathVariable Long id) {

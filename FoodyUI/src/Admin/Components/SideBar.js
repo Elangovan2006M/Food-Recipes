@@ -16,7 +16,7 @@ const SideBar = () => {
 
       <div className={`sidebar ${isOpen ? 'active' : ''}`}>
         <nav>
-          <a href="#">Dashboard</a>
+          <a href="/ps-dashboard">Dashboard</a>
           <a href="/ps-recipes">Manage Recipes</a>
           <a href="/ps-blogs">Manage Blogs</a>
           <a href="/ps-contact">Contact Links</a>
