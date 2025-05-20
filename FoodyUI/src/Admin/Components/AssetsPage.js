@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { getAllLogos, createLogo, updateLogo, deleteLogo } from "../../Service/LogoService";
 
 import '../Styles/AssetsPage.css';
+import SideBar from "./SideBar";
 
 const AssetsPage = () => {
     const [assets, setAssets] = useState([]);
@@ -81,6 +82,7 @@ const AssetsPage = () => {
 
     return (
         <div className='asset-content'>
+            <SideBar/>
             <div className='table-container'>
                 <h2 className='title'>Assets List</h2>
                 <table className='asset-table'>

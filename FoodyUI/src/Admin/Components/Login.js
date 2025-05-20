@@ -17,7 +17,7 @@ const Login = () => {
         e.preventDefault();
         if(email === 'admin@example.com' && password === 'Admin@123')
         {
-            navigate('/admin');
+            navigate('/ps-dashboard');
         }
         else
         {

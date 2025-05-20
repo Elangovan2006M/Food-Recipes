@@ -132,6 +132,7 @@ const BlogPage = () => {
       };
       delete payload.recipeId;
       await createBlog(payload);
+      alert('Blog added successfully!');
       setNewBlog(initialBlogState());
       setPage(0);
       if (searchQuery.trim()) {
@@ -140,7 +141,7 @@ const BlogPage = () => {
         loadBlogs();
       }
     } catch (err) {
-      alert('Failed to add blog: ' + err.message);
+      alert('Failed to add blog: Check whether you entered valid recipe id' );
     }
   };
 
@@ -152,6 +153,7 @@ const BlogPage = () => {
       };
       delete payload.recipeId;
       await updateBlog(id, payload);
+      alert('Blog updated successfully!');
       if (searchQuery.trim()) {
         handleSearch(searchQuery, page);
       } else {
@@ -165,6 +167,7 @@ const BlogPage = () => {
   const handleDelete = async (id) => {
     try {
       await deleteBlog(id);
+      alert('Blog deleted successfully!');
       if (searchQuery.trim()) {
         handleSearch(searchQuery, page);
       } else {
@@ -185,37 +188,38 @@ const BlogPage = () => {
     <div className="recipe-page">
       <SideBar />
       <div className="recipe-content">
-        <h2>Blog Admin Panel</h2>
-
-        <div className="search-bar" style={{ position: 'relative' }}>
-          <input
-            type="search"
-            value={searchQuery}
-            onChange={(e) => handleSearchInput(e.target.value)}
-            placeholder="Search by recipe name"
-            autoComplete="off"
-          />
-          <button onClick={() => {
-            setPage(0);
-            handleSearch();
-          }}>Search</button>
-
-          {suggestions.length > 0 && (
-            <ul className="suggestion-list" ref={suggestionRef}>
-              {suggestions.map((s, i) => (
-                <li
-                  key={i}
-                  onClick={() => handleSuggestionClick(s)}
-                  className="suggestion-item"
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
         <div className="table-container" style={{ overflowX: 'auto' }}>
+          <h2 className='title'>Blogs List</h2>
+
+          <div className="search-bar" style={{ marginBottom: '1rem', marginTop: '1rem', position: 'relative' }}>
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(e) => handleSearchInput(e.target.value)}
+              placeholder="Search by recipe name"
+              autoComplete="off"
+              style={{ marginRight: '0.5rem', padding: '0.3rem', borderRadius: '5px', border: '1px solid #ccc' }}
+
+            />
+            <button onClick={() => {
+              setPage(0);
+              handleSearch();
+            }}style={{backgroundColor:"#1e2730",borderRadius:"5px",color:"white"}}>Search</button>
+
+            {suggestions.length > 0 && (
+              <ul className="suggestion-list" ref={suggestionRef}>
+                {suggestions.map((s, i) => (
+                  <li
+                    key={i}
+                    onClick={() => handleSuggestionClick(s)}
+                    className="suggestion-item"
+                  >
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           <table className="blog-table" style={{ minWidth: '1200px', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
@@ -229,7 +233,7 @@ const BlogPage = () => {
             </thead>
             <tbody>
               {/* Add New Blog */}
-              <tr>
+              <tr className='new-row'>
                 {fields.map((field) => (
                   <td key={'new-' + field} style={{ border: '1px solid #ccc', padding: '8px' }}>
                     {['overview', 'history', 'variations', 'proTips'].includes(field) ? (
@@ -254,7 +258,7 @@ const BlogPage = () => {
                   </td>
                 ))}
                 <td style={{ border: '1px solid #ccc', padding: '8px' }}>
-                  <button onClick={handleAdd}>Add Blog</button>
+                  <button onClick={handleAdd} className='add-btn'>Add</button>
                 </td>
               </tr>
 
@@ -279,26 +283,26 @@ const BlogPage = () => {
                     </td>
                   ))}
                   <td style={{ border: '1px solid #ccc', padding: '8px' }}>
-                    <button onClick={() => handleUpdate(blog.blogId, blog)}>Save</button>
-                    <button onClick={() => handleDelete(blog.blogId)}>Delete</button>
+                    <button onClick={() => handleUpdate(blog.blogId, blog)} className='add-btn'>Save</button>
+                    <button onClick={() => handleDelete(blog.blogId)} className='delete-btn'>Delete</button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          <div className="pagination" style={{ marginTop: '20px' }}>
+            <button disabled={page === 0} onClick={() => setPage(page - 1)} style={{backgroundColor:"#1e2730",borderRadius:"5px",color:"white"}}>
+              Prev
+            </button>
+            <span style={{ margin: '0 10px' }}>
+              Page {page + 1} of {totalPages}
+            </span>
+            <button disabled={page + 1 === totalPages} onClick={() => setPage(page + 1)} style={{backgroundColor:"#1e2730",borderRadius:"5px",color:"white"}}>
+              Next
+            </button>
+          </div>
         </div>
 
-        <div className="pagination" style={{ marginTop: '20px' }}>
-          <button disabled={page === 0} onClick={() => setPage(page - 1)}>
-            Prev
-          </button>
-          <span style={{ margin: '0 10px' }}>
-            Page {page + 1} of {totalPages}
-          </span>
-          <button disabled={page + 1 === totalPages} onClick={() => setPage(page + 1)}>
-            Next
-          </button>
-        </div>
       </div>
     </div>
   );

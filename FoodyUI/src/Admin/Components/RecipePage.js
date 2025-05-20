@@ -98,6 +98,8 @@ const RecipePage = () => {
 
   const handleDelete = async (id) => {
     await deleteRecipe(id);
+    
+    alert('Recipe deleted successfully');
     loadRecipes();
   };
 
@@ -118,6 +120,7 @@ const RecipePage = () => {
       }
     };
 
+    alert('Recipe updated successfully');
     await updateRecipe(id, payload);
     loadRecipes();
   };
@@ -164,6 +167,7 @@ const RecipePage = () => {
         fiber: '',
         carbohydrates: ''
       });
+      alert('Recipe added successfully');
       loadRecipes();
     } catch (error) {
       alert('Error adding recipe: ' + error.message);
@@ -187,18 +191,19 @@ const RecipePage = () => {
   return (
 
     <div className="recipe-content">
+      <SideBar />
     <div className="table-container">
       <h2 className='title'>Recipe List </h2>
     
-      <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+      <div style={{ marginBottom: '1rem', marginTop: '1rem', position: 'relative'}}>
         <input
           type="search"
           placeholder="Search by food name"
           value={searchQuery}
           onChange={(e) => handleSearchInput(e.target.value)}
-          style={{ marginRight: '0.5rem', padding: '0.3rem' }}
+          style={{ marginRight: '0.5rem', padding: '0.3rem', borderRadius: '5px', border: '1px solid #ccc' }}
         />
-        <button onClick={handleSearchClick}>Search</button>
+        <button onClick={handleSearchClick} style={{backgroundColor:"#1e2730",borderRadius:"5px",color:"white"}}>Search</button>
 
         {suggestions.length > 0 && (
           <ul className='suggestion-list'>
@@ -219,16 +224,10 @@ const RecipePage = () => {
 
       </div>
 
-{/* 
-      <div style={{ marginBottom: '1rem' }}>
-        <button onClick={() => setPage((p) => Math.max(p - 1, 0))} disabled={page === 0}>Prev</button>
-        <span style={{ margin: '0 1rem' }}>Page {page + 1} of {totalPages}</span>
-        <button onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))} disabled={page + 1 >= totalPages}>Next</button>
-      </div> */}
-
       <table className="recipe-table">
         <thead>
           <tr>
+            <th>Recipe ID</th>
             <th>Food Name</th>
             <th>Description</th>
             <th>Overview</th>
@@ -236,18 +235,18 @@ const RecipePage = () => {
             <th>Video URL</th>
             <th>Ingredients</th>
             <th>Instructions</th>
-            <th>Prep Time <span style={{color:"grey", fontSize:"12px"}}>in mins</span></th>
-            <th>Cook Time <span style={{color:"grey", fontSize:"12px"}}>in mins</span></th>
-            <th>Total Time <span style={{color:"grey", fontSize:"12px"}}>in mins</span></th>
+            <th>Prep Time <span style={{color:"lightgrey", fontSize:"12px"}}>in mins</span></th>
+            <th>Cook Time <span style={{color:"lightgrey", fontSize:"12px"}}>in mins</span></th>
+            <th>Total Time <span style={{color:"lightgrey", fontSize:"12px"}}>in mins</span></th>
             <th>Difficulty</th>
             <th>Food Type</th>
             <th>Cuisines</th>
-            <th>Calories <span style={{color:"grey", fontSize:"12px"}}>in kcal</span></th>
-            <th>Sugar <span style={{color:"grey", fontSize:"12px"}}>in g</span></th>
-            <th>Protein <span style={{color:"grey", fontSize:"12px"}}>in g</span></th>
-            <th>Fat <span style={{color:"grey", fontSize:"12px"}}>in g</span></th>
-            <th>Fiber <span style={{color:"grey", fontSize:"12px"}}>in g</span></th>
-            <th>Carbohydrates <span style={{color:"grey", fontSize:"12px"}}>in g</span></th>
+            <th>Calories <span style={{color:"lightgrey", fontSize:"12px"}}>in kcal</span></th>
+            <th>Sugar <span style={{color:"lightgrey", fontSize:"12px"}}>in g</span></th>
+            <th>Protein <span style={{color:"lightgrey", fontSize:"12px"}}>in g</span></th>
+            <th>Fat <span style={{color:"lightgrey", fontSize:"12px"}}>in g</span></th>
+            <th>Fiber <span style={{color:"lightgrey", fontSize:"12px"}}>in g</span></th>
+            <th>Carbohydrates <span style={{color:"lightgrey", fontSize:"12px"}}>in g</span></th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -255,11 +254,12 @@ const RecipePage = () => {
         <tbody>
 
           <tr className="new-row">
+            <td></td>
             <td><input value={newRecipe.foodName} placeholder="Enter food name" onChange={(e) => setNewRecipe({ ...newRecipe, foodName: e.target.value })} /></td>
             <td><textarea value={newRecipe.description} placeholder="Enter a short description" onChange={(e) => setNewRecipe({ ...newRecipe, description: e.target.value })} /></td>
             <td><input value={newRecipe.overview} placeholder="Enter an overview of the recipe" onChange={(e) => setNewRecipe({ ...newRecipe, overview: e.target.value })} /></td>
             <td><input value={newRecipe.imageUrl} placeholder="Enter image URL" onChange={(e) => setNewRecipe({ ...newRecipe, imageUrl: e.target.value })} /></td>
-            <td><input value={newRecipe.videoUrl} placeholder="Enter YouTube video URL" onChange={(e) => setNewRecipe({ ...newRecipe, videoUrl: e.target.value })} /></td>
+            <td><input value={newRecipe.videoUrl} placeholder="Enter Embed video URL" onChange={(e) => setNewRecipe({ ...newRecipe, videoUrl: e.target.value })} /></td>
             <td><textarea value={newRecipe.ingredients} placeholder="Enter ingredients (e.g., sugar - 200g)" onChange={(e) => setNewRecipe({ ...newRecipe, ingredients: e.target.value })} /><div><ul>{newRecipe.ingredients && newRecipe.ingredients.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
             <td><textarea value={newRecipe.instructions} placeholder="Enter steps (e.g., Boil water)" onChange={(e) => setNewRecipe({ ...newRecipe, instructions: e.target.value })} /><div><ul>{newRecipe.instructions&& newRecipe.instructions.split('\n').map((item, i) => (<div key={i}><li>{item.trim()}</li></div>))}</ul></div></td>
             <td><input value={newRecipe.prepTime} placeholder="Enter preparation time (e.g., 15)" onChange={(e) => setNewRecipe({ ...newRecipe, prepTime: e.target.value })} /></td>
@@ -279,6 +279,7 @@ const RecipePage = () => {
 
           {recipes.map((recipe, idx) => (
             <tr key={recipe.id}>
+              <td>{recipe.id}</td>
               <td><input value={recipe.foodName || ''} onChange={(e) => handleInputChange(e, idx, 'foodName')} /></td>
               <td><textarea value={recipe.description || ''} onChange={(e) => handleInputChange(e, idx, 'description')} /></td>
               <td><input value={recipe.overview || ''} onChange={(e) => handleInputChange(e, idx, 'overview')} /></td>
@@ -299,7 +300,7 @@ const RecipePage = () => {
               <td><input value={recipe.nutrition?.fiber || ''} onChange={(e) => handleInputChange(e, idx, 'fiber', true)} /></td>
               <td><input value={recipe.nutrition?.carbohydrates || ''} onChange={(e) => handleInputChange(e, idx, 'carbohydrates', true)} /></td>
               <td>
-                <button onClick={() => handleEdit(recipe.id, recipe)}>Save</button>
+                <button onClick={() => handleEdit(recipe.id, recipe)} className='add-btn'>Save</button>
                 <button onClick={() => handleDelete(recipe.id)} className="delete-btn">Delete</button>
               </td>
             </tr>
@@ -310,9 +311,9 @@ const RecipePage = () => {
       </table>
 
       <div style={{ marginBottom: '1rem', marginTop: '1rem' }}>
-        <button onClick={() => setPage((p) => Math.max(p - 1, 0))} disabled={page === 0}>Prev</button>
+        <button onClick={() => setPage((p) => Math.max(p - 1, 0))} disabled={page === 0} style={{backgroundColor:"#1e2730",borderRadius:"5px",color:"white"}}>Prev</button>
         <span style={{ margin: '0 1rem' }}>Page {page + 1} of {totalPages}</span>
-        <button onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))} disabled={page + 1 >= totalPages}>Next</button>
+        <button onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))} disabled={page + 1 >= totalPages} style={{backgroundColor:"#1e2730",borderRadius:"5px",color:"white"}}>Next</button>
       </div>
     </div>
     </div>

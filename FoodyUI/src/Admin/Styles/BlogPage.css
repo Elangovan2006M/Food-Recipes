@@ -1,13 +1,17 @@
 .blog-table input,
 .blog-table textarea {
+  min-width: 200px;
   width: 100%;
+  padding: 5px;
   box-sizing: border-box;
-  font-size: 14px;
+  border:1px solid #ccc;
+  border-radius: 5px;
 }
 
 .blog-table th {
-  background-color: #f0f0f0;
-  text-align: left;
+  background-color: #1e2730;
+  color: #fff;
+  font-weight: bold;
 }
 
 .blog-table button {
@@ -21,10 +25,16 @@
 }
 
 
+.title{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
 .suggestion-list {
   position: absolute;
-  top: 38px; /* adjust depending on input height */
-  left: 0;
+  top: 38px;
   width: 100%;
   max-height: 180px;
   overflow-y: auto;
@@ -46,4 +56,22 @@
 
 .suggestion-item:hover {
   background-color: #f0f0f0;
+}
+
+.new-row{
+    background-color: #f0f8ff;
+}
+
+.add-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 10px;
 }

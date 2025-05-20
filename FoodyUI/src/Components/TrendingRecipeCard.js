@@ -29,9 +29,6 @@ const TrendingRecipeCard = ({ recipe }) => {
           className="recipe-image"
           />
           <div className='image-overlay'></div>
-        <button className="trending-view-button">
-          View <span className='highlight-style'>Recipe</span>
-        </button>
       </div>
     </div>
   );
