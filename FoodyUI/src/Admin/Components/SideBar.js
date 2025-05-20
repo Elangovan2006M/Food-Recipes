@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/SideBar.css';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Service/AuthContext';
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -8,11 +9,18 @@ const SideBar = () => {
   const gotoRegister=()=>{
     navigate('/register');
   }
+  const { logout }=useAuth();
+
+  const Logout=()=>{
+    logout();
+    navigate('/admin-login')
+  }
 
   return (
     <>
       <div className="sidebar">
         <nav>
+          <button className='add-new-admin' onClick={()=>Logout()}>LogOut</button>
           <a href="/ps-dashboard">Dashboard</a>
           <a href="/ps-recipes">Manage Recipes</a>
           <a href="/ps-blogs">Manage Blogs</a>

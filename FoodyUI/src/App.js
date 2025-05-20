@@ -24,13 +24,13 @@ import AssetsPage from './Admin/Components/AssetsPage';
 import SubscribePage from './Admin/Components/SubscribePage';
 import Dashboard from './Admin/Components/DashBoard';
 import BlogPage from './Admin/Components/BlogPage';
-
+import { useAuth } from './Admin/Service/AuthContext';
 
 
 const AppContent = () => {
   const { loading: logoLoading } = useLogo();
   const { loading: socialLoading } = useSocialMedia();
-  const [admin, setAdmin] = useState(true);
+  const { isLoggedIn } = useAuth();
 
   if (logoLoading || socialLoading) {
     return (
@@ -42,37 +42,33 @@ const AppContent = () => {
 
   return (
     <>
-    {admin ?(
-      <>
-        <Routes>
-          <Route path='/admin-login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path="/ps-recipes" element={<RecipePage />} />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
+        <Route path="/search" element={<><Navbar /><RecipeSearch /><Footer /></>} />
+        <Route path="/recipe" element={<><Navbar /><Recipe /><Footer /></>} />
+        <Route path="/recipes" element={<><Navbar /><RecipeDisplay /><Footer /></>} />
+        <Route path="/blogs" element={<><Navbar /><Blog /><Footer /></>} />
+        <Route path="/blogs/view" element={<><Navbar /><BlogRecipePage /><Footer /></>} />
+        <Route path="/aboutus" element={<><Navbar /><AboutUs /><Footer /></>} />
+        <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
 
-          <Route path='/ps-dashboard' element={<Dashboard/>} />
-          <Route path='/ps-contact' element={<ContactPage/>} />
-          <Route path='/ps-assets' element={<AssetsPage/>} />
-          <Route path='/ps-subscribe' element={<SubscribePage/>} />
-          <Route path="/ps-blogs" element={<BlogPage />} />
-        </Routes>
-      </>
-    ):(
-      <>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<RecipeSearch />} />
-          <Route path="/recipe" element={<Recipe />} />
-          <Route path="/recipes" element={<RecipeDisplay />} />
-          <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogs/view" element={<BlogRecipePage />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </>
-    )}
+        {/* Login/Register Routes - always accessible */}
+        <Route path="/admin-login" element={<Login />} />
 
+        {/* Admin Routes - only accessible if logged in */}
+        {isLoggedIn && (
+          <>
+            <Route path="/ps-dashboard" element={<Dashboard />} />
+            <Route path="/ps-recipes" element={<RecipePage />} />
+            <Route path="/ps-contact" element={<ContactPage />} />
+            <Route path="/ps-assets" element={<AssetsPage />} />
+            <Route path="/ps-subscribe" element={<SubscribePage />} />
+            <Route path="/ps-blogs" element={<BlogPage />} />
+            <Route path="/register" element={<Register />} />
+          </>
+        )}
+      </Routes>
     </>
   );
 };
