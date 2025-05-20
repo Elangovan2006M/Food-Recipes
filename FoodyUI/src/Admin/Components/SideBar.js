@@ -13,7 +13,7 @@ const SideBar = () => {
 
   const Logout=()=>{
     logout();
-    navigate('/admin-login')
+    navigate('/login')
   }
 
   return (

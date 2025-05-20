@@ -54,7 +54,7 @@ const AppContent = () => {
         <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
 
         {/* Login/Register Routes - always accessible */}
-        <Route path="/admin-login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
         {/* Admin Routes - only accessible if logged in */}
         {isLoggedIn && (
