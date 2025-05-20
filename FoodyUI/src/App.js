@@ -44,7 +44,6 @@ const AppContent = () => {
     <>
     {admin ?(
       <>
-      <SideBar/>
         <Routes>
           <Route path='/admin-login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>

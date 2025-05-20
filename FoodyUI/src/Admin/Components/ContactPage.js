@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { getAllSocialMedia, createSocialMedia, updateSocialMedia, deleteSocialMedia } from '../../Service/SocialMediaService';
 import '../Styles/ContactPage.css'
+import SideBar from './SideBar';
 
 const ContactPage = () =>
 {
@@ -84,6 +85,7 @@ const ContactPage = () =>
 
     return (
         <div className='contact-content'>
+            <SideBar/>
             <div className='table-container'>
                 <h2 className='title'>Contact List</h2>
                 <table className='contact-table'>

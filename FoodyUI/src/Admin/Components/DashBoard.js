@@ -5,6 +5,7 @@ import { getSubscriberCount } from '../Service/AdminSubscriberService';
 import { getAllRecipes } from '../../Service/RecipeService';
 
 import '../Styles/DashBoard.css';
+import SideBar from './SideBar';
 
 const Dashboard = () => {
 
@@ -41,6 +42,7 @@ const Dashboard = () => {
 
     return (
         <div className='dashboard-container'>
+            <SideBar/>
             <h2 className='dashboard-title'>Welcome to Plate<span className='highlight-style'>Stream's</span> Admin Dashboard</h2>
             <div className='dashboard-counts'>
                 <div className='count-box'>
