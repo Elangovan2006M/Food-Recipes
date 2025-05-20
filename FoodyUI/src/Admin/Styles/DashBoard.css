@@ -31,7 +31,7 @@
 
 .count-box,
 .fill-box {
-    max-width: 200px;
+    max-width: 150px;
     max-height: 85px;
     flex: 1 1 175px;
     background-color: #ffffff;
@@ -62,7 +62,7 @@
 
 .fill-box {
     padding: 35px;
-    min-width: 300px;
+    min-width: 200px;
     background-color: #ffffff;
     color: #34495e;
     font-style: italic;
@@ -89,6 +89,8 @@
     padding: 1.5rem;
     box-shadow: 0 0 8px rgba(7, 50, 63, 0.3);
     transition: transform 0.2s ease;
+    max-width: 530px;
+    margin-bottom: 30px;
     /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05); */
 }
 
@@ -163,15 +165,10 @@
     background-color: #c0392b;
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-    .dashboard-container {
-        padding: 1rem;
-        margin-left: 0 !important;
-    }
-
-    .dashboard-counts,
-    .dashboard-listing {
-        flex-direction: column;
-    }
+.loadmore-btn{
+    background-color: #0c1926;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
 }
