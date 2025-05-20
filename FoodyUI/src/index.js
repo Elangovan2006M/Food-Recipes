@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { LogoProvider } from './Service/LogoContext';
 import { SocialMediaProvider } from './Service/SocialMediaContext';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './Admin/Service/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <AuthProvider>
     <LogoProvider>
       <SocialMediaProvider>
         <BrowserRouter>
@@ -17,6 +19,7 @@ root.render(
           </BrowserRouter>
       </SocialMediaProvider>
     </LogoProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 
