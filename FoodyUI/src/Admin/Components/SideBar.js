@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import '../Styles/SideBar.css';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  const gotoRegister=()=>{
+    navigate('/register');
+  }
 
   return (
     <>
-      <button className="toggle-btn" onClick={toggleSidebar}>
-        ☰
-      </button>
-
-      <div className={`sidebar ${isOpen ? 'active' : ''}`}>
+      <div className="sidebar">
         <nav>
           <a href="/ps-dashboard">Dashboard</a>
           <a href="/ps-recipes">Manage Recipes</a>
@@ -22,6 +19,7 @@ const SideBar = () => {
           <a href="/ps-contact">Contact Links</a>
           <a href="/ps-assets">Manage Assets</a>
           <a href="/ps-subscribe">Subscribe Emails</a>
+          <button className='add-new-admin' onClick={()=>gotoRegister()}>New Admin</button>
         </nav>
       </div>
     </>
