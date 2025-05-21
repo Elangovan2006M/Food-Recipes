@@ -1,17 +1,15 @@
 package com.example.foody.controller;
 
 import com.example.foody.dto.ChangePasswordRequest;
-import com.example.foody.dto.LoginRequest;
+import com.example.foody.dto.LoginRequestDto;
+import com.example.foody.dto.LoginResponseDto;
 import com.example.foody.model.Users;
 import com.example.foody.service.UsersService;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,26 +18,30 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/admin-user")
+@RequestMapping("/api")
 public class UsersController {
 
     @Autowired
     private UsersService userService;
 
-    @GetMapping("/all")
+    @GetMapping("/admin/all")
     public List<Users> getAllAdmins() {
         return userService.getAllAdmins();
     }
     
 
-    @PostMapping("/register")
-    public ResponseEntity<?> createUser(@RequestBody Users user) {
-        return ResponseEntity.ok(userService.saveUser(user));
+    @PostMapping("/admin/register")
+    public ResponseEntity<Users> registerAdmin(@RequestBody Users admin) {
+        return ResponseEntity.ok(userService.registerAdmin(admin));
+    }
+
+    @PostMapping("/user/register")
+    public ResponseEntity<Users> registerUser(@RequestBody Users user) {
+        return ResponseEntity.ok(userService.registerUsers(user));
     }
 
     @GetMapping("/find/{email}")
@@ -56,19 +58,19 @@ public class UsersController {
             return ResponseEntity.badRequest().body("Old password is incorrect or user not found.");
         }
     }
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    // @Autowired
+    // private PasswordEncoder passwordEncoder;
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
-        Optional<Users> optionalUser = userService.findByEmail(request.getEmail());
+    @PostMapping("/admin/login")
+    public ResponseEntity<LoginResponseDto> loginAdmin(@RequestBody LoginRequestDto request) {
+        LoginResponseDto response = userService.loginAdmin(request);
+        return ResponseEntity.ok(response);
+    }
 
-        if (optionalUser.isEmpty() ||
-            !passwordEncoder.matches(request.getPassword(), optionalUser.get().getPassword())) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
-
-        return ResponseEntity.ok("Login successful");
+    @PostMapping("/user/login")
+    public ResponseEntity<LoginResponseDto> loginUser(@RequestBody LoginRequestDto request) {
+        LoginResponseDto response = userService.loginUser(request);
+        return ResponseEntity.ok(response);
     }
 
 }
