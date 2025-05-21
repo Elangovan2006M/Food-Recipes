@@ -6,6 +6,8 @@ import { searchByFoodName, getAllRecipes } from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
 import { MdOutlineScreenSearchDesktop } from "react-icons/md";
 
+
+
 const RecipeSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [foodName, setFoodName] = useState('');

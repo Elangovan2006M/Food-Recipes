@@ -4,6 +4,7 @@ import '../Styles/RecipeDisplay.css';
 import { GiCampCookingPot, GiKnifeFork } from "react-icons/gi";
 import { BiWorld } from "react-icons/bi";
 import { MdSignalCellularAlt } from "react-icons/md";
+import RecipeReviews from './RecipeReviews';
 
 const RecipeDisplay = () => {
   const { selectedRecipe } = useRecipe();
@@ -86,9 +87,11 @@ const RecipeDisplay = () => {
             <p>{step.trim()}</p>
           </div>
         ))}
-      </div>
 
-      
+        {/*Reviews*/}
+        <RecipeReviews recipeId={selectedRecipe.id} />
+
+      </div>      
   );
 };
 

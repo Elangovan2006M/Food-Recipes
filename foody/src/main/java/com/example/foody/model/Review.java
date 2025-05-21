@@ -18,8 +18,6 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String userName;
-
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     @JsonBackReference
@@ -27,7 +25,6 @@ public class Review {
     
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    @JsonBackReference
     private Users user;
 
     @Column(nullable = false, columnDefinition = "TEXT")
@@ -78,14 +75,6 @@ public class Review {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
 }

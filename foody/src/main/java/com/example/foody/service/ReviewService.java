@@ -23,16 +23,6 @@ public class ReviewService {
 
 
      public Review addReview(Review review) {
-        if (review.getUser() == null || review.getUser().getId() == null) {
-            throw new IllegalArgumentException("User ID must be provided");
-        }
-
-        // Fetch user from DB to get the username
-        Users user = usersRepository.findById(review.getUser().getId())
-                                  .orElseThrow(() -> new RuntimeException("User not found"));
-
-        review.setUsername(user.getUsername());  // Set username manually
-
         return reviewRepository.save(review);
     }
 

@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import com.example.foody.model.Review;
 import com.example.foody.service.ReviewService;
 
+import org.springframework.http.MediaType;
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {

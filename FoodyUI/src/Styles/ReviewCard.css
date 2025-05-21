@@ -1,0 +1,86 @@
+/* src/Styles/ReviewCard.css */
+.review-list {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* use 0 if you want hard squares */
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: fit-content;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #e86b00;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.review-username {
+  font-weight: 600;
+  color: #e86b00;
+  margin-right: 15px;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+/* Tablets and smaller screens */
+@media (max-width: 1024px) {
+  .review-card {
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto 1.5rem;
+    padding: 1rem;
+  }
+
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* Phones and small devices */
+@media (max-width: 600px) {
+  .review-card {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .review-header {
+    font-size: 0.85rem;
+  }
+
+  .review-date {
+    font-size: 0.75rem;
+  }
+}
