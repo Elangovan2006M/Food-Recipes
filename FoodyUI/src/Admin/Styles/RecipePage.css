@@ -93,10 +93,3 @@ button {
   box-sizing: border-box;
 }
 
-/* On mobile, when sidebar is hidden */
-@media (max-width: 768px) {
-  .recipe-content {
-    margin-left: 0;
-    width: 100%;
-  }
-}
