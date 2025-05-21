@@ -39,7 +39,13 @@ const Dashboard = () => {
     const loadRecipes = (page) => {
         getAllRecipes(page).then(response => {
             const newRecipes = response.data.content || [];
-            setRecipes(prev => [...prev, ...newRecipes]);
+            // setRecipes(prev => [...prev, ...newRecipes]);
+            setRecipes(prev => {
+            if (page === 0) return newRecipes; // Fresh load
+            const existingIds = new Set(prev.map(r => r.id));
+            const filteredNew = newRecipes.filter(r => !existingIds.has(r.id));
+            return [...prev, ...filteredNew];
+        });
             setRecipeCount(response.data.totalElements || 0);
             setTotalPages(response.data.totalPages || 1);
             setCurrentPage(response.data.number); // current page from backend
