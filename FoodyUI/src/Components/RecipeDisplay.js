@@ -45,10 +45,10 @@ const RecipeDisplay = () => {
           <div className="overview-box">
             <div className="metadata-row">
               <div className="meta-box">
-                <div><GiCampCookingPot style={{color:"#e86b00",fontSize:"20px"}}/><span>Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
-                <div><GiKnifeFork style={{color:"#e86b00",fontSize:"20px"}}/><span>Prep time </span><p>{selectedRecipe.prepTime} Min</p></div>
-                <div><BiWorld style={{color:"#e86b00",fontSize:"20px"}}/><span>Cuisine </span><p>{selectedRecipe.cuisines}</p></div>
-                <div><MdSignalCellularAlt style={{color:"#e86b00",fontSize:"20px"}}/><span>Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
+                <div><span><GiCampCookingPot style={{color:"#e86b00",fontSize:"20px"}}/> Cook time</span><p>{selectedRecipe.cookTime} Min</p></div>
+                <div><span> <GiKnifeFork style={{color:"#e86b00",fontSize:"20px"}}/> Prep time </span><p>{selectedRecipe.prepTime} Min</p></div>
+                <div><span><BiWorld style={{color:"#e86b00",fontSize:"20px"}}/> Cuisine </span><p>{selectedRecipe.cuisines}</p></div>
+                <div><span><MdSignalCellularAlt style={{color:"#e86b00",fontSize:"20px"}}/> Difficulty</span><p>{selectedRecipe.difficulty}</p></div>
               </div>
             </div>
             <div className="overview-text">
@@ -87,6 +87,8 @@ const RecipeDisplay = () => {
           </div>
         ))}
       </div>
+
+      
   );
 };
 

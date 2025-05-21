@@ -1,5 +1,7 @@
 package com.example.foody.model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -164,6 +166,10 @@ public class Recipe {
     @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL,  orphanRemoval = true)
     @JsonManagedReference
     private Nutrition nutrition;
+    
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Review> reviews;
 
 
     public Integer getTotalViews() {
@@ -172,6 +178,14 @@ public class Recipe {
 
     public void setTotalViews(Integer totalViews) {
         this.totalViews = totalViews;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
 }
