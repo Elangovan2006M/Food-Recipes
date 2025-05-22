@@ -29,7 +29,7 @@ const SideBar = () => {
     <>
       <div className="sidebar">
         <nav>
-          <h2 style={{color:"white",paddingRight:"40px"}}><PiHandWavingThin /> Hi, {userName}</h2>
+          <h2 style={{color:"white",paddingRight:"40px"}}><PiHandWavingThin /> Hi, {adminName}</h2>
 
           <button className='add-new-admin' onClick={()=>Logout()}>LogOut</button>
           <a href="/ps-dashboard">Dashboard</a>
