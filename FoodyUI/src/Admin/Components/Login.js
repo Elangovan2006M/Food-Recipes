@@ -20,11 +20,11 @@ const Login = () => {
   const result = await loginAdmin(email, password);
 
   if (result.success) {
-    const { token, userName, role } = result.data;
+    const { token, adminName, role } = result.data;
 
     login(); // set login context
     localStorage.setItem("token", token);     // store token
-    localStorage.setItem("userName", userName);
+    localStorage.setItem("adminName", adminName);
     localStorage.setItem("role", role);
 
     navigate('/ps-dashboard');
@@ -34,24 +34,6 @@ const Login = () => {
   }
 };
 
-
-    // const handleLogin = async (e) =>
-    // {
-    //     e.preventDefault();
-    //     const result = await loginAdmin(email, password);
-
-    //     if(result.success)
-    //     {
-    //         login();
-    //         localStorage.setItem("userName", result.userName);
-    //         localStorage.setItem("role", result.role);
-    //         navigate('/ps-dashboard');
-    //     }
-    //     else
-    //     {
-    //         alert(result.message);
-    //     }
-    // }
   return (
     <div className='admin-login'>
         <h2 className='admin-login-heading'>Welcome <span className='highlight-style'>Admin!</span></h2>
@@ -59,7 +41,7 @@ const Login = () => {
         <div className='login-container'>
             <div className='login-box'>
                 <form onSubmit={handleLogin}>
-                    <label>Username</label>
+                    <label>Email</label>
                     <div className='input-with-icon'>
                         <input type='email' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                         <FaUserAlt className='inputicon'/>
