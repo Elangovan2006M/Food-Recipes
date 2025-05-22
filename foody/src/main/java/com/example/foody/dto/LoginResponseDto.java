@@ -11,5 +11,5 @@ public class LoginResponseDto {
     private boolean success;
     private String role;
     private String message;
-    private String userName;
+    private String adminName;
 }

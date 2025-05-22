@@ -17,11 +17,11 @@ const SideBar = () => {
     navigate('/login')
   }
 
-  const [userName, setUserName] = useState('');
+  const [adminName, setAdminName] = useState('');
   useEffect(() => {
-    const storedUserName = localStorage.getItem('userName');
-    if(storedUserName) {
-      setUserName(storedUserName);
+    const storedAdminName = localStorage.getItem('adminName');
+    if(storedAdminName) {
+      setAdminName(storedAdminName);
     }
   },[]);
 
@@ -30,6 +30,7 @@ const SideBar = () => {
       <div className="sidebar">
         <nav>
           <h2 style={{color:"white",paddingRight:"40px"}}><PiHandWavingThin /> Hi, {userName}</h2>
+
           <button className='add-new-admin' onClick={()=>Logout()}>LogOut</button>
           <a href="/ps-dashboard">Dashboard</a>
           <a href="/ps-recipes">Manage Recipes</a>

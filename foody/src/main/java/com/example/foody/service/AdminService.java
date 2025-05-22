@@ -30,7 +30,7 @@ public class AdminService{
         admin.setRole("admin");
         admin.setCreatedAt(LocalDateTime.now());
         admin.setPasswordChanged(false);
-        admin.setUserName(admin.getUserName());
+        admin.setAdminName(admin.getAdminName());
         return adminRepository.save(admin);
     }
     public Admin registerUsers(Admin user) {
@@ -39,7 +39,7 @@ public class AdminService{
         user.setRole("user");
         user.setCreatedAt(LocalDateTime.now());
         user.setPasswordChanged(false);
-        user.setUserName(user.getUserName());
+        user.setAdminName(user.getAdminName());
         return adminRepository.save(user);
     }
 
@@ -51,7 +51,7 @@ public class AdminService{
         Admin user = adminRepository.findByEmail(dto.getEmail())
                     .orElse(null);
         if (user != null && user.getPassword().equals(dto.getPassword()) && "user".equalsIgnoreCase(user.getRole())) {
-            return new LoginResponseDto(true, user.getRole(), "Login successful", user.getUserName());
+            return new LoginResponseDto(true, user.getRole(), "Login successful", user.getAdminName());
         }
         return new LoginResponseDto(false, null, "Invalid credentials", null);
         }
@@ -60,7 +60,7 @@ public class AdminService{
         Admin admin = adminRepository.findByEmail(dto.getEmail())
                     .orElse(null);
         if (admin != null && admin.getPassword().equals(dto.getPassword()) && "admin".equalsIgnoreCase(admin.getRole())) {
-            return new LoginResponseDto(true, admin.getRole(), "Login successful", admin.getUserName());
+            return new LoginResponseDto(true, admin.getRole(), "Login successful", admin.getAdminName());
         }
         return new LoginResponseDto(false, null, "Invalid credentials or not an admin", null);
     }

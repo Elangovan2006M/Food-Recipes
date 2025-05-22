@@ -24,14 +24,14 @@ public class Admin {
     private boolean passwordChanged;
     private LocalDateTime createdAt;
 
-    private String userName;
+    private String adminName;
 
-    public String getUserName() {
-        return userName;
+    public String getAdminName() {
+        return adminName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public Long getId() {
