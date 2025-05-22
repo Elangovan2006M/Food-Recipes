@@ -8,6 +8,10 @@
   .recipe-result {
     width: 100%;
   }
+
+  .recipe-heading{
+    text-align: left !important;
+  }
   
   .recipe-card-grid {
     display: grid;

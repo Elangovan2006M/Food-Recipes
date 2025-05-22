@@ -6,7 +6,6 @@ export const getAllAdmins = () => {
     return axios.get(`${API_BASE_URL}/admin/all`);
 }
 
-// AdminService.js
 export const loginAdmin = async (email, password) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/admin/login`, {
@@ -22,12 +21,14 @@ export const loginAdmin = async (email, password) => {
       data,
     };
   } catch (error) {
+    console.error("Login API error:", error.response || error.message); 
     return {
       success: false,
       message: "Something went wrong during login!",
     };
   }
 };
+
 
 export const registerAdmin = async (userName, email, password) => {
   try {

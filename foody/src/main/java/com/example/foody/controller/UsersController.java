@@ -9,6 +9,8 @@ import com.example.foody.service.UsersService;
 
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "*")
@@ -33,5 +35,12 @@ public class UsersController {
     @GetMapping("/email")
     public Users getUserByEmail(@RequestParam String email) {
         return usersService.getUserByEmail(email).orElse(null);
+    }
+
+    @GetMapping
+    public Page<Users> getAllUsers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return usersService.getAllUsers(page, size);
     }
 }
