@@ -84,7 +84,7 @@ const Home = () => {
 
                 <section className="home-trending">
                 <div className="full-align">
-                    <h2 style={{"margin-top":"5px","margin-bottom":"10px"}}>See <span className="home-highlight-style">Trending</span> Recipes</h2>
+                    <h2 style={{"margin-top":"5px","margin-bottom":"10px"}}>See <span className="highlight">Trending</span> Recipes</h2>
                 </div>
                     <div className="button-stack">
                         <div className="button-back"></div>
@@ -107,7 +107,7 @@ const Home = () => {
                 {/* Cuisines Section*/}
 
                 <div className="home-cuisines">
-                    <h2>Need <span className="home-highlight-style">Varieties</span>?</h2>
+                    <h2 style={{textAlign:"left"}}>Need <span className="highlight">Varieties</span>?</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
                         <button className="button-front">Explore By Cuisines <FaMapMarkedAlt className="topic-icons" /></button>
@@ -163,7 +163,7 @@ const Home = () => {
 
                 <div className="home-popular">
                     <div className="full-align">
-                        <h2><span className="home-highlight-style">Our</span> Most <span className="home-highlight-style">Popular</span> recipes</h2>
+                        <h2><span className="highlight">Our</span> Most <span className="highlight">Popular</span> recipes</h2>
                     </div>
                         <div className="button-stack">
                             <div className="button-back"></div>
@@ -186,7 +186,7 @@ const Home = () => {
                 {/* Blog Section */}
 
                 <div className="blog">
-                    <h2><span className="home-highlight-style">From Our</span> Blog</h2>
+                    <h2 style={{textAlign:"left"}}><span className="highlight">From Our</span> Blog</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
                         <button className="button-front">Best Articles For You  <IoNewspaperOutline  className="topic-icons"/></button>
@@ -212,7 +212,7 @@ const Home = () => {
                 {/* About Section */}
 
                 <div className="about">
-                    <h2><span className="home-highlight-style">About</span> Us</h2>
+                    <h2 style={{textAlign:"left"}}><span className="highlight">About</span> Us</h2>
                     <div className="button-stack">
                         <div className="button-back"></div>
                         <button className="button-front">Best Articles For You  <LuMessagesSquare  className="topic-icons"/></button>

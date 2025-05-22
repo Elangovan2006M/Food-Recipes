@@ -92,6 +92,7 @@
     line-height: 1.2;
     margin-top: 0px;
     background-color: #FF7C00;
+
     /* border-radius: 15px; */
 }
 
@@ -100,7 +101,7 @@
     width: 25px;
 }
 
-.home-highlight-style {
+.highlight {
     color: #EA7300;
     font-size: 32px;
 }

@@ -51,13 +51,12 @@ const Navbar = () => {
             <FiSearch className="search-icon" onClick={handleSearch} />
           </li>
 
-          {/* Conditional: show SignUp if not logged in, or Username + Logout if logged in */}
           {!userLoggedIn ? (
             <li><a href="/user-register">SignUp</a></li>
           ) : (
             <>
               <li className="nav-username">Hi, {userName}</li>
-              <li onClick={handleLogout}><FaSignInAlt /></li>
+              <li onClick={handleLogout}><FaSignInAlt  style={{fontSize:"20px",paddingTop:"5px"}}/></li>
             </>
           )}
         </ul>

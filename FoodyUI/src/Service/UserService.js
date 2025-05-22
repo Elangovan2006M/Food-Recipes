@@ -18,3 +18,10 @@ export const getUserByEmail = (email) => {
     params: { email }
   });
 };
+
+//Get all users
+export const getAllUsers = (page = 0, size = 10) =>{
+    return axios.get(`${API_BASE_URL}`,{
+        params: {page,size}
+    })
+}
