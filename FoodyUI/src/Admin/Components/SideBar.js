@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Styles/SideBar.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Service/AuthContext';
@@ -16,10 +16,19 @@ const SideBar = () => {
     navigate('/login')
   }
 
+  const [userName, setUserName] = useState('');
+  useEffect(() => {
+    const storedUserName = localStorage.getItem('userName');
+    if(storedUserName) {
+      setUserName(storedUserName);
+    }
+  },[]);
+
   return (
     <>
       <div className="sidebar">
         <nav>
+          <h2>Hi, {userName}</h2>
           <button className='add-new-admin' onClick={()=>Logout()}>LogOut</button>
           <a href="/ps-dashboard">Dashboard</a>
           <a href="/ps-recipes">Manage Recipes</a>

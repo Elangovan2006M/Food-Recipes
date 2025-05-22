@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FaUserAlt } from "react-icons/fa";
 import { TiLockOpen, TiLockClosed } from "react-icons/ti";
-import { useAuth } from '../Service/AuthContext';   
+import { useAuth } from '../Service/AuthContext';
 
 import '../Styles/Login.css';
+import { loginAdmin } from '../Service/AdminService';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -13,19 +14,44 @@ const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogin = (e) =>
-    {
-        e.preventDefault();
-        if(email === 'admin@example.com' && password === 'Admin@123')
-        {
-            navigate('/ps-dashboard');
-            login();
-        }
-        else
-        {
-            alert("Invalid credentials");
-        }
-    }
+    const handleLogin = async (e) => {
+  e.preventDefault();
+
+  const result = await loginAdmin(email, password);
+
+  if (result.success) {
+    const { token, userName, role } = result.data;
+
+    login(); // set login context
+    localStorage.setItem("token", token);     // store token
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("role", role);
+
+    navigate('/ps-dashboard');
+  } else {
+    alert(result.message);
+    console.error("Login failed:", result.message); // helpful debug
+  }
+};
+
+
+    // const handleLogin = async (e) =>
+    // {
+    //     e.preventDefault();
+    //     const result = await loginAdmin(email, password);
+
+    //     if(result.success)
+    //     {
+    //         login();
+    //         localStorage.setItem("userName", result.userName);
+    //         localStorage.setItem("role", result.role);
+    //         navigate('/ps-dashboard');
+    //     }
+    //     else
+    //     {
+    //         alert(result.message);
+    //     }
+    // }
   return (
     <div className='admin-login'>
         <h2 className='admin-login-heading'>Welcome <span className='highlight-style'>Admin!</span></h2>
