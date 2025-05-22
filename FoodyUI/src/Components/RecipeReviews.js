@@ -1,8 +1,9 @@
-// src/Components/RecipeReviews.js
 import React, { useEffect, useState, useRef } from 'react';
 import { getReviewsByRecipe, createReview } from '../Service/ReviewService';
 import ReviewCard from './ReviewCard';
 import '../Styles/RecipeReview.css';
+import { useUser } from '../Service/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const RecipeReviews = ({ recipeId }) => {
   const [reviews, setReviews] = useState([]);
@@ -12,6 +13,8 @@ const RecipeReviews = ({ recipeId }) => {
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 
+  const { userId, userLoggedIn } = useUser();
+  const navigate = useNavigate();
   const containerRef = useRef(null);
 
   const fetchReviews = async (pageToFetch = 0, append = false) => {
@@ -39,13 +42,18 @@ const RecipeReviews = ({ recipeId }) => {
   }, [recipeId]);
 
   const handleSubmit = async () => {
+    if (!userLoggedIn) {
+      navigate('/user-register');
+      return;
+    }
+
     if (!newReview.trim()) return;
 
     setSubmitting(true);
     try {
       const reviewPayload = {
         recipe: { id: recipeId },
-        user: { id: 2 }, // Replace with dynamic user ID when available
+        user: { id: userId },
         reviewText: newReview.trim()
       };
 
@@ -64,7 +72,6 @@ const RecipeReviews = ({ recipeId }) => {
     const nextPage = page + 1;
     setPage(nextPage);
     fetchReviews(nextPage, true);
-    // Scroll to the end after a short delay to let rendering complete
     setTimeout(() => {
       if (containerRef.current) {
         containerRef.current.scrollLeft = containerRef.current.scrollWidth;
@@ -73,44 +80,43 @@ const RecipeReviews = ({ recipeId }) => {
   };
 
   return (
-      <div className="review-list">
-  <div className="align">
-    <h2>
-      Recipe <span className="home-highlight-style">Reviews</span>
-    </h2>
-    {hasMore && (
-      <button className="load-more-button" onClick={loadMore}>
-        Load More
-      </button>
-    )}
-  </div>
+    <div className="review-list">
+      <div className="align">
+        <h2>
+          Recipe <span className="home-highlight-style">Reviews</span>
+        </h2>
+        {hasMore && (
+          <button className="load-more-button" onClick={loadMore}>
+            Load More
+          </button>
+        )}
+      </div>
 
-  <div className="review-horizontal-wrapper">
-    {/* Review input */}
-    <div className="review-form">
-      <textarea
-        value={newReview}
-        onChange={(e) => setNewReview(e.target.value)}
-        placeholder="Write your review here..."
-        rows={4}
-      />
-      <button
-        onClick={handleSubmit}
-        disabled={submitting || !newReview.trim()}
-      >
-        {submitting ? 'Submitting...' : 'Submit Review'}
-      </button>
+      <div className="review-horizontal-wrapper">
+        {/* Review input */}
+        <div className="review-form">
+          <textarea
+            value={newReview}
+            onChange={(e) => setNewReview(e.target.value)}
+            placeholder="Write your review here..."
+            rows={4}
+          />
+          <button
+            onClick={handleSubmit}
+            disabled={submitting || (!newReview.trim() && userLoggedIn)}
+          >
+            {submitting ? 'Submitting...' : 'Submit Review'}
+          </button>
+        </div>
+
+        {/* Scrollable Review Cards */}
+        <div className="review-cards-container" ref={containerRef}>
+          {reviews.map((review) => (
+            <ReviewCard key={review.id} review={review} className="review-card" />
+          ))}
+        </div>
+      </div>
     </div>
-
-    {/* Scrollable Review Cards */}
-    <div className="review-cards-container" ref={containerRef}>
-      {reviews.map((review) => (
-        <ReviewCard key={review.id} review={review}  className="review-card"/>
-      ))}
-    </div>
-  </div>
-</div>
-
   );
 };
 

@@ -1,5 +1,6 @@
 package com.example.foody.service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,10 @@ public class UsersService {
     private UsersRepository usersRepository;
 
     public Users createUser(Users user) {
+        user.setCreatedAt(LocalDateTime.now());
         return usersRepository.save(user);
     }
+
 
     @Transactional
     public void deleteUserById(Long id) {

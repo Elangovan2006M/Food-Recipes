@@ -26,6 +26,9 @@ import Dashboard from './Admin/Components/DashBoard';
 import BlogPage from './Admin/Components/BlogPage';
 import { useAuth } from './Admin/Service/AuthContext';
 import ReviewPage from './Admin/Components/ReviewPage';
+import { UserProvider } from './Service/UserContext';
+import UserRegister from './Components/UserRegister';
+import UserLogin from './Components/UserLogin';
 
 
 const AppContent = () => {
@@ -45,14 +48,16 @@ const AppContent = () => {
     <>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
-        <Route path="/search" element={<><Navbar /><RecipeSearch /><Footer /></>} />
-        <Route path="/recipe" element={<><Navbar /><Recipe /><Footer /></>} />
-        <Route path="/recipes" element={<><Navbar /><RecipeDisplay /><Footer /></>} />
-        <Route path="/blogs" element={<><Navbar /><Blog /><Footer /></>} />
-        <Route path="/blogs/view" element={<><Navbar /><BlogRecipePage /><Footer /></>} />
-        <Route path="/aboutus" element={<><Navbar /><AboutUs /><Footer /></>} />
-        <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
+          <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
+          <Route path="/search" element={<><Navbar /><RecipeSearch /><Footer /></>} />
+          <Route path="/recipe" element={<><Navbar /><Recipe /><Footer /></>} />
+          <Route path="/recipes" element={<><Navbar /><RecipeDisplay /><Footer /></>} />
+          <Route path="/blogs" element={<><Navbar /><Blog /><Footer /></>} />
+          <Route path="/blogs/view" element={<><Navbar /><BlogRecipePage /><Footer /></>} />
+          <Route path="/aboutus" element={<><Navbar /><AboutUs /><Footer /></>} />
+          <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
+          <Route path="/user-register" element={<><Navbar /><Home /><UserRegister/><Footer /></>} />
+          <Route path="/user-login" element={<><Navbar /><Home /><UserLogin/><Footer /></>}/>
 
         <Route path="/login" element={<Login />} />
 
@@ -76,15 +81,17 @@ const AppContent = () => {
 
 const App = () => {
   return (
+    <UserProvider>
     <BlogProvider>
         <LogoProvider>
         <RecipeProvider>
           <SocialMediaProvider>
-              <AppContent />
+               <AppContent />
           </SocialMediaProvider>
         </RecipeProvider>
       </LogoProvider>
     </BlogProvider>
+    </UserProvider>
   );
 };
 
