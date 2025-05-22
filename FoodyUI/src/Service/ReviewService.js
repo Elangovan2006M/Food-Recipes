@@ -14,7 +14,19 @@ export const getReviewsByRecipe = (recipeId, page = 0, size = 10) => {
   });
 };
 
+export const getAllReviews = (page = 0, size = 10) => {
+  return axios.get(`${API_BASE_URL}`, {
+    params: { page, size }
+  });
+};
+
+
 // Delete all reviews for a specific recipe
 export const deleteReviewsByRecipe = (recipeId) => {
   return axios.delete(`${API_BASE_URL}/${recipeId}`);
+};
+
+// Delete a single review by ID
+export const deleteReviewById = (reviewId) => {
+  return axios.delete(`${API_BASE_URL}/review/${reviewId}`);
 };

@@ -34,4 +34,15 @@ public class ReviewService {
     public void deleteReviewsByRecipeId(Long recipeId) {
         reviewRepository.deleteByRecipeId(recipeId);
     }
+
+    @Transactional
+    public void deleteReviewById(Long reviewId) {
+        reviewRepository.deleteById(reviewId);
+    }
+
+    public Page<Review> getAllReviews(Pageable pageable) {
+        return reviewRepository.findAll(pageable);
+    }
+
+
 }

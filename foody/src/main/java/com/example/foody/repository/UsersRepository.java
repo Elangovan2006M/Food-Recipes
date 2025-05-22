@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.example.foody.model.Users;
 
 @Repository
-public interface UsersRepository extends JpaRepository<Users, Long>{
-        Optional<Users> findByEmail(String email);
+public interface UsersRepository extends JpaRepository<Users, Long> {
+    Optional<Users> findByEmail(String email);
 }

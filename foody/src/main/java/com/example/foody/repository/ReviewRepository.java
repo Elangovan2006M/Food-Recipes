@@ -11,6 +11,8 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     // Paginated fetch by recipe ID
     Page<Review> findByRecipeId(Long recipeId, Pageable pageable);
 
+    Page<Review> findAll(Pageable pageable);
+
     // Delete all reviews by recipe ID
     void deleteByRecipeId(Long recipeId);
 }

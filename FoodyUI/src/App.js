@@ -25,6 +25,7 @@ import SubscribePage from './Admin/Components/SubscribePage';
 import Dashboard from './Admin/Components/DashBoard';
 import BlogPage from './Admin/Components/BlogPage';
 import { useAuth } from './Admin/Service/AuthContext';
+import ReviewPage from './Admin/Components/ReviewPage';
 
 
 const AppContent = () => {
@@ -53,10 +54,8 @@ const AppContent = () => {
         <Route path="/aboutus" element={<><Navbar /><AboutUs /><Footer /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
 
-        {/* Login/Register Routes - always accessible */}
         <Route path="/login" element={<Login />} />
 
-        {/* Admin Routes - only accessible if logged in */}
         {isLoggedIn && (
           <>
             <Route path="/ps-dashboard" element={<Dashboard />} />
@@ -66,6 +65,7 @@ const AppContent = () => {
             <Route path="/ps-subscribe" element={<SubscribePage />} />
             <Route path="/ps-blogs" element={<BlogPage />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/ps-review" element={<ReviewPage/>} />
           </>
         )}
       </Routes>

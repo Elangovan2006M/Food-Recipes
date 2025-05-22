@@ -20,7 +20,6 @@ public class Review {
 
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
-    @JsonBackReference
     private Recipe recipe;
     
     @ManyToOne

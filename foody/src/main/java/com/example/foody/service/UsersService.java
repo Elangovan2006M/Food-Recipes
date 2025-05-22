@@ -1,14 +1,31 @@
 package com.example.foody.service;
 
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.foody.model.Users;
+import com.example.foody.repository.UsersRepository;
 
-public interface UsersService {
-    Users saveUser(Users user);
-    Optional<Users> findByEmail(String email);
-    boolean updatePassword(String email, String oldPassword, String newPassword);
+import jakarta.transaction.Transactional;
 
-    List<Users> getAllAdmins();
+@Service
+public class UsersService {
+
+    @Autowired
+    private UsersRepository usersRepository;
+
+    public Users createUser(Users user) {
+        return usersRepository.save(user);
+    }
+
+    @Transactional
+    public void deleteUserById(Long id) {
+        usersRepository.deleteById(id);
+    }
+
+    public Optional<Users> getUserByEmail(String email) {
+        return usersRepository.findByEmail(email);
+    }
 }

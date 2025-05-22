@@ -38,4 +38,15 @@ public class ReviewController {
     public void deleteReviewsByRecipe(@PathVariable Long recipeId) {
         reviewService.deleteReviewsByRecipeId(recipeId);
     }
+
+    @DeleteMapping("/review/{reviewId}")
+    public void deleteReviews(@PathVariable Long reviewId) {
+        reviewService.deleteReviewById(reviewId);
+    }
+
+    @GetMapping
+    public Page<Review> getAllReviews(@RequestParam(defaultValue = "0") int page,
+                                      @RequestParam(defaultValue = "10") int size) {
+        return reviewService.getAllReviews(PageRequest.of(page, size));
+    }
 }
