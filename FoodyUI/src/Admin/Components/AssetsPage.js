@@ -77,6 +77,8 @@ const AssetsPage = () => {
 
 
     useEffect(() => {
+        const token = localStorage.getItem('isLoggedIn');
+        if(!token) return;
         loadAssets();
     },[]);
 

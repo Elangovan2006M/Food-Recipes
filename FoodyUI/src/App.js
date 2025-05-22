@@ -14,6 +14,7 @@ import Blog from './Components/Blog';
 import BlogRecipePage from './Components/BlogRecipePage';
 import AboutUs from './Components/About';
 import Contact from './Components/Contact';
+import { AuthProvider } from './Admin/Service/AuthContext';
 
 import RecipePage from './Admin/Components/RecipePage';
 import Login from './Admin/Components/Login';
@@ -81,6 +82,8 @@ const AppContent = () => {
 
 const App = () => {
   return (
+    <AuthProvider>
+
     <UserProvider>
     <BlogProvider>
         <LogoProvider>
@@ -92,6 +95,7 @@ const App = () => {
       </LogoProvider>
     </BlogProvider>
     </UserProvider>
+    </AuthProvider>
   );
 };
 

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa';
 import { TiLockClosed, TiLockOpen } from 'react-icons/ti';
-import axios from 'axios';
-
+import { registerAdmin } from '../Service/AdminService'; // ✅ use the API wrapper
 import '../Styles/Register.css';
 
 const Register = () => {
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -16,21 +16,13 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post('http://localhost:8080/api/admin-user/register', {
-        email,
-        password,
-      });
+    const result = await registerAdmin(userName, email, password); // ✅ using wrapper
 
-      if (response.status === 200 || response.status === 201) {
-        alert('Registration successful!');
-        navigate('/admin-login');
-      } else {
-        alert('Registration failed!');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('Registration failed!');
+    if (result.success) {
+      alert(result.message);
+      navigate('/login');
+    } else {
+      alert(result.message);
     }
   };
 
@@ -46,10 +38,23 @@ const Register = () => {
             <label>Username</label>
             <div className='input-with-icon'>
               <input
+                type='text'
+                placeholder='Enter your name'
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                required
+              />
+              <FaUserAlt className='inputicon' />
+            </div>
+
+            <label>Email</label>
+            <div className='input-with-icon'>
+              <input
                 type='email'
                 placeholder='Enter your email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <FaUserAlt className='inputicon' />
             </div>
@@ -61,6 +66,7 @@ const Register = () => {
                 placeholder='Enter your password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               <span
                 className='inputicon toggle-icon'
@@ -73,7 +79,7 @@ const Register = () => {
             <button type='submit'>Register</button>
           </form>
           <h3>
-            Already have an account? <a href='/admin-login'>Login</a>
+            Already have an account? <a href='/login'>Login</a>
           </h3>
         </div>
       </div>
