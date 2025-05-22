@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAllAdmins } from '../Service/AdminService';
-import { getBlogCount } from '../Service/AdminBlogService';
-import { getSubscriberCount } from '../Service/AdminSubscriberService';
+import { getBlogCount } from '../../Service/BlogService';
+import { getSubscriberCount } from '../../Service/SubscribeService';
 import { getAllRecipes } from '../../Service/RecipeService';
 
 import '../Styles/DashBoard.css';

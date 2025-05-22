@@ -62,3 +62,6 @@ export const getBlogSuggestions = (query) => {
   });
 }; 
   
+export const getBlogCount = () => {
+    return axios.get(`${API_BASE_URL}/count`);
+}

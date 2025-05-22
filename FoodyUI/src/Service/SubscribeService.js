@@ -27,3 +27,7 @@ export const searchSubscribers = (keyword, page = 0, size = 10) => {
 export const deleteSubscriber = (id) => {
   return axios.delete(`${API_BASE_URL}/${id}`);
 };
+
+export const getSubscriberCount = () => {
+    return axios.get(`${API_BASE_URL}/count`);
+}

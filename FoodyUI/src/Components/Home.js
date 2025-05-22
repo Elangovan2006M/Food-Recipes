@@ -194,7 +194,7 @@ const Home = () => {
                     <div className="home-blog-container">
                         <div className="kitchen-banner">
                             <div className="kitchen-text">
-                                <h2>
+                                <h2 style={{textAlign:"left"}}>
                                 <span className="highlight">Spice up your</span> 
                                 <span className="bold"> kitchen stories!</span>
                                 </h2>
