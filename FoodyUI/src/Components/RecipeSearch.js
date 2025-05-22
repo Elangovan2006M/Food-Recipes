@@ -6,10 +6,12 @@ import { searchByFoodName, getAllRecipes } from '../Service/RecipeService';
 import '../Styles/RecipeSearch.css';
 import { MdOutlineScreenSearchDesktop } from "react-icons/md";
 
+
+
 const RecipeSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [foodName, setFoodName] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+  // const [suggestions, setSuggestions] = useState([]);
   const [filtersApplied, setFiltersApplied] = useState(false);
 // Filter states
   const cuisines = ['Indian', 'French', 'Italian', 'Japanese', 'Chinese', 'Mexican', 'Thai', 'Malaysian', 'Australian', 'American', 'Korean'];
@@ -48,24 +50,35 @@ const RecipeSearch = () => {
 // Search input handler
   const handleSearchInput = async (query) => {
     setFoodName(query);
+
     if (query.length > 1) {
       try {
         const res = await searchByFoodName(query);
-        setSuggestions(res.data.map((r) => r.foodName));
+        const resultData = res.data;
+
+        setSearchResults(resultData);
+        setFiltersApplied(false);
+        setCurrentPage(0);
+        setTotalPages(1);
       } catch (error) {
         console.error(error);
       }
     } else {
-      setSuggestions([]);
+      handleInitialLoad(0);
     }
   };
+
+
+
+  
+
 // Search button handler
   const handleSearchClick = async () => {
     if (foodName.trim() === '') return;
     try {
       const res = await searchByFoodName(foodName);
       setSearchResults(res.data);
-      setSuggestions([]);
+      // setSuggestions([]);
       setFiltersApplied(false);
       setCurrentPage(0);
       setTotalPages(1);
@@ -131,7 +144,7 @@ const RecipeSearch = () => {
               placeholder="Search your recipe"
               className="search-input"
             />
-            {suggestions.length > 0 && (
+            {/* {suggestions.length > 0 && (
               <ul className="suggestions-dropdown">
                 {suggestions.map((item, index) => (
                   <li key={index} onClick={() => { setFoodName(item); handleSearchClick(); }}>
@@ -139,7 +152,7 @@ const RecipeSearch = () => {
                   </li>
                 ))}
               </ul>
-            )}
+            )} */}
           </div>
           <button onClick={handleSearchClick} className="search-button">
             <FiSearch className="searchicon" />

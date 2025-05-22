@@ -9,7 +9,7 @@ import {
 import "../Styles/SubscribePage.css";
 import SideBar from "./SideBar";
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 10;
 
 const SubscribePage = () => {
   const [subscribers, setSubscribers] = useState([]);

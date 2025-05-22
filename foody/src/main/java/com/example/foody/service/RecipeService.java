@@ -5,8 +5,10 @@ import com.example.foody.model.Recipe;
 import com.example.foody.model.ViewRecipe;
 import com.example.foody.repository.RecipeRepository;
 import com.example.foody.repository.ViewRecipeRepository;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
 import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import java.util.NoSuchElementException;
 import com.example.foody.model.Instruction;
 import com.example.foody.repository.InstructionRepository;
 import com.example.foody.repository.NutritionRepository;
+import com.example.foody.repository.ReviewRepository;
 
 @Service
 public class RecipeService {
@@ -32,6 +35,9 @@ public class RecipeService {
 
     @Autowired
     private NutritionRepository nutritionRepository;
+
+    @Autowired
+    private ReviewRepository reviewRepository;
 
 
     RecipeService(ViewRecipeRepository viewRecipeRepository) {
@@ -108,8 +114,9 @@ public class RecipeService {
     
     @Transactional
         public void deleteRecipe(Long id) {
-            viewRecipeRepository.deleteByRecipeId(id);  // First delete child records
-            recipeRepository.deleteById(id);            // Then delete parent recipe
+            viewRecipeRepository.deleteByRecipeId(id);
+            reviewRepository.deleteByRecipeId(id);  
+            recipeRepository.deleteById(id);            
         }
 
 

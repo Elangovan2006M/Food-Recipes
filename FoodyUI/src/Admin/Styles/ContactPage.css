@@ -91,15 +91,3 @@
 .contact-table button:last-child:hover {
     background-color: #c0392b;
 }
-
-/* On mobile, when sidebar is hidden */
-@media (max-width: 768px) {
-    .contact-content {
-    margin-left: 0 !important;
-    padding: 1rem;
-  }
-    .recipe-content {
-    margin-left: 0 !important;
-    width: 100%;
-    }
-}

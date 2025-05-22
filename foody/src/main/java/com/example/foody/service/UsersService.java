@@ -1,19 +1,34 @@
-// package com.example.foody.service;
+package com.example.foody.service;
 
-// import java.util.List;
-// import java.util.Optional;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
-// import com.example.foody.dto.LoginRequestDto;
-// import com.example.foody.dto.LoginResponseDto;
-// import com.example.foody.model.Users;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-// public interface UsersService {
-//     Users registerAdmin(Users admin);
-//     Users registerUsers(Users users);
-//     Optional<Users> findByEmail(String email);
-//     boolean updatePassword(String email, String oldPassword, String newPassword);
+import com.example.foody.model.Users;
+import com.example.foody.repository.UsersRepository;
 
-//     List<Users> getAllAdmins();
-//     LoginResponseDto loginUser(LoginRequestDto dto);
-//     LoginResponseDto loginAdmin(LoginRequestDto dto);
-// }
+import jakarta.transaction.Transactional;
+
+@Service
+public class UsersService {
+
+    @Autowired
+    private UsersRepository usersRepository;
+
+    public Users createUser(Users user) {
+        user.setCreatedAt(LocalDateTime.now());
+        return usersRepository.save(user);
+    }
+
+
+    @Transactional
+    public void deleteUserById(Long id) {
+        usersRepository.deleteById(id);
+    }
+
+    public Optional<Users> getUserByEmail(String email) {
+        return usersRepository.findByEmail(email);
+    }
+}

@@ -16,7 +16,7 @@ const BlogPage = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const pageSize = 5;
+  const pageSize = 10;
   const suggestionRef = useRef(null);
   const [isSearching, setIsSearching] = useState(false);
 

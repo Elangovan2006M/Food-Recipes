@@ -35,7 +35,7 @@ const RecipePage = () => {
   });
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(0);
-  const pageSize = 5;
+  const pageSize = 10;
   const [totalPages, setTotalPages] = useState(0);
   const [suggestions, setSuggestions] = useState([]);
 
