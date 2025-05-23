@@ -30,6 +30,7 @@ import ReviewPage from './Admin/Components/ReviewPage';
 import { UserProvider } from './Service/UserContext';
 import UserRegister from './Components/UserRegister';
 import UserLogin from './Components/UserLogin';
+import Users from './Admin/Components/Users';
 
 
 const AppContent = () => {
@@ -72,6 +73,7 @@ const AppContent = () => {
             <Route path="/ps-blogs" element={<BlogPage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/ps-review" element={<ReviewPage/>} />
+            <Route path="/ps-users" element={<Users/>} />
           </>
         )}
       </Routes>

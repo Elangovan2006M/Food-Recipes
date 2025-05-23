@@ -36,7 +36,7 @@ const UserRegister = () => {
       };
       createUser(newUser);
       alert("Registration successful!");
-      navigate('/');
+      navigate('/user-login');
     } catch (error) {
       console.error("Registration failed:", error);
       alert("Failed to register user.");

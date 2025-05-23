@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa';
 import { TiLockClosed, TiLockOpen } from 'react-icons/ti';
-import { registerAdmin } from '../Service/AdminService'; // ✅ use the API wrapper
+import { registerAdmin } from '../Service/AdminService';
 import '../Styles/Register.css';
 
 const Register = () => {
@@ -16,7 +16,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const result = await registerAdmin(userName, email, password); // ✅ using wrapper
+    const result = await registerAdmin(userName, email, password); 
 
     if (result.success) {
       alert(result.message);
