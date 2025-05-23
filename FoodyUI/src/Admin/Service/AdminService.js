@@ -30,10 +30,10 @@ export const loginAdmin = async (email, password) => {
 };
 
 
-export const registerAdmin = async (userName, email, password) => {
+export const registerAdmin = async (adminName, email, password) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/admin/register`, {
-      userName,
+      adminName,
       email,
       password,
     });

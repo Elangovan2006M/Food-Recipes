@@ -6,7 +6,7 @@ import { registerAdmin } from '../Service/AdminService';
 import '../Styles/Register.css';
 
 const Register = () => {
-  const [userName, setUserName] = useState('');
+  const [adminName, setAdminName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +16,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const result = await registerAdmin(userName, email, password); 
+    const result = await registerAdmin(adminName, email, password); // ✅ using wrapper
 
     if (result.success) {
       alert(result.message);
@@ -40,8 +40,8 @@ const Register = () => {
               <input
                 type='text'
                 placeholder='Enter your name'
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                value={adminName}
+                onChange={(e) => setAdminName(e.target.value)}
                 required
               />
               <FaUserAlt className='inputicon' />
